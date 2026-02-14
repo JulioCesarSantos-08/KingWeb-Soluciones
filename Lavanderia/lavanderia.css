@@ -1,0 +1,68 @@
+body{
+margin:0;
+background:#0b0b0b;
+color:white;
+font-family:Arial;
+}
+
+header{
+background:black;
+padding:12px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header img{height:40px;}
+
+header button{
+background:#d4af37;
+border:none;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+}
+
+.container{
+max-width:480px;
+margin:30px auto;
+background:#111;
+padding:25px;
+border-radius:15px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:6px;
+border:none;
+}
+
+.primary{
+background:#d4af37;
+padding:12px;
+width:100%;
+border:none;
+border-radius:25px;
+font-weight:bold;
+}
+
+.recibo{
+background:#1a1a1a;
+padding:12px;
+border-radius:10px;
+margin-top:10px;
+font-size:14px;
+}
+
+.estado{
+font-weight:bold;
+}
+
+.pagado{color:#4ade80;}
+.pendiente{color:#f87171;}
+
+@media(max-width:600px){
+.container{margin:10px;}
+}

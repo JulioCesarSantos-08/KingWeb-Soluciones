@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Gestión Lavandería</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="../imagenes/logo2.png">
+<link rel="stylesheet" href="lavanderia.css">
+
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-database-compat.js"></script>
+</head>
+
+<body>
+
+<header>
+<img src="../imagenes/logo2.png">
+<span>Recibos Demo</span>
+
+<div>
+<button onclick="location.href='lavanderia.html'">Crear</button>
+<button onclick="location.href='../index.html'">Inicio</button>
+</div>
+
+</header>
+
+<div class="container">
+
+<h2>Recibos</h2>
+
+<select id="filtroEstado" onchange="filtrar()">
+<option value="">Todos</option>
+<option value="pendiente">Pendiente</option>
+<option value="pagado">Pagado</option>
+</select>
+
+<div id="ingresos"></div>
+
+<div id="lista"></div>
+
+</div>
+
+<script src="lavanderia.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>King Web | Julio Cesar Santos Peñaloza</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="King Web - Desarrollo de sistemas web interactivos. Prueba demos reales de nuestros proyectos.">
+
+<link rel="icon" type="image/png" href="imagenes/logo1.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:#f5f5f5;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+background:black;
+position:sticky;
+top:0;
+z-index:10;
+flex-wrap:wrap;
+}
+
+.logo img{
+height:45px;
+}
+
+nav{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+font-size:14px;
+}
+
+nav a:hover{
+color:#d4af37;
+}
+
+.hero{
+padding:80px 15px;
+text-align:center;
+background:radial-gradient(circle,#1a1a1a,#000);
+}
+
+.hero h1{
+font-size:clamp(28px,5vw,42px);
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:600px;
+margin:auto;
+margin-bottom:25px;
+font-size:15px;
+}
+
+.btn{
+padding:10px 22px;
+border-radius:25px;
+text-decoration:none;
+margin:5px;
+display:inline-block;
+cursor:pointer;
+font-size:14px;
+}
+
+.gold{
+background:#d4af37;
+color:black;
+}
+
+.outline{
+border:2px solid #d4af37;
+color:#d4af37;
+}
+
+section{
+padding:60px 15px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
+}
+
+.card{
+background:#1a1a1a;
+padding:22px;
+border-radius:15px;
+text-align:left;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 15px rgba(212,175,55,.35);
+}
+
+.card h3{
+color:#d4af37;
+margin-bottom:8px;
+font-size:18px;
+}
+
+.card p{
+font-size:14px;
+}
+
+.sobre,.contacto{
+max-width:800px;
+margin:auto;
+font-size:15px;
+}
+
+.botones{
+margin:25px 0;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.info p{
+margin:6px;
+font-size:14px;
+}
+
+footer{
+background:black;
+padding:18px;
+text-align:center;
+margin-top:40px;
+font-size:13px;
+}
+
+/* RESPONSIVE EXTRA */
+@media(max-width:600px){
+nav{
+justify-content:center;
+width:100%;
+margin-top:10px;
+}
+
+header{
+justify-content:center;
+}
+
+.hero{
+padding:60px 10px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<img src="imagenes/logo1.png">
+</div>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#sobre">Sobre mí</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</header>
+
+<section id="inicio" class="hero">
+<h1>Soluciones Web Profesionales</h1>
+
+<p>
+Desarrollo sistemas digitales personalizados para negocios reales.
+Aquí puedes probar versiones demo de mis proyectos.
+</p>
+
+<a href="#proyectos" class="btn gold">Ver Proyectos</a>
+<a href="#contacto" class="btn outline">Contactar</a>
+</section>
+
+<section id="proyectos">
+
+<h2>Proyectos</h2>
+<br>
+
+<div class="grid">
+
+<div class="card">
+<h3>Herramienta para Lavanderías</h3>
+<p>Control de servicios, clientes, cobros e historial.</p>
+<a href="Lavanderia/lavanderia.html" class="btn gold">Probar Demo</a>
+</div>
+
+<div class="card">
+<h3>Dreams B</h3>
+<p>Tienda en línea de productos de belleza.</p>
+<a href="#" class="btn gold">Probar Demo</a>
+</div>
+
+<div class="card">
+<h3>Quinielas Liga MX</h3>
+<p>Plataforma web para quinielas.</p>
+<a href="#" class="btn gold">Probar Demo</a>
+</div>
+
+<div class="card">
+<h3>Cocina de la Güera</h3>
+<p>Presentación de comedor con mini juegos.</p>
+<a href="#" class="btn gold">Probar Demo</a>
+</div>
+
+<div class="card">
+<h3>Herramienta para Talleres Mecánicos</h3>
+<p>Inventario, control y QR.</p>
+<a href="#" class="btn gold">Probar Demo</a>
+</div>
+
+<div class="card">
+<h3>RACSA</h3>
+<p>Sistema administrativo interno.</p>
+<a href="#" class="btn gold">Probar Demo</a>
+</div>
+
+<div class="card">
+<h3>El Maizal</h3>
+<p>Control de producción.</p>
+<a href="#" class="btn gold">Probar Demo</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="sobre" class="sobre">
+
+<h2>Sobre mí</h2>
+<br>
+
+<p>
+Mi nombre es <strong>Julio Cesar Santos Peñaloza</strong>, desarrollador web especializado en sistemas personalizados.
+</p>
+<br>
+
+<p>
+Soy originario de Río Grande, Oaxaca. Estudié durante 4 años en la Universidad del Valle de Puebla.
+</p>
+<br>
+
+<p>
+Creo soluciones prácticas, funcionales y fáciles de usar para negocios que desean modernizarse.
+</p>
+
+</section>
+
+<section id="contacto" class="contacto">
+
+<h2>Contacto</h2>
+
+<div class="botones">
+
+<a href="https://wa.me/522225354183" target="_blank" class="btn gold">WhatsApp</a>
+
+<a href="mailto:king.web.soluciones@gmail.com" class="btn outline">Email</a>
+
+<a href="https://www.facebook.com/share/1C7mosj949/" target="_blank" class="btn outline">Facebook</a>
+
+</div>
+
+<div class="info">
+<p>📞 +52 222 535 4183</p>
+<p>📧 king.web.soluciones@gmail.com</p>
+<p>📍 Río Grande, Oaxaca</p>
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 King Web — Julio Cesar Santos Peñaloza</p>
+</footer>
+
+<script>
+console.log("King Web listo y responsivo");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>King Web | Demo Lavandería</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="../imagenes/logo2.png">
+<link rel="stylesheet" href="lavanderia.css">
+
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-database-compat.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+<header>
+<img src="../imagenes/logo2.png">
+<span>Demo Herramienta Lavanderías</span>
+
+<div>
+<button onclick="location.href='lavanderia2.html'">Gestión</button>
+<button onclick="location.href='../index.html'">Inicio</button>
+</div>
+
+</header>
+
+<div class="container">
+
+<h2>Crear Recibo</h2>
+
+<input id="cliente" placeholder="Cliente">
+
+<input id="kilos" type="number" placeholder="Kilos">
+
+<select id="sucursal">
+<option>Sucursal 1</option>
+<option>Sucursal 2</option>
+</select>
+
+<input id="total" placeholder="Total $" readonly>
+
+<button class="primary" onclick="crearRecibo()">Guardar</button>
+
+<div id="reciboVista"></div>
+
+</div>
+
+<script src="lavanderia.js"></script>
+</body>
+</html>
