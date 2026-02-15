@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>King Web | Asistencias Demo</title>
+<link rel="icon" href="../imagenes/logo2.png">
+<link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<header class="topbar">
+<div class="top-left">
+<img src="../imagenes/logo2.png" class="top-logo">
+<div>
+<div class="top-title">Panel Asistencias</div>
+<div class="top-sub">Demo King Web</div>
+</div>
+</div>
+
+<button onclick="location.href='../index.html'" class="btn-ghost">Inicio</button>
+</header>
+
+<main class="main">
+
+<section class="card">
+<div class="card-title">Estadísticas</div>
+
+<div class="stats">
+<div class="stat">
+<div class="stat-label">Registros</div>
+<div id="stTotal" class="stat-value">0</div>
+</div>
+
+<div class="stat">
+<div class="stat-label">Minutos</div>
+<div id="stMin" class="stat-value">0</div>
+</div>
+
+<div class="stat">
+<div class="stat-label">Horas</div>
+<div id="stHoras" class="stat-value">0</div>
+</div>
+</div>
+
+</section>
+
+<section class="card">
+<div class="card-title">Jornadas</div>
+<div id="listaJornadas" class="list"></div>
+</section>
+
+</main>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>
