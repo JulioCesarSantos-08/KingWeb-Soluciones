@@ -27,7 +27,7 @@ return pad(d.getHours())+":"+pad(d.getMinutes());
 }
 
 function minutosAHoras(m){
-if(!m)return "0";
+if(!m||m<0)return "0";
 const h=Math.floor(m/60);
 const mm=m%60;
 if(h<=0)return mm+" min";
@@ -35,32 +35,37 @@ return h+" h "+mm+" min";
 }
 
 async function cargar(){
+
 const snap=await get(ref(db,`demos/asistencias/${DEMO}`));
 if(!snap.exists()){
 lista.innerHTML="Sin registros";
 return;
 }
 
-let arr=[];
-snap.forEach(c=>{
-arr.push({...c.val(),fecha:c.key});
+let registros=[];
+
+snap.forEach(fecha=>{
+fecha.forEach(reg=>{
+registros.push({...reg.val(),fecha:fecha.key});
+});
 });
 
-arr.sort((a,b)=>b.fecha.localeCompare(a.fecha));
+registros.sort((a,b)=>b.entradaTs-a.entradaTs);
 
 let totalMin=0;
 
-arr.forEach(x=>{
-if(x.minutos) totalMin+=x.minutos;
+registros.forEach(r=>{
+if(r.minutos) totalMin+=r.minutos;
 });
 
-stTotal.textContent=arr.length;
+stTotal.textContent=registros.length;
 stMin.textContent=totalMin;
 stHoras.textContent=minutosAHoras(totalMin);
 
-lista.innerHTML=arr.map(j=>`
+lista.innerHTML=registros.map(j=>`
 <div class="item">
 <div class="item-title">${j.fecha}</div>
+<div class="item-sub">${j.nombre||""}</div>
 <div class="item-sub">Entrada: ${hora(j.entradaTs)}</div>
 <div class="item-sub">Salida: ${hora(j.salidaTs)}</div>
 <div class="item-sub">Tiempo: ${minutosAHoras(j.minutos)}</div>

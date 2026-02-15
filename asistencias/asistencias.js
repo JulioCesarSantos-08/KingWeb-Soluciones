@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getDatabase, ref, get, set, update, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import { getDatabase, ref, get, push, update, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 const firebaseConfig={
 apiKey:"AIzaSyBF4xiYBLDGyMWcLo1fhrnsq1EqoUQV4Rk",
@@ -12,6 +12,7 @@ initializeApp(firebaseConfig);
 const db=getDatabase();
 
 const DEMO_USER="demo-user";
+const NOMBRE="Visitante-KingWeb";
 
 const txtEstado=document.getElementById("txtEstado");
 const txtDistancia=document.getElementById("txtDistancia");
@@ -33,7 +34,6 @@ const btnRefrescarHistorial=document.getElementById("btnRefrescarHistorial");
 const mapDiv=document.getElementById("map");
 
 let ubicacionUsuario=null;
-let jornadaHoy=null;
 let map=null;
 let markerUsuario=null;
 let circleUsuario=null;
@@ -52,34 +52,24 @@ return pad2(d.getHours())+":"+pad2(d.getMinutes());
 }
 
 function minutosAHoras(min){
-if(!Number.isFinite(min)||min<0)return "---";
+if(!min||min<0)return "---";
 const h=Math.floor(min/60);
 const m=min%60;
 if(h<=0)return m+" min";
 return h+" h "+m+" min";
 }
 
-function distanciaMetros(lat1,lon1,lat2,lon2){
-const R=6371000;
-const toRad=v=>(v*Math.PI)/180;
-const dLat=toRad(lat2-lat1);
-const dLon=toRad(lon2-lon1);
-const a=Math.sin(dLat/2)**2+
-Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*
-Math.sin(dLon/2)**2;
-const c=2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
-return R*c;
-}
-
 async function limpiarAntiguos(){
 const snap=await get(ref(db,`demos/asistencias/${DEMO_USER}`));
 if(!snap.exists())return;
 const ahora=Date.now();
-snap.forEach(c=>{
-const v=c.val();
+snap.forEach(fecha=>{
+fecha.forEach(reg=>{
+const v=reg.val();
 if(v.createdAt&&ahora-v.createdAt>604800000){
-remove(ref(db,`demos/asistencias/${DEMO_USER}/${c.key}`));
+remove(ref(db,`demos/asistencias/${DEMO_USER}/${fecha.key}/${reg.key}`));
 }
+});
 });
 }
 limpiarAntiguos();
@@ -95,15 +85,11 @@ if(!map||!ubicacionUsuario)return;
 if(markerUsuario)map.removeLayer(markerUsuario);
 if(circleUsuario)map.removeLayer(circleUsuario);
 
-markerUsuario=L.circleMarker(
-[ubicacionUsuario.lat,ubicacionUsuario.lng],
-{radius:7,color:"#2563eb",fillColor:"#2563eb",fillOpacity:1}
-).addTo(map);
+markerUsuario=L.circleMarker([ubicacionUsuario.lat,ubicacionUsuario.lng],
+{radius:7,color:"#2563eb",fillColor:"#2563eb",fillOpacity:1}).addTo(map);
 
-circleUsuario=L.circle(
-[ubicacionUsuario.lat,ubicacionUsuario.lng],
-{radius:ubicacionUsuario.accuracy,color:"#2563eb",fillOpacity:.15}
-).addTo(map);
+circleUsuario=L.circle([ubicacionUsuario.lat,ubicacionUsuario.lng],
+{radius:ubicacionUsuario.accuracy,color:"#2563eb",fillOpacity:.15}).addTo(map);
 }
 
 function obtenerUbicacion(){
@@ -117,60 +103,88 @@ accuracy:p.coords.accuracy
 initMap(ubicacionUsuario.lat,ubicacionUsuario.lng);
 map.setView([ubicacionUsuario.lat,ubicacionUsuario.lng],16);
 pintarUsuario();
-evaluarAcceso();
-txtEstado.textContent="Ubicación actualizada";
+txtPrecision.textContent=`±${Math.round(ubicacionUsuario.accuracy)} m`;
+txtAcceso.textContent="Permitido";
+txtEstado.textContent="Ubicación confirmada";
 },()=>{
-msgRegistro.textContent="No se pudo obtener ubicación.";
+msgRegistro.textContent="Debes permitir la ubicación.";
 },{enableHighAccuracy:true});
 }
 
-function evaluarAcceso(){
-if(!ubicacionUsuario)return;
-txtDistancia.textContent="---";
-txtPrecision.textContent=`±${Math.round(ubicacionUsuario.accuracy)} m`;
-txtAcceso.textContent="Permitido";
-return true;
-}
-
-async function cargarJornadaHoy(){
-const snap=await get(ref(db,`demos/asistencias/${DEMO_USER}/${keyHoy()}`));
-jornadaHoy=snap.exists()?snap.val():null;
-pintarJornada();
-}
-
-function pintarJornada(){
-txtEntradaHoy.textContent=jornadaHoy?.entradaTs?hora(jornadaHoy.entradaTs):"---";
-txtSalidaHoy.textContent=jornadaHoy?.salidaTs?hora(jornadaHoy.salidaTs):"---";
-if(jornadaHoy?.entradaTs&&jornadaHoy?.salidaTs){
-const min=Math.round((jornadaHoy.salidaTs-jornadaHoy.entradaTs)/60000);
-txtTiempoHoy.textContent=minutosAHoras(min);
-}else{
-txtTiempoHoy.textContent="---";
-}
-}
-
 async function registrarEntrada(){
+if(!ubicacionUsuario){
+msgRegistro.textContent="Primero debes informar tu ubicación.";
+return;
+}
+
 const now=Date.now();
-await set(ref(db,`demos/asistencias/${DEMO_USER}/${keyHoy()}`),{
-nombre:"Visitante-KingWeb",
+const nuevo=push(ref(db,`demos/asistencias/${DEMO_USER}/${keyHoy()}`));
+
+await update(nuevo,{
+nombre:NOMBRE,
 entradaTs:now,
-salidaTs:null,
+entradaLat:ubicacionUsuario.lat,
+entradaLng:ubicacionUsuario.lng,
 estado:"abierta",
 createdAt:now
 });
-await cargarJornadaHoy();
+
+await cargarHoy();
 }
 
 async function registrarSalida(){
-if(!jornadaHoy?.entradaTs)return;
+if(!ubicacionUsuario)return;
+
+const snap=await get(ref(db,`demos/asistencias/${DEMO_USER}/${keyHoy()}`));
+if(!snap.exists())return;
+
+let abierto=null;
+
+snap.forEach(r=>{
+if(r.val().estado==="abierta") abierto={...r.val(),id:r.key};
+});
+
+if(!abierto)return;
+
 const now=Date.now();
-const min=Math.round((now-jornadaHoy.entradaTs)/60000);
-await update(ref(db,`demos/asistencias/${DEMO_USER}/${keyHoy()}`),{
+const min=Math.round((now-abierto.entradaTs)/60000);
+
+await update(ref(db,`demos/asistencias/${DEMO_USER}/${keyHoy()}/${abierto.id}`),{
 salidaTs:now,
+salidaLat:ubicacionUsuario.lat,
+salidaLng:ubicacionUsuario.lng,
 minutos:min,
 estado:"cerrada"
 });
-await cargarJornadaHoy();
+
+await cargarHoy();
+}
+
+async function cargarHoy(){
+const snap=await get(ref(db,`demos/asistencias/${DEMO_USER}/${keyHoy()}`));
+if(!snap.exists()){
+txtEntradaHoy.textContent="---";
+txtSalidaHoy.textContent="---";
+txtTiempoHoy.textContent="---";
+return;
+}
+
+let arr=[];
+snap.forEach(r=>arr.push(r.val()));
+arr.sort((a,b)=>a.entradaTs-b.entradaTs);
+
+let totalMin=0;
+
+arr.forEach(r=>{
+if(r.minutos) totalMin+=r.minutos;
+if(r.estado==="abierta"){
+totalMin+=Math.round((Date.now()-r.entradaTs)/60000);
+}
+});
+
+txtEntradaHoy.textContent=hora(arr[arr.length-1].entradaTs);
+txtSalidaHoy.textContent=hora(arr[arr.length-1].salidaTs);
+txtTiempoHoy.textContent=minutosAHoras(totalMin);
 }
 
 async function cargarHistorial(){
@@ -179,13 +193,22 @@ if(!snap.exists()){
 historialList.innerHTML="Sin registros.";
 return;
 }
-const arr=Object.entries(snap.val()).map(([k,v])=>({...v,fechaKey:k}));
-arr.sort((a,b)=>b.fechaKey.localeCompare(a.fechaKey));
+
+let arr=[];
+snap.forEach(fecha=>{
+fecha.forEach(reg=>{
+arr.push({...reg.val(),fecha:fecha.key});
+});
+});
+
+arr.sort((a,b)=>b.entradaTs-a.entradaTs);
+
 historialList.innerHTML=arr.map(x=>`
 <div class="item">
-<div>${x.fechaKey}</div>
-<div>Entrada: ${hora(x.entradaTs)}</div>
-<div>Salida: ${hora(x.salidaTs)}</div>
+<div><strong>${x.nombre}</strong></div>
+<div>${x.fecha}</div>
+<div>Entrada: ${hora(x.entradaTs)} (${x.entradaLat?.toFixed(4)}, ${x.entradaLng?.toFixed(4)})</div>
+<div>Salida: ${hora(x.salidaTs)} (${x.salidaLat?.toFixed(4)}, ${x.salidaLng?.toFixed(4)})</div>
 <div>Tiempo: ${minutosAHoras(x.minutos)}</div>
 </div>
 `).join("");
@@ -196,4 +219,4 @@ btnEntrada.onclick=registrarEntrada;
 btnSalida.onclick=registrarSalida;
 btnRefrescarHistorial.onclick=cargarHistorial;
 
-cargarJornadaHoy();
+cargarHoy();
