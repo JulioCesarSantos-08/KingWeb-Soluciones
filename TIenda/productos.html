@@ -10,28 +10,33 @@
 
 <style>
 
+*{box-sizing:border-box}
+
 body{
 margin:0;
 font-family:Poppins;
 background:#eef3ff;
+padding-bottom:140px;
 }
 
 header{
 background:#2563eb;
 color:white;
-padding:12px 18px;
+padding:12px 16px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+gap:10px;
+flex-wrap:wrap;
 }
 
-header img{height:38px}
+header img{height:36px}
 
 .btn{
 background:#0ea5e9;
 border:none;
 color:white;
-padding:8px 15px;
+padding:8px 16px;
 border-radius:20px;
 font-weight:600;
 cursor:pointer;
@@ -39,6 +44,8 @@ transition:.25s;
 }
 
 .btn:hover{transform:scale(1.05)}
+
+.btn.green{background:#22c55e}
 
 .grid{
 display:grid;
@@ -53,6 +60,9 @@ border-radius:16px;
 padding:12px;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
 text-align:center;
+display:flex;
+flex-direction:column;
+gap:5px;
 }
 
 .card img{
@@ -61,7 +71,7 @@ height:120px;
 object-fit:contain;
 }
 
-.nombre{font-weight:600;margin-top:5px}
+.nombre{font-weight:600}
 .desc{font-size:12px;color:#666}
 
 .precioOld{text-decoration:line-through;color:#888;font-size:12px}
@@ -71,51 +81,78 @@ object-fit:contain;
 background:#dc2626;
 color:white;
 font-size:11px;
-padding:2px 6px;
+padding:3px 8px;
 border-radius:10px;
+display:inline-block;
 }
 
-#carrito{
+.carrito{
 position:fixed;
 bottom:0;
 left:0;
 right:0;
 background:white;
 box-shadow:0 -4px 12px rgba(0,0,0,.15);
-padding:10px;
+padding:10px 15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+z-index:50;
 }
 
-#listaCarrito{font-size:13px}
+#listaCarrito{
+font-size:12px;
+max-height:50px;
+overflow:auto;
+flex:1;
+}
 
-.total{font-weight:600;margin-top:10px}
+.total{font-weight:600}
 
-#modal{
+.modal{
 position:fixed;
-top:0;
-left:0;
-right:0;
-bottom:0;
-background:rgba(0,0,0,.5);
+inset:0;
+background:rgba(0,0,0,.6);
 display:none;
 align-items:center;
 justify-content:center;
+z-index:100;
 }
 
-#modalBox{
+.ticket{
 background:white;
+width:320px;
 padding:20px;
-border-radius:16px;
-max-width:350px;
-width:90%;
+border-radius:14px;
 text-align:center;
+font-size:14px;
 }
 
-body{
-  padding-bottom:120px;
+.ticket h2{margin:0}
+
+.ticket hr{margin:10px 0}
+
+.sub{color:#666;font-size:12px}
+
+.btn-primary{
+background:#22c55e;
+border:none;
+color:white;
+padding:10px;
+width:100%;
+border-radius:10px;
+margin-top:10px;
+font-weight:600;
 }
 
-#carrito{
-  height:110px;
+.btn-outline{
+margin-top:6px;
+background:none;
+border:1px solid #ccc;
+width:100%;
+padding:8px;
+border-radius:10px;
 }
 
 </style>
@@ -128,23 +165,38 @@ body{
 <img src="../imagenes/logo2.png">
 <b>Herramienta para tienda en línea</b>
 </div>
+
+<div style="display:flex;gap:8px">
 <button class="btn" onclick="location.href='recibos.html'">Recibos</button>
 <button class="btn" onclick="location.href='../index.html'">Inicio</button>
+</div>
 </header>
 
 <div class="grid" id="productos"></div>
 
-<div id="carrito">
+<div class="carrito">
 <div id="listaCarrito"></div>
-<div class="total" id="total"></div>
-<button class="btn" onclick="comprar()">Comprar</button>
+<div class="total" id="total">$0</div>
+<button class="btn green" onclick="comprar()">Comprar</button>
 </div>
 
-<div id="modal">
-<div id="modalBox">
-<h3>Recibo</h3>
-<div id="recibo"></div>
-<button class="btn" onclick="cerrar()">Cerrar</button>
+<div id="modal" class="modal">
+<div class="ticket">
+
+<h2>King Web Store</h2>
+<div class="sub">Gracias por visitarnos</div>
+
+<div id="ticketItems"></div>
+
+<hr>
+
+<div id="ticketTotales"></div>
+
+<div class="sub">Cliente: Visitante-KingWeb</div>
+
+<button onclick="confirmarCompra()" class="btn-primary">Confirmar compra</button>
+<button onclick="cerrarModal()" class="btn-outline">Cancelar</button>
+
 </div>
 </div>
 

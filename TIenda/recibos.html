@@ -23,6 +23,7 @@ padding:12px 18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+flex-wrap:wrap;
 }
 
 header img{height:38px}
@@ -53,9 +54,14 @@ flex-wrap:wrap;
 
 .stat{
 background:white;
-padding:12px 20px;
+padding:14px 22px;
 border-radius:14px;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
+font-size:14px;
+}
+
+.stat b{
+font-size:18px;
 }
 
 .table-wrapper{
@@ -68,25 +74,44 @@ box-shadow:0 6px 18px rgba(0,0,0,.08);
 table{
 border-collapse:collapse;
 width:100%;
-min-width:600px;
+min-width:650px;
 }
 
 th{
 background:#1e40af;
 color:white;
-padding:10px;
+padding:12px;
 font-size:13px;
+letter-spacing:.5px;
 }
 
 td{
-padding:10px;
+padding:12px;
 text-align:center;
 font-size:13px;
 border-bottom:1px solid #eee;
 }
 
+td:nth-child(3){
+font-weight:600;
+color:#16a34a;
+font-variant-numeric: tabular-nums;
+}
+
 tr:hover{
 background:#f1f5ff;
+}
+
+@media(max-width:600px){
+
+.stats{
+flex-direction:column;
+}
+
+.stat{
+width:100%;
+}
+
 }
 
 </style>
@@ -100,14 +125,17 @@ background:#f1f5ff;
 <b>Ventas Tienda</b>
 </div>
 
-<button class="btn" onclick="location.href='productos.html'">Volver</button>
+<div style="display:flex;gap:10px">
+<button class="btn" onclick="location.href='productos.html'">Productos</button>
+<button class="btn" onclick="location.href='../index.html'">Inicio</button>
+</div>
 </header>
 
 <div class="container">
 
 <div class="stats">
-<div class="stat">Ventas: <b id="stVentas">0</b></div>
-<div class="stat">Ingresos: <b id="stTotal">$0</b></div>
+<div class="stat">Ventas Totales<br><b id="stVentas">0</b></div>
+<div class="stat">Ingresos Generados<br><b id="stTotal">$0.00</b></div>
 </div>
 
 <div class="table-wrapper">

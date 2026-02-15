@@ -8,6 +8,10 @@ databaseURL:"https://king-web-soluciones-08-default-rtdb.firebaseio.com"
 
 const db=getDatabase();
 
+function dinero(n){
+return Number(n).toLocaleString("es-MX",{minimumFractionDigits:2});
+}
+
 const USER="Visitante-KingWeb";
 
 const productos=[
@@ -32,7 +36,8 @@ const cont=document.getElementById("productos");
 const lista=document.getElementById("listaCarrito");
 const total=document.getElementById("total");
 const modal=document.getElementById("modal");
-const recibo=document.getElementById("recibo");
+const ticketItems=document.getElementById("ticketItems");
+const ticketTotales=document.getElementById("ticketTotales");
 
 let carrito=[];
 
@@ -43,8 +48,8 @@ cont.innerHTML+=`
 <div class="nombre">${p.n}</div>
 <div class="desc">Producto demo</div>
 <div class="badge">-${p.desc}%</div>
-<div class="precioOld">$${p.p}</div>
-<div class="precioNew">$${p.final}</div>
+<div class="precioOld">$${dinero(p.p)}</div>
+<div class="precioNew">$${dinero(p.final)}</div>
 <button class="btn" onclick="agregar(${i})">Agregar</button>
 </div>`;
 });
@@ -58,45 +63,83 @@ function render(){
 lista.innerHTML="";
 let t=0;
 carrito.forEach(p=>{
-lista.innerHTML+=`${p.n} $${p.final}<br>`;
+lista.innerHTML+=`${p.n} $${dinero(p.final)}<br>`;
 t+=p.final;
 });
-total.textContent="Total: $"+t;
+total.textContent="$"+dinero(t);
 }
 
-window.comprar=async()=>{
-if(!carrito.length)return;
+window.comprar=()=>{
+if(!carrito.length) return;
 
-const data={
-usuario:USER,
-fecha:Date.now(),
-productos:carrito,
-total:carrito.reduce((a,b)=>a+b.final,0),
-createdAt:Date.now()
-};
+ticketItems.innerHTML=carrito.map(p=>`
+<div style="display:flex;justify-content:space-between">
+<span>${p.n}</span>
+<span>$${dinero(p.final)}</span>
+</div>
+`).join("");
 
-await push(ref(db,"demos/tienda/recibos"),data);
+const subtotal=carrito.reduce((a,b)=>a+b.final,0);
+const descuento=Math.round(subtotal*0.1);
+const totalFinal=subtotal-descuento;
 
-recibo.innerHTML=`
-Cliente: ${USER}<br>
-Total: $${data.total}<br>
-Productos:<br>${carrito.map(p=>p.n).join("<br>")}
+ticketTotales.innerHTML=`
+<hr>
+<div style="display:flex;justify-content:space-between">
+<span>Subtotal</span>
+<span>$${dinero(subtotal)}</span>
+</div>
+<div style="display:flex;justify-content:space-between;color:#dc2626">
+<span>Descuento</span>
+<span>-$${dinero(descuento)}</span>
+</div>
+<div style="display:flex;justify-content:space-between;font-weight:600;font-size:18px;margin-top:8px">
+<span>Total</span>
+<span>$${dinero(totalFinal)}</span>
+</div>
+<br>
+<div style="text-align:center;font-size:12px;color:#666">
+Gracias por su compra<br>
+King Web Soluciones
+</div>
 `;
 
+window.ticketData={subtotal,descuento,totalFinal};
+
 modal.style.display="flex";
-carrito=[];
-render();
 };
 
-window.cerrar=()=>modal.style.display="none";
+window.cerrarModal=()=>{
+modal.style.display="none";
+};
+
+window.confirmarCompra=async()=>{
+
+await push(ref(db,"tienda/recibos"),{
+usuario:USER,
+productos:carrito,
+subtotal:ticketData.subtotal,
+descuento:ticketData.descuento,
+total:ticketData.totalFinal,
+fecha:Date.now(),
+createdAt:Date.now()
+});
+
+carrito=[];
+render();
+cerrarModal();
+alert("Compra registrada correctamente");
+};
 
 async function limpiar(){
-const snap=await get(ref(db,"demos/tienda/recibos"));
-if(!snap.exists())return;
+const snap=await get(ref(db,"tienda/recibos"));
+if(!snap.exists()) return;
+
 snap.forEach(c=>{
 if(Date.now()-c.val().createdAt>604800000){
-remove(ref(db,"demos/tienda/recibos/"+c.key));
+remove(ref(db,"tienda/recibos/"+c.key));
 }
 });
 }
+
 limpiar();
