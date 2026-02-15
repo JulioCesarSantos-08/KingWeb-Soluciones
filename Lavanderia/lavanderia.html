@@ -2,51 +2,87 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>King Web | Demo Lavandería</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="icon" href="../imagenes/logo2.png">
-<link rel="stylesheet" href="lavanderia.css">
 
-<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-database-compat.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <header>
+<div style="display:flex;align-items:center;gap:10px">
 <img src="../imagenes/logo2.png">
-<span>Demo Herramienta Lavanderías</span>
-
-<div>
-<button onclick="location.href='lavanderia2.html'">Gestión</button>
-<button onclick="location.href='../index.html'">Inicio</button>
+<strong>Demo Lavandería</strong>
 </div>
-
+<button onclick="location.href='../index.html'">Inicio</button>
 </header>
 
 <div class="container">
 
-<h2>Crear Recibo</h2>
+<h3>Crear recibo</h3>
 
-<input id="cliente" placeholder="Cliente">
+<label>Nombre del cliente</label>
+<input id="cliente" placeholder="Ej: Juan Pérez">
 
-<input id="kilos" type="number" placeholder="Kilos">
-
-<select id="sucursal">
-<option>Sucursal 1</option>
-<option>Sucursal 2</option>
+<label>Tipo de servicio</label>
+<select id="lavanderia">
+<option>Lavado</option>
+<option>Lavado + Secado</option>
+<option>Planchado</option>
 </select>
 
-<input id="total" placeholder="Total $" readonly>
+<label>Kilos de ropa</label>
+<input id="kilos" type="number" placeholder="Ej: 8">
 
-<button class="primary" onclick="crearRecibo()">Guardar</button>
+<label>Folio</label>
+<input id="folio" placeholder="Automático">
 
-<div id="reciboVista"></div>
+<div id="ultimoFolio" style="font-size:13px;margin-bottom:10px"></div>
+
+<label>Fecha ingreso</label>
+<input id="fechaIngreso" type="date">
+
+<label>Fecha entrega</label>
+<input id="fechaEntrega" type="date">
+
+<label>Hora entrega</label>
+<input id="horaEntrega" type="time">
+
+<label>Total a pagar</label>
+<input id="total" placeholder="Ej: 180">
+
+<label>Estado del servicio</label>
+<select id="estado">
+<option>Pendiente</option>
+<option>Pagado</option>
+</select>
+
+<label>Método de pago</label>
+<select id="metodoPago">
+<option>Efectivo</option>
+<option>Transferencia</option>
+</select>
+
+<button style="margin-top:15px" onclick="generarRecibo()">Generar recibo</button>
+
+<div id="recibo" class="hidden"></div>
+
+<div id="accionesRecibo" class="hidden" style="margin-top:15px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="compartirRecibo()">Compartir recibo</button>
+<button onclick="location.href='datos.html'">Ver recibos</button>
+<button onclick="location.href='analisis.html'">Análisis</button>
+</div>
 
 </div>
 
-<script src="lavanderia.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
