@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Concentrado Quiniela</title>
+
+<link rel="icon" href="../imagenes/logo2.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:Poppins;
+background:#eef3ff;
+}
+
+header{
+background:#2563eb;
+color:white;
+padding:12px 18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header img{height:36px}
+
+.btn{
+background:#0ea5e9;
+border:none;
+color:white;
+padding:8px 15px;
+border-radius:20px;
+font-weight:600;
+cursor:pointer;
+transition:.25s;
+}
+
+.btn:hover{transform:scale(1.05)}
+
+.container{
+padding:20px;
+}
+
+.table-wrapper{
+overflow-x:auto;
+background:white;
+border-radius:16px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+table{
+border-collapse:collapse;
+width:100%;
+min-width:900px;
+}
+
+th{
+background:#1e40af;
+color:white;
+padding:10px;
+font-size:13px;
+text-align:center;
+}
+
+td{
+padding:10px;
+text-align:center;
+font-size:13px;
+border-bottom:1px solid #eee;
+}
+
+tr:hover{
+background:#f1f5ff;
+}
+
+.usuario{
+font-weight:600;
+color:#2563eb;
+}
+
+.fecha{
+font-size:11px;
+color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div style="display:flex;align-items:center;gap:10px">
+<img src="../imagenes/logo2.png">
+<b>Concentrado Quiniela</b>
+</div>
+
+<div style="display:flex;gap:10px">
+<button class="btn" onclick="location.href='../index.html'">Inicio</button>
+<button class="btn" onclick="location.href='quiniela.html'">Volver</button>
+</div>
+</header>
+
+<div class="container">
+<div class="table-wrapper">
+<table id="tabla">
+<thead>
+<tr>
+<th>Usuario</th>
+<th>Tigres vs Santos</th>
+<th>Necaxa vs San Luis</th>
+<th>Tijuana vs Puebla</th>
+<th>Mazatlan vs Chivas</th>
+<th>Barcelona vs Real Madrid</th>
+<th>Queretaro vs Leon</th>
+<th>Toluca vs Cruz Azul</th>
+<th>Atlas vs Pumas</th>
+<th>Pachuca vs Juarez</th>
+<th>America vs Monterrey</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+</div>
+
+<script type="module" src="tabla.js"></script>
+
+</body>
+</html>

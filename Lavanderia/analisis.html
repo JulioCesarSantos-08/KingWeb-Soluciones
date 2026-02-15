@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Análisis</title>
+<title>Análisis Lavandería</title>
 
 <link rel="icon" href="../imagenes/logo2.png">
 
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -22,10 +24,15 @@
 </header>
 
 <div class="stats">
-<p>Total recibos: <span id="totalRecibos">0</span></p>
-<p>Total ingresos: $<span id="totalIngresos">0</span></p>
+<p>Total recibos: <strong id="totalRecibos">0</strong></p>
+<p>Total ingresos: $<strong id="totalIngresos">0</strong></p>
+</div>
+
+<div style="padding:20px">
+<canvas id="grafica"></canvas>
 </div>
 
 <script src="analisis.js"></script>
+
 </body>
 </html>
