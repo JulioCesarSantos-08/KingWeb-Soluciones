@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Demo Quinielas | King Web</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="../imagenes/logo2.png">
+<link rel="stylesheet" href="quinielas.css">
+
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-database-compat.js"></script>
+</head>
+
+<body>
+
+<header>
+<img src="../imagenes/logo2.png">
+<b>Demo Quinielas</b>
+<div>
+<button onclick="location.href='quinielas2.html'">Tabla</button>
+<button onclick="location.href='../index.html'">Inicio</button>
+</div>
+</header>
+
+<div class="container">
+
+<h2>Crea tu Quiniela</h2>
+
+<input id="nombre" placeholder="Tu nombre">
+
+<div id="partidos"></div>
+
+<button class="primary" onclick="guardar()">Guardar Quiniela</button>
+
+</div>
+
+<script src="quinielas.js"></script>
+</body>
+</html>
