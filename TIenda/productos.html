@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Herramienta para tienda en línea</title>
+
+<link rel="icon" href="../imagenes/logo2.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins;
+background:#eef3ff;
+}
+
+header{
+background:#2563eb;
+color:white;
+padding:12px 18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header img{height:38px}
+
+.btn{
+background:#0ea5e9;
+border:none;
+color:white;
+padding:8px 15px;
+border-radius:20px;
+font-weight:600;
+cursor:pointer;
+transition:.25s;
+}
+
+.btn:hover{transform:scale(1.05)}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px;
+padding:20px;
+}
+
+.card{
+background:white;
+border-radius:16px;
+padding:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.card img{
+width:100%;
+height:120px;
+object-fit:contain;
+}
+
+.nombre{font-weight:600;margin-top:5px}
+.desc{font-size:12px;color:#666}
+
+.precioOld{text-decoration:line-through;color:#888;font-size:12px}
+.precioNew{font-weight:600;color:#16a34a}
+
+.badge{
+background:#dc2626;
+color:white;
+font-size:11px;
+padding:2px 6px;
+border-radius:10px;
+}
+
+#carrito{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:white;
+box-shadow:0 -4px 12px rgba(0,0,0,.15);
+padding:10px;
+}
+
+#listaCarrito{font-size:13px}
+
+.total{font-weight:600;margin-top:10px}
+
+#modal{
+position:fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(0,0,0,.5);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+#modalBox{
+background:white;
+padding:20px;
+border-radius:16px;
+max-width:350px;
+width:90%;
+text-align:center;
+}
+
+body{
+  padding-bottom:120px;
+}
+
+#carrito{
+  height:110px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div style="display:flex;align-items:center;gap:10px">
+<img src="../imagenes/logo2.png">
+<b>Herramienta para tienda en línea</b>
+</div>
+<button class="btn" onclick="location.href='recibos.html'">Recibos</button>
+<button class="btn" onclick="location.href='../index.html'">Inicio</button>
+</header>
+
+<div class="grid" id="productos"></div>
+
+<div id="carrito">
+<div id="listaCarrito"></div>
+<div class="total" id="total"></div>
+<button class="btn" onclick="comprar()">Comprar</button>
+</div>
+
+<div id="modal">
+<div id="modalBox">
+<h3>Recibo</h3>
+<div id="recibo"></div>
+<button class="btn" onclick="cerrar()">Cerrar</button>
+</div>
+</div>
+
+<script type="module" src="productos.js"></script>
+
+</body>
+</html>

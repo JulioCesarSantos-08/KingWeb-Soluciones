@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ventas - Tienda Demo</title>
+
+<link rel="icon" href="../imagenes/logo2.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins;
+background:#eef3ff;
+}
+
+header{
+background:#2563eb;
+color:white;
+padding:12px 18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header img{height:38px}
+
+.btn{
+background:#0ea5e9;
+border:none;
+color:white;
+padding:8px 15px;
+border-radius:20px;
+font-weight:600;
+cursor:pointer;
+transition:.25s;
+}
+
+.btn:hover{transform:scale(1.05)}
+
+.container{
+padding:20px;
+}
+
+.stats{
+display:flex;
+gap:15px;
+margin-bottom:15px;
+flex-wrap:wrap;
+}
+
+.stat{
+background:white;
+padding:12px 20px;
+border-radius:14px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.table-wrapper{
+overflow-x:auto;
+background:white;
+border-radius:16px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+table{
+border-collapse:collapse;
+width:100%;
+min-width:600px;
+}
+
+th{
+background:#1e40af;
+color:white;
+padding:10px;
+font-size:13px;
+}
+
+td{
+padding:10px;
+text-align:center;
+font-size:13px;
+border-bottom:1px solid #eee;
+}
+
+tr:hover{
+background:#f1f5ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div style="display:flex;align-items:center;gap:10px">
+<img src="../imagenes/logo2.png">
+<b>Ventas Tienda</b>
+</div>
+
+<button class="btn" onclick="location.href='productos.html'">Volver</button>
+</header>
+
+<div class="container">
+
+<div class="stats">
+<div class="stat">Ventas: <b id="stVentas">0</b></div>
+<div class="stat">Ingresos: <b id="stTotal">$0</b></div>
+</div>
+
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+<th>Fecha</th>
+<th>Cliente</th>
+<th>Total</th>
+<th>Productos</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+
+</div>
+
+<script type="module" src="recibos.js"></script>
+
+</body>
+</html>
