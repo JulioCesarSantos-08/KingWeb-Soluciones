@@ -1,68 +1,100 @@
 body{
 margin:0;
-background:#0b0b0b;
-color:white;
+background:linear-gradient(135deg,#f3f6fb,#e9eef5);
+color:#222;
 font-family:Arial;
 }
 
+/* HEADER */
 header{
-background:black;
+background:white;
 padding:12px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+box-shadow:0 3px 15px rgba(0,0,0,.1);
 }
 
 header img{height:40px;}
 
 header button{
-background:#d4af37;
+background:#2563eb;
 border:none;
+color:white;
 padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
+border-radius:18px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
 }
 
+header button:hover{
+background:#1e40af;
+}
+
+/* CONTENEDOR */
 .container{
 max-width:480px;
 margin:30px auto;
-background:#111;
+background:white;
 padding:25px;
 border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
+/* INPUTS */
 input,select{
 width:100%;
-padding:10px;
+padding:12px;
 margin:8px 0;
-border-radius:6px;
-border:none;
+border-radius:8px;
+border:1px solid #ddd;
+font-size:14px;
 }
 
+/* BOTON PRINCIPAL */
 .primary{
-background:#d4af37;
+background:#16a34a;
+color:white;
 padding:12px;
 width:100%;
 border:none;
 border-radius:25px;
 font-weight:bold;
+cursor:pointer;
+transition:.3s;
 }
 
+.primary:hover{
+background:#15803d;
+}
+
+/* RECIBO */
 .recibo{
-background:#1a1a1a;
-padding:12px;
+background:#f8fafc;
+padding:14px;
 border-radius:10px;
-margin-top:10px;
+margin-top:12px;
 font-size:14px;
+border-left:5px solid #16a34a;
 }
 
+/* ESTADOS */
 .estado{
 font-weight:bold;
 }
 
-.pagado{color:#4ade80;}
-.pendiente{color:#f87171;}
+.pagado{
+color:#16a34a;
+}
 
+.pendiente{
+color:#dc2626;
+}
+
+/* RESPONSIVE */
 @media(max-width:600px){
-.container{margin:10px;}
+.container{
+margin:10px;
+}
 }

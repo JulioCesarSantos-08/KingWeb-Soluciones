@@ -21,16 +21,17 @@ font-family:Poppins,sans-serif;
 }
 
 body{
-background:#0b0b0b;
-color:#f5f5f5;
+background:linear-gradient(135deg,#f8f9fb,#eef1f6);
+color:#222;
 }
 
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 25px;
-background:black;
+background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
 position:sticky;
 top:0;
 z-index:10;
@@ -38,12 +39,12 @@ flex-wrap:wrap;
 }
 
 .logo img{
-height:120px;
+height:100px;
 }
 
 nav{
 display:flex;
-gap:15px;
+gap:20px;
 flex-wrap:wrap;
 }
 
@@ -52,126 +53,150 @@ color:white;
 text-decoration:none;
 font-weight:500;
 font-size:14px;
+transition:.3s;
 }
 
 nav a:hover{
-color:#d4af37;
+color:#ffd369;
 }
 
+/* HERO */
 .hero{
-padding:80px 15px;
+padding:100px 15px;
 text-align:center;
-background:radial-gradient(circle,#1a1a1a,#000);
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+color:white;
 }
 
 .hero h1{
-font-size:clamp(28px,5vw,42px);
-margin-bottom:15px;
+font-size:clamp(30px,5vw,48px);
+margin-bottom:20px;
 }
 
 .hero p{
 max-width:600px;
 margin:auto;
-margin-bottom:25px;
-font-size:15px;
+margin-bottom:30px;
+font-size:16px;
+opacity:.9;
 }
 
 .btn{
-padding:10px 22px;
-border-radius:25px;
+padding:12px 25px;
+border-radius:30px;
 text-decoration:none;
 margin:5px;
 display:inline-block;
 cursor:pointer;
 font-size:14px;
+transition:.3s;
 }
 
 .gold{
-background:#d4af37;
+background:linear-gradient(45deg,#d4af37,#ffd369);
 color:black;
+font-weight:600;
+}
+
+.gold:hover{
+transform:translateY(-3px);
+box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
 .outline{
-border:2px solid #d4af37;
-color:#d4af37;
+border:2px solid white;
+color:white;
 }
 
 section{
-padding:60px 15px;
+padding:80px 20px;
 text-align:center;
 }
 
+/* PROYECTOS */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-max-width:1000px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+max-width:1100px;
 margin:auto;
 }
 
 .card{
-background:#1a1a1a;
-padding:22px;
+background:white;
+padding:25px;
 border-radius:15px;
 text-align:left;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
 transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 0 15px rgba(212,175,55,.35);
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
 
 .card h3{
-color:#d4af37;
-margin-bottom:8px;
+color:#1e3c72;
+margin-bottom:10px;
 font-size:18px;
 }
 
 .card p{
 font-size:14px;
+color:#555;
 }
 
+/* SOBRE Y CONTACTO */
 .sobre,.contacto{
 max-width:800px;
 margin:auto;
-font-size:15px;
+font-size:16px;
 }
 
 .botones{
-margin:25px 0;
+margin:30px 0;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 }
 
-.info p{
-margin:6px;
-font-size:14px;
+.contacto .btn{
+background:#1e3c72;
+color:white;
+}
+
+.contacto .btn:hover{
+background:#2a5298;
 }
 
 footer{
-background:black;
-padding:18px;
+background:#0f2027;
+color:white;
+padding:25px;
 text-align:center;
 margin-top:40px;
-font-size:13px;
+font-size:14px;
 }
 
-/* RESPONSIVE EXTRA */
+/* RESPONSIVE */
 @media(max-width:600px){
+header{
+justify-content:center;
+}
+
 nav{
 justify-content:center;
 width:100%;
 margin-top:10px;
 }
 
-header{
-justify-content:center;
+.logo img{
+height:80px;
 }
 
 .hero{
-padding:60px 10px;
+padding:70px 15px;
 }
 }
 
@@ -206,7 +231,6 @@ Aquí puedes probar versiones demo de mis proyectos.
 </section>
 
 <section id="proyectos">
-
 <h2>Proyectos</h2>
 <br>
 
@@ -219,9 +243,9 @@ Aquí puedes probar versiones demo de mis proyectos.
 </div>
 
 <div class="card">
-<h3>Dreams B</h3>
-<p>Tienda en línea de productos de belleza.</p>
-<a href="#" class="btn gold">Probar Demo</a>
+<h3>Herramienta Para Gestión de Asistencias</h3>
+<p>Geolocalizador para registro de asistencia y control de empleados.</p>
+<a href="Asistencias/asistencias.html" class="btn gold">Probar Demo</a>
 </div>
 
 <div class="card">
@@ -231,66 +255,49 @@ Aquí puedes probar versiones demo de mis proyectos.
 </div>
 
 <div class="card">
-<h3>Cocina de la Güera</h3>
-<p>Presentación de comedor con mini juegos.</p>
+<h3>Dreams B</h3>
+<p>Tienda en línea de productos de belleza.</p>
 <a href="#" class="btn gold">Probar Demo</a>
 </div>
 
 <div class="card">
 <h3>Herramienta para Talleres Mecánicos</h3>
-<p>Inventario, control y QR.</p>
+<p>Inventario, control y seguimiento con QR.</p>
 <a href="#" class="btn gold">Probar Demo</a>
-</div>
-
-<div class="card">
-<h3>Herramienta Para Gestion de Asistencias</h3>
-<p>Sistema administrativo interno. Es un Geolocalizador el cual permite que los empleados puedan registrar sus asistencias y sus salidas unicamente estando dentro de la sucursal</p>
-<a href="asistencias/asistencias.html" class="btn gold">Probar Demo</a>
 </div>
 
 <div class="card">
 <h3>El Maizal</h3>
-<p>Control de producción.</p>
+<p>Control de producción y procesos.</p>
 <a href="#" class="btn gold">Probar Demo</a>
 </div>
 
 </div>
-
 </section>
 
 <section id="sobre" class="sobre">
-
 <h2>Sobre mí</h2>
 <br>
-
 <p>
 Mi nombre es <strong>Julio Cesar Santos Peñaloza</strong>, desarrollador web especializado en sistemas personalizados.
 </p>
 <br>
-
 <p>
 Soy originario de Río Grande, Oaxaca. Estudié durante 4 años en la Universidad del Valle de Puebla.
 </p>
 <br>
-
 <p>
 Creo soluciones prácticas, funcionales y fáciles de usar para negocios que desean modernizarse.
 </p>
-
 </section>
 
 <section id="contacto" class="contacto">
-
 <h2>Contacto</h2>
 
 <div class="botones">
-
-<a href="https://wa.me/522225354183" target="_blank" class="btn gold">WhatsApp</a>
-
-<a href="mailto:king.web.soluciones@gmail.com" class="btn outline">Email</a>
-
-<a href="https://www.facebook.com/share/1C7mosj949/" target="_blank" class="btn outline">Facebook</a>
-
+<a href="https://wa.me/522225354183" target="_blank" class="btn">WhatsApp</a>
+<a href="mailto:king.web.soluciones@gmail.com" class="btn">Email</a>
+<a href="https://www.facebook.com/share/1C7mosj949/" target="_blank" class="btn">Facebook</a>
 </div>
 
 <div class="info">
@@ -298,16 +305,11 @@ Creo soluciones prácticas, funcionales y fáciles de usar para negocios que des
 <p>📧 king.web.soluciones@gmail.com</p>
 <p>📍 Río Grande, Oaxaca</p>
 </div>
-
 </section>
 
 <footer>
 <p>© 2026 King Web — Julio Cesar Santos Peñaloza</p>
 </footer>
-
-<script>
-console.log("King Web listo y responsivo");
-</script>
 
 </body>
 </html>
