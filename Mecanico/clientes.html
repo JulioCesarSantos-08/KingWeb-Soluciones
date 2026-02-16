@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clientes - Taller Mecánico</title>
+
+<link rel="icon" href="../imagenes/logo2.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins;
+background:#f0f9ff;
+}
+
+header{
+background:linear-gradient(90deg,#0f766e,#0ea5e9);
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+header img{height:40px}
+
+.btn{
+background:white;
+color:#0f766e;
+border:none;
+padding:8px 18px;
+border-radius:20px;
+font-weight:600;
+cursor:pointer;
+transition:.25s;
+}
+
+.btn:hover{transform:scale(1.05)}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:25px;
+}
+
+.form{
+background:white;
+padding:20px;
+border-radius:18px;
+box-shadow:0 6px 20px rgba(0,0,0,.08);
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-bottom:25px;
+}
+
+input,textarea{
+padding:10px;
+border-radius:10px;
+border:1px solid #ccc;
+font-family:Poppins;
+}
+
+textarea{resize:none}
+
+button.save{
+grid-column:1/-1;
+background:#0ea5e9;
+color:white;
+border:none;
+border-radius:20px;
+padding:10px;
+font-weight:600;
+cursor:pointer;
+}
+
+.table-box{
+background:white;
+border-radius:18px;
+box-shadow:0 6px 20px rgba(0,0,0,.08);
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:700px;
+}
+
+th{
+background:#0f766e;
+color:white;
+padding:12px;
+font-size:13px;
+}
+
+td{
+padding:12px;
+text-align:center;
+border-bottom:1px solid #eee;
+font-size:13px;
+}
+
+.action{
+background:#0ea5e9;
+color:white;
+border:none;
+padding:6px 12px;
+border-radius:15px;
+cursor:pointer;
+font-size:12px;
+}
+
+.footer{
+text-align:center;
+margin-top:30px;
+font-size:12px;
+color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div style="display:flex;align-items:center;gap:10px">
+<img src="../imagenes/logo2.png">
+<b>Clientes / Vehículos</b>
+</div>
+
+<div style="display:flex;gap:10px">
+<button class="btn" onclick="location.href='taller.html'">Panel</button>
+<button class="btn" onclick="location.href='../index.html'">Inicio</button>
+</div>
+</header>
+
+<div class="container">
+
+<div class="form">
+<input id="cliente" placeholder="Nombre del cliente">
+<input id="placas" placeholder="Placas del vehículo">
+<input id="modelo" placeholder="Modelo del auto">
+<input type="date" id="fecha">
+<input type="date" id="proxima">
+<textarea id="servicio" placeholder="Servicio realizado"></textarea>
+<button class="save" onclick="guardar()">Guardar registro</button>
+</div>
+
+<div class="table-box">
+<table>
+<thead>
+<tr>
+<th>Cliente</th>
+<th>Placas</th>
+<th>Modelo</th>
+<th>Servicio</th>
+<th>Fecha</th>
+<th>Próxima</th>
+<th></th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+
+<div class="footer">
+Historial demo · Visitante-KingWeb
+</div>
+
+</div>
+
+<script type="module" src="clientes.js"></script>
+
+</body>
+</html>

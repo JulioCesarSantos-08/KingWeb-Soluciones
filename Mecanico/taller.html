@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Herramienta para Taller Mecánico</title>
+
+<link rel="icon" href="../imagenes/logo2.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins;
+background:#eef3ff;
+}
+
+header{
+background:linear-gradient(90deg,#0f766e,#0ea5e9);
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+header img{height:40px}
+
+.btn{
+background:white;
+color:#0f766e;
+border:none;
+padding:8px 18px;
+border-radius:20px;
+font-weight:600;
+cursor:pointer;
+transition:.25s;
+}
+
+.btn:hover{transform:scale(1.05)}
+
+.container{
+padding:25px;
+max-width:1000px;
+margin:auto;
+}
+
+.titulo{
+font-size:24px;
+font-weight:600;
+margin-bottom:5px;
+}
+
+.sub{
+color:#555;
+margin-bottom:25px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:18px;
+padding:25px;
+box-shadow:0 6px 20px rgba(0,0,0,.08);
+text-align:center;
+transition:.25s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.icon{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.card h3{
+margin:5px 0;
+}
+
+.card p{
+font-size:13px;
+color:#666;
+margin-bottom:15px;
+}
+
+.card button{
+background:#0ea5e9;
+border:none;
+color:white;
+padding:10px 20px;
+border-radius:25px;
+font-weight:600;
+cursor:pointer;
+}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:12px;
+color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div style="display:flex;align-items:center;gap:10px">
+<img src="../imagenes/logo2.png">
+<b>Herramienta para Taller Mecánico</b>
+</div>
+
+<button class="btn" onclick="location.href='../index.html'">Inicio</button>
+</header>
+
+<div class="container">
+
+<div class="titulo">Panel principal</div>
+<div class="sub">Demo interactivo – Visitante-KingWeb</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🧰</div>
+<h3>Inventario</h3>
+<p>Control de refacciones y stock</p>
+<button onclick="irInventario()">Abrir</button>
+</div>
+
+<div class="card">
+<div class="icon">🚗</div>
+<h3>Clientes / Vehículos</h3>
+<p>Historial de servicios y próximas visitas</p>
+<button onclick="irClientes()">Abrir</button>
+</div>
+
+<div class="card">
+<div class="icon">🧾</div>
+<h3>Recibos</h3>
+<p>Registro de trabajos realizados</p>
+<button onclick="irRecibos()">Abrir</button>
+</div>
+
+</div>
+
+<div class="footer">
+King Web Soluciones · Demo Taller Mecánico
+</div>
+
+</div>
+
+<script src="taller.js"></script>
+
+</body>
+</html>

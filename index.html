@@ -59,7 +59,6 @@ nav a:hover{
 color:#ffd369;
 }
 
-/* HERO */
 .hero{
 padding:100px 15px;
 text-align:center;
@@ -73,7 +72,7 @@ margin-bottom:20px;
 }
 
 .hero p{
-max-width:600px;
+max-width:700px;
 margin:auto;
 margin-bottom:30px;
 font-size:16px;
@@ -81,13 +80,13 @@ opacity:.9;
 }
 
 .btn{
-padding:12px 25px;
-border-radius:30px;
+padding:10px 22px;
+border-radius:25px;
 text-decoration:none;
 margin:5px;
 display:inline-block;
 cursor:pointer;
-font-size:14px;
+font-size:13px;
 transition:.3s;
 }
 
@@ -103,8 +102,8 @@ box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
 .outline{
-border:2px solid white;
-color:white;
+border:2px solid #1e3c72;
+color:#1e3c72;
 }
 
 section{
@@ -112,7 +111,6 @@ padding:80px 20px;
 text-align:center;
 }
 
-/* PROYECTOS */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -144,9 +142,9 @@ font-size:18px;
 .card p{
 font-size:14px;
 color:#555;
+margin-bottom:12px;
 }
 
-/* SOBRE Y CONTACTO */
 .sobre,.contacto{
 max-width:800px;
 margin:auto;
@@ -165,10 +163,6 @@ background:#1e3c72;
 color:white;
 }
 
-.contacto .btn:hover{
-background:#2a5298;
-}
-
 footer{
 background:#0f2027;
 color:white;
@@ -178,25 +172,11 @@ margin-top:40px;
 font-size:14px;
 }
 
-/* RESPONSIVE */
 @media(max-width:600px){
-header{
-justify-content:center;
-}
-
-nav{
-justify-content:center;
-width:100%;
-margin-top:10px;
-}
-
-.logo img{
-height:150px;
-}
-
-.hero{
-padding:70px 15px;
-}
+header{justify-content:center;}
+nav{justify-content:center;width:100%;margin-top:10px;}
+.logo img{height:150px;}
+.hero{padding:70px 15px;}
 }
 
 </style>
@@ -221,8 +201,8 @@ padding:70px 15px;
 <h1>Soluciones Web Profesionales</h1>
 
 <p>
-Desarrollo sistemas digitales personalizados para negocios reales.
-Aquí puedes probar versiones demo de mis proyectos.
+Desarrollo sistemas digitales personalizados para negocios reales.  
+Aquí puedes probar versiones demo interactivas y también ver en video cómo funcionan mis proyectos en la vida real.
 </p>
 
 <a href="#proyectos" class="btn gold">Ver Proyectos</a>
@@ -230,68 +210,79 @@ Aquí puedes probar versiones demo de mis proyectos.
 </section>
 
 <section id="proyectos">
-<h2>Proyectos</h2>
-<br>
+<h2>Proyectos</h2><br>
 
 <div class="grid">
 
 <div class="card">
 <h3>Herramienta para Lavanderías</h3>
-<p>Haz fácilmente los recibos para tus clientes y enviarlos por WhatsApp lleva el control de tu negocio</p>
-<a href="Lavanderia/lavanderia.html" class="btn gold">Probar Demo</a>
+<p>
+Sistema completo para lavanderías: generación de recibos, control de servicios, historial de clientes y seguimiento de cobros. Ideal para negocios que quieren dejar el papel y comenzar a trabajar de forma digital.
+</p>
+<a href="Lavanderia/lavanderia.html" class="btn gold">Probar demo</a>
+<a href="https://youtube.com" target="_blank" class="btn outline">Ver funcionamiento</a>
 </div>
 
 <div class="card">
-<h3>Herramienta Para Gestión de Asistencias</h3>
-<p>Geolocalizador para registro de asistencia y control de empleados.</p>
-<a href="asistencias/asistencias.html" class="btn gold">Probar Demo</a>
+<h3>Gestión de Asistencias con Geolocalización</h3>
+<p>
+Registro de entradas y salidas mediante ubicación GPS. Permite llevar control del personal, historial de jornadas y cálculo de horas trabajadas, evitando registros falsos.
+</p>
+<a href="asistencias/asistencias.html" class="btn gold">Probar demo</a>
+<a href="https://youtube.com" target="_blank" class="btn outline">Ver funcionamiento</a>
 </div>
 
 <div class="card">
 <h3>Quinielas Liga MX</h3>
-<p>Haz la quiniela con tu grupo sin esfuerzo!, diviertance y gana dinero por administrarla.</p>
-<a href="Quinielas/quiniela.html" class="btn gold">Probar Demo</a>
+<p>
+Plataforma para crear quinielas entre amigos o grupos. Permite registrar participantes, guardar resultados y mostrar concentrados, ideal para diversión o monetización.
+</p>
+<a href="Quinielas/quiniela.html" class="btn gold">Probar demo</a>
+<a href="https://youtube.com" target="_blank" class="btn outline">Ver funcionamiento</a>
 </div>
 
 <div class="card">
-<h3>Herramienta para tienda en línea</h3>
-<p>Tienda en línea para cualquier tipo de productos, administracion de productos, Gestion de recibos y administracion de su dinero.</p>
-<a href="TIenda/productos.html" class="btn gold">Probar Demo</a>
+<h3>Tienda en Línea</h3>
+<p>
+Sistema de ventas con carrito, descuentos automáticos, recibos digitales y panel de ventas. Perfecto para emprendedores que desean comenzar a vender productos en internet.
+</p>
+<a href="TIenda/productos.html" class="btn gold">Probar demo</a>
+<a href="https://youtube.com" target="_blank" class="btn outline">Ver funcionamiento</a>
 </div>
 
 <div class="card">
-<h3>Herramienta para Talleres Mecánicos</h3>
-<p>Inventario, control y seguimiento con QR.</p>
-<a href="#" class="btn gold">Probar Demo</a>
+<h3>Herramienta para Taller Mecánico</h3>
+<p>
+Gestión de inventario, clientes, vehículos y recibos. Permite llevar historial de servicios y próximos mantenimientos, facilitando la administración del taller.
+</p>
+<a href="Mecanico/taller.html" class="btn gold">Probar demo</a>
+<a href="https://youtube.com" target="_blank" class="btn outline">Ver funcionamiento</a>
 </div>
 
 <div class="card">
-<h3>El Maizal</h3>
-<p>Control de producción y procesos.</p>
-<a href="#" class="btn gold">Probar Demo</a>
+<h3>Herramienta para Tortillerías</h3>
+<p>
+Control de ventas, gastos, empleados y ganancias con gráficas. Diseñado para tortillerías que desean visualizar su negocio en tiempo real y mejorar su administración.
+</p>
+<a href="Tortilleria/tortilleria.html" class="btn gold">Probar demo</a>
+<a href="https://youtube.com" target="_blank" class="btn outline">Ver funcionamiento</a>
 </div>
 
 </div>
 </section>
 
 <section id="sobre" class="sobre">
-<h2>Sobre mí</h2>
-<br>
+<h2>Sobre mí</h2><br>
+
+<p>Mi nombre es <strong>Julio Cesar Santos Peñaloza</strong>, desarrollador web especializado en sistemas personalizados.</p><br>
+
+<p>Soy originario de Río Grande, Oaxaca. Estudié durante 4 años en la Universidad del Valle de Puebla.</p><br>
+
 <p>
-Mi nombre es <strong>Julio Cesar Santos Peñaloza</strong>, desarrollador web especializado en sistemas personalizados.
+Creo soluciones prácticas y fáciles de usar para negocios que desean modernizarse.  
+También realizo logotipos, códigos QR, códigos de barras y páginas web personalizadas según tus ideas.
 </p>
-<br>
-<p>
-Soy originario de Río Grande, Oaxaca. Estudié durante 4 años en la Universidad del Valle de Puebla.
-</p>
-<br>
-<p>
-Creo soluciones prácticas, funcionales y fáciles de usar para negocios que desean modernizarse.
-</p>
-<br>
-<p>
-Hacemos logotipos desde cero con tus ideas, Codigos Qr, Codigos de barras para los productos de tu tienda, Creamos tu propia pagina web tal y como la imagines.
-</p>
+
 </section>
 
 <section id="contacto" class="contacto">
@@ -303,12 +294,11 @@ Hacemos logotipos desde cero con tus ideas, Codigos Qr, Codigos de barras para l
 <a href="https://www.facebook.com/share/1C7mosj949/" target="_blank" class="btn">Facebook</a>
 </div>
 
-<div class="info">
 <p>📞 +52 222 535 4183</p>
 <p>📧 king.web.soluciones@gmail.com</p>
 <p>📍 Río Grande, Oaxaca</p>
 <p>📍 Heroica Puebla de Zaragoza, Puebla</p>
-</div>
+
 </section>
 
 <footer>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Ventas – Tortillería</title>
+
+<link rel="icon" href="../imagenes/logo2.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins;
+background:#f1f5f9;
+}
+
+header{
+background:#16a34a;
+color:white;
+padding:12px 16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header img{height:36px}
+
+.btn{
+background:#0ea5e9;
+border:none;
+color:white;
+padding:8px 16px;
+border-radius:20px;
+font-weight:600;
+cursor:pointer;
+}
+
+.container{
+padding:20px;
+max-width:500px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:18px;
+box-shadow:0 6px 18px rgba(0,0,0,.1);
+}
+
+label{
+font-size:13px;
+color:#555;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:6px 0 15px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:15px;
+}
+
+.primary{
+background:#22c55e;
+border:none;
+color:white;
+width:100%;
+padding:12px;
+border-radius:25px;
+font-weight:600;
+cursor:pointer;
+}
+
+.ticket{
+margin-top:15px;
+font-size:13px;
+}
+
+#modal{
+position:fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(0,0,0,.5);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+#modalBox{
+background:white;
+padding:20px;
+border-radius:18px;
+width:90%;
+max-width:350px;
+text-align:center;
+}
+
+.total{
+font-weight:600;
+margin-top:10px;
+font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div style="display:flex;align-items:center;gap:10px">
+<img src="../imagenes/logo2.png">
+<b>Ventas Tortillería</b>
+</div>
+
+<button class="btn" onclick="location.href='tortilleria.html'">Volver</button>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<label>Kilos vendidos</label>
+<input id="kilos" type="number" placeholder="Ej: 5">
+
+<label>Precio por kilo</label>
+<input id="precio" type="number" placeholder="Ej: 22">
+
+<button class="primary" onclick="registrar()">Registrar venta</button>
+
+</div>
+
+</div>
+
+<div id="modal">
+<div id="modalBox">
+<h3>Recibo</h3>
+
+<div class="ticket" id="ticket"></div>
+
+<div class="total" id="ticketTotal"></div>
+
+<br>
+<button class="btn" onclick="cerrar()">Cerrar</button>
+</div>
+</div>
+
+<script type="module" src="ventas.js"></script>
+
+</body>
+</html>
