@@ -1,309 +1,902 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>King Web | Julio Cesar Santos Peñaloza</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#27483c">
 
-<meta name="description" content="King Web - Desarrollo de sistemas web interactivos. Prueba demos reales de nuestros proyectos.">
+  <title>King Land | Soluciones digitales para tu negocio</title>
 
-<link rel="icon" type="image/png" href="imagenes/logo1.png">
+  <meta name="description" content="Páginas web, tiendas en línea y sistemas personalizados para tu negocio. Explora nuestros demos y cuéntanos tu proyecto.">
+  <meta property="og:title" content="King Land | Soluciones digitales">
+  <meta property="og:description" content="Tu negocio tiene potencial. Hagámoslo digital. Explora soluciones y demos para tu próximo proyecto.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="imagenes/logo1.png">
+  <link rel="stylesheet" href="estilos.css">
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#f8f9fb,#eef1f6);
-color:#222;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 25px;
-background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
-position:sticky;
-top:0;
-z-index:10;
-flex-wrap:wrap;
-}
-
-.logo img{
-height:120px;
-}
-
-nav{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:500;
-font-size:14px;
-transition:.3s;
-}
-
-nav a:hover{
-color:#ffd369;
-}
-
-.hero{
-padding:100px 15px;
-text-align:center;
-background:linear-gradient(135deg,#1e3c72,#2a5298);
-color:white;
-}
-
-.hero h1{
-font-size:clamp(30px,5vw,48px);
-margin-bottom:20px;
-}
-
-.hero p{
-max-width:700px;
-margin:auto;
-margin-bottom:30px;
-font-size:16px;
-opacity:.9;
-}
-
-.btn{
-padding:10px 22px;
-border-radius:25px;
-text-decoration:none;
-margin:5px;
-display:inline-block;
-cursor:pointer;
-font-size:13px;
-transition:.3s;
-}
-
-.gold{
-background:linear-gradient(45deg,#d4af37,#ffd369);
-color:black;
-font-weight:600;
-}
-
-.gold:hover{
-transform:translateY(-3px);
-box-shadow:0 5px 15px rgba(0,0,0,.2);
-}
-
-.outline{
-border:2px solid #1e3c72;
-color:#1e3c72;
-}
-
-section{
-padding:80px 20px;
-text-align:center;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-max-width:1100px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:15px;
-text-align:left;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 15px 35px rgba(0,0,0,.15);
-}
-
-.card h3{
-color:#1e3c72;
-margin-bottom:10px;
-font-size:18px;
-}
-
-.card p{
-font-size:14px;
-color:#555;
-margin-bottom:12px;
-}
-
-.sobre,.contacto{
-max-width:800px;
-margin:auto;
-font-size:16px;
-}
-
-.botones{
-margin:30px 0;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.contacto .btn{
-background:#1e3c72;
-color:white;
-}
-
-footer{
-background:#0f2027;
-color:white;
-padding:25px;
-text-align:center;
-margin-top:40px;
-font-size:14px;
-}
-
-@media(max-width:600px){
-header{justify-content:center;}
-nav{justify-content:center;width:100%;margin-top:10px;}
-.logo img{height:150px;}
-.hero{padding:70px 15px;}
-}
-
-</style>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
+  <a class="saltar" href="#contenido">Ir al contenido</a>
 
-<header>
-<div class="logo">
-<img src="imagenes/logo1.png">
-</div>
+  <header class="cabecera">
+    <div class="contenedor cabecera-interior">
+      <a class="marca" href="#inicio" aria-label="King Land, inicio">
+        <span class="marca-imagen">
+          <img src="imagenes/logo1.png" alt="Logo de King Land">
+        </span>
 
-<nav>
-<a href="#inicio">Inicio</a>
-<a href="#proyectos">Proyectos</a>
-<a href="#sobre">Sobre mí</a>
-<a href="#contacto">Contacto</a>
-</nav>
-</header>
+        <span class="marca-nombre">
+          KING LAND
+          <small>SOLUCIONES DIGITALES</small>
+        </span>
+      </a>
 
-<section id="inicio" class="hero">
-<h1>Soluciones Web Profesionales</h1>
+      <button
+        class="menu-boton"
+        id="menu-boton"
+        type="button"
+        aria-label="Abrir menú"
+        aria-controls="navegacion"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
-<p>
-Desarrollo sistemas digitales personalizados para negocios reales.  
-Aquí puedes probar versiones demo interactivas y también ver en video cómo funcionan mis proyectos en la vida real.
-</p>
+      <nav class="navegacion" id="navegacion" aria-label="Navegación principal">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#servicios">Soluciones</a>
+        <a href="#sobre">Sobre nosotros</a>
+        <a href="#preguntas">Preguntas</a>
+        <a class="boton" href="#contacto">
+          Hablemos de tu idea <span>↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
 
-<a href="#proyectos" class="btn gold">Ver Proyectos</a>
-<a href="#contacto" class="btn outline">Contactar</a>
-</section>
+  <main id="contenido">
+    <div class="hero-fondo">
+      <section class="contenedor hero" id="inicio">
+        <div>
+          <p class="etiqueta">
+            <span class="punto"></span>
+            Diseño con propósito. Tecnología a tu medida.
+          </p>
 
-<section id="proyectos">
-<h2>Proyectos</h2><br>
+          <h1>
+            Tu negocio<br>
+            tiene potencial.
+            <em>Hagámoslo digital.</em>
+          </h1>
 
-<div class="grid">
+          <p class="hero-texto">
+            Creamos páginas web y sistemas que se ven bien,
+            se entienden fácil y ayudan a tu negocio a avanzar.
+          </p>
 
-<div class="card">
-<h3>Herramienta para Lavanderías</h3>
-<p>
-Sistema completo para lavanderías: generación de recibos, control de servicios, historial de clientes y seguimiento de cobros. Ideal para negocios que quieren dejar el papel y comenzar a trabajar de forma digital.
-</p>
-<a href="Lavanderia/lavanderia.html" class="btn gold">Probar demo</a>
-<a href="https://youtu.be/tZdLciA-dlg" target="_blank" class="btn outline">Ver funcionamiento</a>
-</div>
+          <div class="acciones">
+            <a class="boton" href="#proyectos">
+              Explorar proyectos <span>↗</span>
+            </a>
 
-<div class="card">
-<h3>Gestión de Asistencias con Geolocalización</h3>
-<p>
-Registro de entradas y salidas mediante ubicación GPS. Permite llevar control del personal, historial de jornadas y cálculo de horas trabajadas, evitando registros falsos.
-</p>
-<a href="asistencias/asistencias.html" class="btn gold">Probar demo</a>
-<a href="https://youtu.be/lsgQapURqzw" target="_blank" class="btn outline">Ver funcionamiento</a>
-</div>
+            <a class="enlace" href="#contacto">
+              Cuéntanos tu idea <span>→</span>
+            </a>
+          </div>
 
-<div class="card">
-<h3>Quinielas Liga MX</h3>
-<p>
-Plataforma para crear quinielas entre amigos o grupos. Permite registrar participantes, guardar resultados y mostrar concentrados, ideal para diversión o monetización.
-</p>
-<a href="Quinielas/quiniela.html" class="btn gold">Probar demo</a>
-<a href="https://youtu.be/9_Xb23olUyE" target="_blank" class="btn outline">Ver funcionamiento</a>
-</div>
+          <div class="hero-detalles">
+            <span>Diseño a tu medida</span>
+            <span>Atención directa</span>
+            <span>Celular y computadora</span>
+          </div>
+        </div>
 
-<div class="card">
-<h3>Tienda en Línea</h3>
-<p>
-Sistema de ventas con carrito, descuentos automáticos, recibos digitales y panel de ventas. Perfecto para emprendedores que desean comenzar a vender productos en internet.
-</p>
-<a href="TIenda/productos.html" class="btn gold">Probar demo</a>
-<a href="https://youtu.be/z40Xj7znUpE" target="_blank" class="btn outline">Ver funcionamiento</a>
-</div>
+        <div class="escena">
+          <p class="escena-etiqueta">DE TU IDEA A UNA SOLUCIÓN REAL</p>
 
-<div class="card">
-<h3>Herramienta para Taller Mecánico</h3>
-<p>
-Gestión de inventario, clientes, vehículos y recibos. Permite llevar historial de servicios y próximos mantenimientos, facilitando la administración del taller.
-</p>
-<a href="Mecanico/taller.html" class="btn gold">Probar demo</a>
-<a href="https://youtu.be/t2Fo1_WTCZM" target="_blank" class="btn outline">Ver funcionamiento</a>
-</div>
+          <div class="ventana" aria-label="Ilustración de un panel administrativo">
+            <div class="ventana-barra">
+              <span class="ventana-puntos" aria-hidden="true">● ● ●</span>
+              <span>Tu negocio, en digital</span>
+              <span aria-hidden="true">↗</span>
+            </div>
 
-<div class="card">
-<h3>Herramienta para Tortillerías</h3>
-<p>
-Control de ventas, gastos, empleados y ganancias con gráficas. Diseñado para tortillerías que desean visualizar su negocio en tiempo real y mejorar su administración.
-</p>
-<a href="Tortilleria/tortilleria.html" class="btn gold">Probar demo</a>
-<a href="https://youtube.com" target="_blank" class="btn outline">Ver funcionamiento</a>
-</div>
+            <div class="panel">
+              <div class="panel-saludo">
+                <div>
+                  <small>UN NUEVO DÍA, MÁS POSIBILIDADES</small>
+                  <h3>Hola, emprendedor ✦</h3>
+                </div>
 
-</div>
-</section>
+                <span class="panel-avatar" aria-hidden="true">T</span>
+              </div>
 
-<section id="sobre" class="sobre">
-<h2>Sobre mí</h2><br>
+              <div class="panel-destacado">
+                <div>
+                  <small>Tu negocio</small>
+                  <strong>En un solo lugar</strong>
+                </div>
 
-<p>Mi nombre es <strong>Julio Cesar Santos Peñaloza</strong>, desarrollador web especializado en sistemas personalizados.</p><br>
+                <span aria-hidden="true">↗</span>
+              </div>
 
-<p>Soy originario de Río Grande, Oaxaca. Estudié durante 4 años en la Universidad del Valle de Puebla.</p><br>
+              <div class="panel-modulos">
+                <div class="modulo">
+                  <h4>Una visión más clara</h4>
 
-<p>
-Creo soluciones prácticas y fáciles de usar para negocios que desean modernizarse.  
-También realizo logotipos, códigos QR, códigos de barras y páginas web personalizadas según tus ideas.
-</p>
+                  <div class="barras" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
 
-</section>
+                <div class="modulo">
+                  <h4>Todo conectado</h4>
 
-<section id="contacto" class="contacto">
-<h2>Contacto</h2>
+                  <div class="modulo-lista">
+                    <span>Tus clientes</span>
+                    <span>Tus servicios</span>
+                    <span>Tus ventas</span>
+                    <span>Tu información</span>
+                  </div>
+                </div>
+              </div>
 
-<div class="botones">
-<a href="https://wa.me/522225354183" target="_blank" class="btn">WhatsApp</a>
-<a href="mailto:king.web.soluciones@gmail.com" class="btn">Email</a>
-<a href="https://www.facebook.com/share/1C7mosj949/" target="_blank" class="btn">Facebook</a>
-</div>
+              <div class="panel-pie">
+                <span class="punto"></span>
+                Una herramienta que trabaja contigo
+              </div>
+            </div>
+          </div>
 
-<p>📞 +52 222 535 4183</p>
-<p>📧 king.web.soluciones@gmail.com</p>
-<p>📍 Río Grande, Oaxaca</p>
-<p>📍 Heroica Puebla de Zaragoza, Puebla</p>
+          <div class="nota-flotante">
+            <span aria-hidden="true">✦</span>
 
-</section>
+            <div>
+              <strong>Hecho para tu negocio</strong>
+              <small>Tu forma de trabajar merece su propia solución.</small>
+            </div>
+          </div>
 
-<footer>
-<p>© 2026 King Web — Julio Cesar Santos Peñaloza</p>
-</footer>
+          <p class="escena-aclaracion">
+            Vista ilustrativa · Cada proyecto se diseña a tu medida
+          </p>
+        </div>
+      </section>
+    </div>
 
+    <div class="especialidades">
+      <div class="contenedor">
+        <span>PÁGINAS WEB</span>
+        <i aria-hidden="true">✦</i>
+        <span>TIENDAS EN LÍNEA</span>
+        <i aria-hidden="true">✦</i>
+        <span>SISTEMAS DE GESTIÓN</span>
+        <i aria-hidden="true">✦</i>
+        <span>IDENTIDAD DIGITAL</span>
+      </div>
+    </div>
+
+    <section class="contenedor seccion" id="proyectos">
+      <div class="encabezado-seccion">
+        <div>
+          <p class="etiqueta">01 / Explora las posibilidades</p>
+
+          <h2 class="titulo">
+            Las ideas se entienden<br>
+            mejor <em>cuando las pruebas.</em>
+          </h2>
+        </div>
+
+        <p>
+          Explora nuestros demos y descubre cómo una herramienta digital
+          puede ayudarte en las tareas de tu negocio.
+        </p>
+      </div>
+
+      <div class="filtros" role="group" aria-label="Filtrar proyectos">
+        <button
+          class="filtro activo"
+          type="button"
+          data-filtro="todos"
+          aria-pressed="true"
+        >
+          Todos
+        </button>
+
+        <button
+          class="filtro"
+          type="button"
+          data-filtro="gestion"
+          aria-pressed="false"
+        >
+          Gestión de negocios
+        </button>
+
+        <button
+          class="filtro"
+          type="button"
+          data-filtro="ventas"
+          aria-pressed="false"
+        >
+          Ventas
+        </button>
+
+        <button
+          class="filtro"
+          type="button"
+          data-filtro="deportes"
+          aria-pressed="false"
+        >
+          Deportes
+        </button>
+      </div>
+
+      <div class="proyectos-grid">
+        <article class="proyecto" data-categoria="gestion">
+          <div class="proyecto-portada portada-lavanderia">
+            <small>GESTIÓN DE SERVICIOS</small>
+            <strong>Cada servicio,<br>en orden.</strong>
+          </div>
+
+          <div class="proyecto-contenido">
+            <h3>Sistema para lavanderías</h3>
+
+            <p>
+              Organiza servicios, consulta clientes y genera recibos
+              para llevar un mejor seguimiento de la atención.
+            </p>
+
+            <div class="etiquetas">
+              <span>Servicios</span>
+              <span>Clientes</span>
+              <span>Recibos</span>
+            </div>
+
+            <a
+              class="proyecto-enlace"
+              href="Lavanderia/lavanderia.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Probar demo de lavandería en otra pestaña"
+            >
+              Probar demo <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="proyecto" data-categoria="ventas">
+          <div class="proyecto-portada portada-tienda">
+            <small>COMERCIO DIGITAL</small>
+            <strong>Tu próxima<br>tienda empieza aquí.</strong>
+          </div>
+
+          <div class="proyecto-contenido">
+            <h3>Tienda en línea</h3>
+
+            <p>
+              Presenta productos y explora una experiencia de compra
+              con carrito, descuentos y recibos digitales.
+            </p>
+
+            <div class="etiquetas">
+              <span>Catálogo</span>
+              <span>Carrito</span>
+              <span>Ventas</span>
+            </div>
+
+            <a
+              class="proyecto-enlace"
+              href="TIenda/productos.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Probar demo de tienda en otra pestaña"
+            >
+              Probar demo <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="proyecto" data-categoria="gestion">
+          <div class="proyecto-portada portada-taller">
+            <small>GESTIÓN AUTOMOTRIZ</small>
+            <strong>Más control.<br>Menos pendientes.</strong>
+          </div>
+
+          <div class="proyecto-contenido">
+            <h3>Sistema para talleres</h3>
+
+            <p>
+              Mantén a la mano la información de clientes,
+              el inventario y los recibos de los servicios de tu taller.
+            </p>
+
+            <div class="etiquetas">
+              <span>Inventario</span>
+              <span>Clientes</span>
+              <span>Recibos</span>
+            </div>
+
+            <a
+              class="proyecto-enlace"
+              href="Mecanico/taller.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Probar demo de taller en otra pestaña"
+            >
+              Probar demo <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="proyecto" data-categoria="gestion">
+          <div class="proyecto-portada portada-asistencias">
+            <small>ORGANIZACIÓN DE PERSONAL</small>
+            <strong>Un equipo,<br>mejor organizado.</strong>
+          </div>
+
+          <div class="proyecto-contenido">
+            <h3>Control de asistencias</h3>
+
+            <p>
+              Explora el registro de entradas y salidas con ubicación,
+              historial de jornadas y consulta de horas trabajadas.
+            </p>
+
+            <div class="etiquetas">
+              <span>Geolocalización</span>
+              <span>Jornadas</span>
+              <span>Personal</span>
+            </div>
+
+            <a
+              class="proyecto-enlace"
+              href="asistencias/asistencias.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Probar demo de asistencias en otra pestaña"
+            >
+              Probar demo <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="proyecto" data-categoria="ventas">
+          <div class="proyecto-portada portada-tortilleria">
+            <small>ADMINISTRACIÓN DE NEGOCIOS</small>
+            <strong>Conoce mejor<br>tu operación.</strong>
+          </div>
+
+          <div class="proyecto-contenido">
+            <h3>Sistema para tortillerías</h3>
+
+            <p>
+              Consulta ventas, gastos, empleados y ganancias
+              para entender mejor el movimiento diario de tu negocio.
+            </p>
+
+            <div class="etiquetas">
+              <span>Ventas</span>
+              <span>Gastos</span>
+              <span>Ganancias</span>
+            </div>
+
+            <a
+              class="proyecto-enlace"
+              href="Tortilleria/tortilleria.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Probar demo de tortillería en otra pestaña"
+            >
+              Probar demo <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="proyecto" data-categoria="deportes">
+          <div class="proyecto-portada portada-quinielas">
+            <small>EXPERIENCIAS DEPORTIVAS</small>
+            <strong>La jornada<br>empieza aquí.</strong>
+          </div>
+
+          <div class="proyecto-contenido">
+            <h3>Organizador de quinielas</h3>
+
+            <p>
+              Organiza pronósticos, registra participantes
+              y consulta los resultados de tu grupo en un mismo lugar.
+            </p>
+
+            <div class="etiquetas">
+              <span>Pronósticos</span>
+              <span>Participantes</span>
+              <span>Resultados</span>
+            </div>
+
+            <a
+              class="proyecto-enlace"
+              href="Quinielas/quiniela.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Probar demo de quinielas en otra pestaña"
+            >
+              Probar demo <span>↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <p class="nota-demos" id="resultado-filtro" role="status">
+        6 demos disponibles para explorar.
+      </p>
+
+      <p class="nota-demos">
+        Usa información ficticia al probar los demos.
+        Las funciones y el diseño de tu proyecto se definen contigo.
+      </p>
+    </section>
+
+    <section class="experiencia seccion">
+      <div class="contenedor">
+        <div class="encabezado-seccion">
+          <div>
+            <p class="etiqueta">Más experiencias de desarrollo</p>
+
+            <h2 class="titulo">
+              Cada negocio tiene<br>
+              su propio <em>mundo digital.</em>
+            </h2>
+          </div>
+
+          <p>
+            También hemos trabajado en propuestas para distintos giros.
+            Conoce el tipo de solución que podemos explorar contigo.
+          </p>
+        </div>
+
+        <div class="experiencia-grid">
+          <article class="experiencia-item">
+            <span>01</span>
+            <h3>Estética automotriz</h3>
+
+            <p>
+              Presencia web y herramientas para organizar
+              la atención de negocios de cuidado automotriz.
+            </p>
+
+            <a
+              class="enlace"
+              href="https://wa.me/522225354183?text=Hola%2C%20me%20interesa%20una%20soluci%C3%B3n%20para%20un%20negocio%20de%20est%C3%A9tica%20automotriz."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Me interesa esta solución ↗
+            </a>
+          </article>
+
+          <article class="experiencia-item">
+            <span>02</span>
+            <h3>Tienda de belleza</h3>
+
+            <p>
+              Una experiencia de tienda para presentar
+              productos de belleza y facilitar el proceso de compra.
+            </p>
+
+            <a
+              class="enlace"
+              href="https://wa.me/522225354183?text=Hola%2C%20me%20interesa%20una%20tienda%20en%20l%C3%ADnea%20para%20productos%20de%20belleza."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Quiero una tienda así ↗
+            </a>
+          </article>
+
+          <article class="experiencia-item">
+            <span>03</span>
+            <h3>Administración de ligas</h3>
+
+            <p>
+              Organización de equipos, jugadores, calendarios,
+              resultados y estadísticas para una liga deportiva.
+            </p>
+
+            <a
+              class="enlace"
+              href="https://wa.me/522225354183?text=Hola%2C%20me%20interesa%20una%20plataforma%20para%20organizar%20una%20liga%20deportiva."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tengo un proyecto deportivo ↗
+            </a>
+          </article>
+
+          <article class="experiencia-item">
+            <span>04</span>
+            <h3>Sistema para consultorios</h3>
+
+            <p>
+              Un prototipo para explorar la organización
+              de pacientes y la administración de un consultorio.
+            </p>
+
+            <a
+              class="enlace"
+              href="https://wa.me/522225354183?text=Hola%2C%20me%20interesa%20un%20sistema%20administrativo%20para%20mi%20consultorio."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Quiero conocer las opciones ↗
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contenedor seccion" id="servicios">
+      <div class="encabezado-seccion">
+        <div>
+          <p class="etiqueta">02 / Soluciones a tu medida</p>
+
+          <h2 class="titulo">
+            Lo que necesitas hoy.<br>
+            <em>Lo que puedes crecer mañana.</em>
+          </h2>
+        </div>
+
+        <p>
+          Empezamos por entender tu negocio y lo que necesitas resolver.
+          Después damos forma a una solución contigo.
+        </p>
+      </div>
+
+      <div class="servicios-grid">
+        <article class="servicio">
+          <span class="servicio-icono" aria-hidden="true">↗</span>
+          <h3>Una web que te represente</h3>
+
+          <p>
+            Presenta tus servicios, muestra tu trabajo
+            y facilita que tus próximos clientes se comuniquen contigo.
+          </p>
+
+          <ul>
+            <li>Páginas de negocio y portafolios</li>
+            <li>Tiendas y catálogos digitales</li>
+            <li>Contacto por WhatsApp</li>
+            <li>Diseño adaptable a distintas pantallas</li>
+          </ul>
+        </article>
+
+        <article class="servicio">
+          <span class="servicio-icono" aria-hidden="true">▦</span>
+          <h3>Más orden en tu negocio</h3>
+
+          <p>
+            Reúne las tareas que hoy llevas en libretas,
+            mensajes o archivos separados.
+          </p>
+
+          <ul>
+            <li>Clientes, servicios e inventario</li>
+            <li>Ventas y recibos</li>
+            <li>Reportes para tu operación</li>
+            <li>Funciones según tus necesidades</li>
+          </ul>
+        </article>
+
+        <article class="servicio">
+          <span class="servicio-icono" aria-hidden="true">✦</span>
+          <h3>Una presencia con identidad</h3>
+
+          <p>
+            Haz que tu marca mantenga una presentación
+            coherente y fácil de reconocer.
+          </p>
+
+          <ul>
+            <li>Logotipos y piezas publicitarias</li>
+            <li>Material para redes sociales</li>
+            <li>Catálogos de presentación</li>
+            <li>Códigos QR para tu negocio</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="proceso seccion">
+      <div class="contenedor">
+        <p class="etiqueta">03 / Así lo hacemos contigo</p>
+
+        <h2 class="titulo">
+          Sin complicarte.<br>
+          <em>Paso a paso.</em>
+        </h2>
+
+        <div class="pasos">
+          <article class="paso">
+            <span>01</span>
+            <h3>Nos cuentas tu idea</h3>
+
+            <p>
+              Platicamos sobre tu negocio, tus objetivos
+              y lo que necesitas mejorar.
+            </p>
+          </article>
+
+          <article class="paso">
+            <span>02</span>
+            <h3>Definimos la propuesta</h3>
+
+            <p>
+              Acordamos funciones, alcance, tiempos
+              y una cotización para tu proyecto.
+            </p>
+          </article>
+
+          <article class="paso">
+            <span>03</span>
+            <h3>Diseñamos y desarrollamos</h3>
+
+            <p>
+              Convertimos la propuesta en una experiencia
+              que puedas revisar y conocer.
+            </p>
+          </article>
+
+          <article class="paso">
+            <span>04</span>
+            <h3>Lo ponemos en marcha</h3>
+
+            <p>
+              Revisamos los detalles y te orientamos
+              para comenzar a utilizar tu solución.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contenedor seccion sobre" id="sobre">
+      <div class="sobre-marca">
+        <img
+          src="imagenes/logo1.png"
+          alt="King Land, Soluciones Digitales"
+          loading="lazy"
+        >
+
+        <div class="sobre-frase">
+          <small>DE RÍO GRANDE, OAXACA</small>
+
+          <strong>
+            Ideas locales.<br>
+            Posibilidades sin fronteras.
+          </strong>
+        </div>
+      </div>
+
+      <div class="sobre-texto">
+        <p class="etiqueta">04 / Detrás de King Land</p>
+
+        <h2 class="titulo">
+          Personas reales.<br>
+          <em>Soluciones con intención.</em>
+        </h2>
+
+        <p>
+          Soy <strong>Julio Cesar Santos Peñaloza</strong>,
+          desarrollador web y creador de King Land.
+          Me gusta convertir ideas en herramientas prácticas,
+          con una presentación que refleje el trabajo de cada negocio.
+        </p>
+
+        <p>
+          La tecnología debe ayudarte a trabajar mejor y a mostrar
+          lo que haces. Por eso, cada proyecto empieza escuchándote
+          y entendiendo tu forma de trabajar.
+        </p>
+
+        <div class="sobre-puntos">
+          <span>↗ Atención directa con el desarrollador</span>
+          <span>↗ Proyectos personalizados</span>
+          <span>↗ Atención a distancia en todo México</span>
+        </div>
+
+        <a class="enlace" href="#contacto">
+          Hagamos equipo <span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="preguntas seccion" id="preguntas">
+      <div class="contenedor preguntas-interior">
+        <div class="preguntas-intro">
+          <p class="etiqueta">05 / Resolvemos tus dudas</p>
+
+          <h2 class="titulo">
+            Antes de dar<br>
+            <em>el siguiente paso.</em>
+          </h2>
+
+          <p>
+            Conoce cómo trabajamos y qué necesitas
+            para empezar a darle forma a tu proyecto.
+          </p>
+
+          <a class="enlace" href="#contacto">
+            Consultar mi proyecto ↗
+          </a>
+        </div>
+
+        <div>
+          <details class="pregunta">
+            <summary>¿Cuánto cuesta una página o un sistema?</summary>
+
+            <p>
+              El precio depende de las funciones y del alcance.
+              Para darte una cotización, primero necesitamos conocer
+              tu proyecto. Puedes comunicarte directamente con el ingeniero
+              por WhatsApp.
+            </p>
+          </details>
+
+          <details class="pregunta">
+            <summary>¿Cuánto tarda el desarrollo?</summary>
+
+            <p>
+              El plazo se define al acordar el proyecto.
+              Una página informativa y un sistema administrativo requieren
+              trabajos distintos. Revisamos contigo las funciones
+              y una fecha de entrega antes de comenzar.
+            </p>
+          </details>
+
+          <details class="pregunta">
+            <summary>¿Se puede adaptar un demo a mi negocio?</summary>
+
+            <p>
+              Sí. Los demos te ayudan a conocer posibilidades.
+              Podemos revisar cambios en identidad, campos, módulos
+              y procesos según las necesidades de tu negocio.
+            </p>
+          </details>
+
+          <details class="pregunta">
+            <summary>¿Mi página se verá bien en el celular?</summary>
+
+            <p>
+              Diseñamos la presentación para adaptarse a celular,
+              tablet y computadora, cuidando que los textos,
+              botones y navegación sean fáciles de usar.
+            </p>
+          </details>
+
+          <details class="pregunta">
+            <summary>¿El dominio y los servicios se pagan aparte?</summary>
+
+            <p>
+              Los costos de dominio, alojamiento y servicios externos
+              se detallan en la propuesta cuando sean necesarios.
+              Cada proyecto puede necesitar herramientas diferentes.
+            </p>
+          </details>
+
+          <details class="pregunta">
+            <summary>¿Puedo trabajar contigo desde otra ciudad?</summary>
+
+            <p>
+              Sí. Atendemos a distancia en todo México.
+              Podemos coordinar la propuesta, las revisiones
+              y la entrega por medios digitales.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contenedor seccion" id="contacto">
+      <div class="contacto-caja">
+        <div>
+          <p class="etiqueta">Todo empieza con una conversación</p>
+
+          <h2 class="titulo">
+            Tienes una idea.<br>
+            <em>Vamos a darle forma.</em>
+          </h2>
+
+          <p>
+            Cuéntanos qué haces, qué necesitas y qué te gustaría mejorar.
+            Te ayudamos a encontrar por dónde empezar.
+          </p>
+        </div>
+
+        <div class="contacto-opciones">
+          <a
+            class="contacto-opcion"
+            href="https://wa.me/522225354183?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20King%20Land%20y%20me%20gustar%C3%ADa%20platicar%20sobre%20un%20proyecto."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div>
+              <strong>Platiquemos por WhatsApp</strong>
+              <small>+52 222 535 4183</small>
+            </div>
+
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            class="contacto-opcion"
+            href="mailto:king.web.soluciones@gmail.com"
+          >
+            <div>
+              <strong>Escríbenos</strong>
+              <small>king.web.soluciones@gmail.com</small>
+            </div>
+
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            class="contacto-opcion"
+            href="https://www.facebook.com/share/1C7mosj949/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div>
+              <strong>Síguenos en Facebook</strong>
+              <small>Conoce nuestro trabajo</small>
+            </div>
+
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <div>
+        <a class="pie-marca" href="#inicio">
+          KING LAND <span>✦</span>
+        </a>
+
+        <p>Soluciones digitales con propósito.</p>
+      </div>
+
+      <div>
+        <p>Río Grande, Oaxaca</p>
+        <p>Atención a distancia en todo México</p>
+      </div>
+
+      <div class="pie-creditos">
+        <p>© <span id="anio">2026</span> King Land</p>
+        <p>Julio Cesar Santos Peñaloza</p>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="contacto-flotante"
+    id="contacto-flotante"
+    href="https://wa.me/522225354183?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20orientaci%C3%B3n%20para%20mi%20proyecto."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Consultar mi proyecto por WhatsApp"
+  >
+    <span aria-hidden="true">✦</span>
+    <span>Hablemos de tu proyecto</span>
+  </a>
 </body>
 </html>

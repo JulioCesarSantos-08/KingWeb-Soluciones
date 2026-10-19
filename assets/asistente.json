@@ -1,0 +1,678 @@
+{
+  "version": "1.0",
+  "marca": "King Land",
+  "asistente": {
+    "nombre": "Asistente King Land",
+    "subtitulo": "Encuentra una solución para tu negocio",
+    "bienvenida": "¡Hola! Te ayudo a conocer nuestras soluciones y elegir lo que necesitas para tu negocio. Selecciona una opción para comenzar.",
+    "aclaracion": "Soy un asistente automático de orientación. Puedes explorar proyectos, elegir funciones y preparar un resumen para hablar con el ingeniero.",
+    "entrada_libre": false,
+    "guardar_conversacion": false,
+    "mensaje_error": "No pude cargar la información del asistente. Puedes comunicarte directamente con el ingeniero por WhatsApp.",
+    "mensaje_reinicio": "Comencemos de nuevo. ¿En qué podemos ayudarte?",
+    "confirmacion_reinicio": "¿Quieres comenzar de nuevo? Se borrarán tus selecciones de esta conversación."
+  },
+  "contacto": {
+    "nombre": "Julio Cesar Santos Peñaloza",
+    "nombre_corto": "Julio",
+    "whatsapp": "522225354183",
+    "texto_boton": "Hablar con el ingeniero",
+    "ubicacion": "Río Grande, Oaxaca",
+    "cobertura": "Atención a distancia en todo México"
+  },
+  "navegacion": {
+    "volver": "Volver",
+    "inicio": "Menú principal",
+    "reiniciar": "Comenzar de nuevo",
+    "continuar": "Continuar",
+    "omitir": "Todavía no lo sé",
+    "ver_funciones": "Conocer sus funciones",
+    "ver_demo": "Probar demo",
+    "elegir_funciones": "Elegir lo que necesito",
+    "otro_proyecto": "Explorar otra solución",
+    "cotizar": "Quiero una cotización",
+    "ver_resumen": "Revisar mi resumen",
+    "editar_resumen": "Cambiar mis selecciones",
+    "enviar_whatsapp": "Continuar en WhatsApp",
+    "cerrar": "Cerrar asistente"
+  },
+  "inicio": {
+    "pregunta": "¿Qué te gustaría hacer?",
+    "opciones": [
+      {
+        "id": "explorar",
+        "texto": "Encontrar una solución para mi negocio",
+        "destino": "categorias"
+      },
+      {
+        "id": "demos",
+        "texto": "Explorar los demos",
+        "destino": "demos"
+      },
+      {
+        "id": "servicios",
+        "texto": "Conocer sus servicios",
+        "destino": "servicios"
+      },
+      {
+        "id": "preguntas",
+        "texto": "Resolver una duda",
+        "destino": "preguntas"
+      },
+      {
+        "id": "cotizacion",
+        "texto": "Consultar costos",
+        "destino": "cotizacion"
+      }
+    ]
+  },
+  "categorias": [
+    {
+      "id": "presencia",
+      "nombre": "Presentar mi negocio en internet",
+      "proyectos": [
+        "pagina_web"
+      ]
+    },
+    {
+      "id": "comercio",
+      "nombre": "Vender productos",
+      "proyectos": [
+        "tienda",
+        "tienda_belleza"
+      ]
+    },
+    {
+      "id": "administracion",
+      "nombre": "Organizar mi negocio",
+      "proyectos": [
+        "lavanderia",
+        "taller",
+        "tortilleria",
+        "estetica_automotriz",
+        "consultorio"
+      ]
+    },
+    {
+      "id": "personal",
+      "nombre": "Llevar el control de mi personal",
+      "proyectos": [
+        "asistencias"
+      ]
+    },
+    {
+      "id": "deportes",
+      "nombre": "Organizar actividades deportivas",
+      "proyectos": [
+        "quinielas",
+        "liga_deportiva"
+      ]
+    },
+    {
+      "id": "identidad",
+      "nombre": "Mejorar la imagen de mi marca",
+      "proyectos": [
+        "identidad_digital"
+      ]
+    },
+    {
+      "id": "personalizado",
+      "nombre": "Necesito algo diferente",
+      "proyectos": [
+        "proyecto_personalizado"
+      ]
+    }
+  ],
+  "proyectos": [
+    {
+      "id": "pagina_web",
+      "nombre": "Página web para negocios",
+      "presentacion": "Una página para explicar qué hace tu negocio, mostrar tus servicios y facilitar que las personas se comuniquen contigo.",
+      "ideal_para": "Negocios, profesionales y emprendedores que quieren una presentación propia en internet.",
+      "ejemplo_uso": "Una persona llega desde tus redes sociales, conoce tus servicios, revisa tus trabajos y te escribe por WhatsApp desde la página.",
+      "demo": null,
+      "funciones_demo": [],
+      "opciones_personalizables": [
+        "Presentación del negocio",
+        "Catálogo de servicios",
+        "Galería de trabajos",
+        "Preguntas frecuentes",
+        "Contacto por WhatsApp",
+        "Ubicación y horarios",
+        "Asistente de preguntas frecuentes",
+        "Formulario de consulta"
+      ],
+      "nota": "Las secciones, los contenidos y las funciones se definen según los objetivos de tu negocio."
+    },
+    {
+      "id": "tienda",
+      "nombre": "Tienda en línea",
+      "presentacion": "Una solución para mostrar productos y facilitar que tus clientes seleccionen lo que desean comprar.",
+      "ideal_para": "Negocios que venden productos y quieren organizar su catálogo y sus pedidos.",
+      "ejemplo_uso": "El cliente explora los productos, agrega artículos al carrito y revisa su compra. En el proyecto final acordamos contigo cómo se gestionarán el pago y la entrega.",
+      "demo": "TIenda/productos.html",
+      "funciones_demo": [
+        "Catálogo de productos",
+        "Carrito de compras",
+        "Descuentos",
+        "Recibos digitales",
+        "Consulta de ventas"
+      ],
+      "opciones_personalizables": [
+        "Categorías de productos",
+        "Control de inventario",
+        "Administración de pedidos",
+        "Métodos de pago",
+        "Opciones de entrega",
+        "Contacto por WhatsApp"
+      ],
+      "nota": "Los métodos de pago y los servicios de entrega no se incluyen automáticamente: se revisan en la propuesta."
+    },
+    {
+      "id": "tienda_belleza",
+      "nombre": "Tienda de productos de belleza",
+      "presentacion": "Una propuesta de tienda enfocada en presentar productos de belleza y organizar la experiencia de compra.",
+      "ideal_para": "Negocios de maquillaje, cosméticos y cuidado personal.",
+      "ejemplo_uso": "Una persona encuentra los productos que le interesan, consulta su información y prepara su pedido desde el celular.",
+      "demo": null,
+      "funciones_demo": [],
+      "opciones_personalizables": [
+        "Catálogo con fotografías",
+        "Categorías y colecciones",
+        "Carrito de compras",
+        "Gestión de pedidos",
+        "Información de pago",
+        "Promociones",
+        "Atención por WhatsApp",
+        "Variantes de productos"
+      ],
+      "nota": "Podemos evaluar cómo presentar tonos, tamaños u otras variantes según tu catálogo."
+    },
+    {
+      "id": "lavanderia",
+      "nombre": "Sistema para lavanderías",
+      "presentacion": "Una herramienta para organizar servicios, clientes y recibos durante la atención de una lavandería.",
+      "ideal_para": "Lavanderías que necesitan consultar con mayor facilidad sus servicios y cobros.",
+      "ejemplo_uso": "Registras un servicio, generas su recibo y consultas la información cuando el cliente regresa.",
+      "demo": "Lavanderia/lavanderia.html",
+      "funciones_demo": [
+        "Registro de servicios",
+        "Generación de recibos",
+        "Historial de clientes",
+        "Seguimiento de cobros"
+      ],
+      "opciones_personalizables": [
+        "Estados de los pedidos",
+        "Fechas de entrega",
+        "Catálogo de servicios y precios",
+        "Reportes del negocio",
+        "Avisos por WhatsApp"
+      ],
+      "nota": "Podemos revisar cómo adaptar los registros a tus servicios y a tu forma de cobrar."
+    },
+    {
+      "id": "taller",
+      "nombre": "Sistema para talleres mecánicos",
+      "presentacion": "Una herramienta para tener a la mano información de clientes, inventario y recibos de servicios.",
+      "ideal_para": "Talleres que quieren organizar su atención y reducir registros dispersos.",
+      "ejemplo_uso": "Consultas la información de un cliente, revisas el inventario y generas un recibo por el servicio realizado.",
+      "demo": "Mecanico/taller.html",
+      "funciones_demo": [
+        "Registro de clientes",
+        "Gestión de inventario",
+        "Generación de recibos",
+        "Consulta de recibos"
+      ],
+      "opciones_personalizables": [
+        "Registro de vehículos",
+        "Órdenes de trabajo",
+        "Historial de servicios",
+        "Estados de reparación",
+        "Recordatorios de mantenimiento"
+      ],
+      "nota": "Las órdenes de trabajo, los recordatorios y otras funciones adicionales se evalúan según el alcance."
+    },
+    {
+      "id": "estetica_automotriz",
+      "nombre": "Solución para estética automotriz",
+      "presentacion": "Una propuesta para presentar servicios de cuidado automotriz y organizar la atención del negocio.",
+      "ideal_para": "Autolavados y negocios de detallado o estética automotriz.",
+      "ejemplo_uso": "El visitante conoce los servicios disponibles y solicita información para la atención de su vehículo.",
+      "demo": null,
+      "funciones_demo": [],
+      "opciones_personalizables": [
+        "Página de presentación",
+        "Catálogo de servicios",
+        "Galería de trabajos",
+        "Registro de clientes y vehículos",
+        "Organización de citas",
+        "Seguimiento de servicios",
+        "Recibos para clientes"
+      ],
+      "nota": "Podemos evaluar una página de presentación, un sistema administrativo o una combinación de ambos."
+    },
+    {
+      "id": "tortilleria",
+      "nombre": "Sistema para tortillerías",
+      "presentacion": "Una herramienta para consultar los movimientos del negocio y entender mejor sus ingresos y gastos.",
+      "ideal_para": "Tortillerías que buscan una administración más organizada.",
+      "ejemplo_uso": "Registras ventas y gastos para consultar el balance de la operación y revisar sus resultados.",
+      "demo": "Tortilleria/tortilleria.html",
+      "funciones_demo": [
+        "Registro de ventas",
+        "Registro de gastos",
+        "Gestión de empleados",
+        "Consulta de ganancias",
+        "Gráficas de resultados"
+      ],
+      "opciones_personalizables": [
+        "Reportes por periodo",
+        "Clasificación de gastos",
+        "Control de producción",
+        "Administración de sucursales"
+      ],
+      "nota": "La información de los reportes depende de los registros capturados en el sistema."
+    },
+    {
+      "id": "asistencias",
+      "nombre": "Control de asistencias",
+      "presentacion": "Una herramienta para registrar entradas y salidas y consultar las jornadas de trabajo.",
+      "ideal_para": "Negocios y equipos que necesitan organizar el registro de asistencia de su personal.",
+      "ejemplo_uso": "Una persona registra su entrada y el administrador consulta los horarios registrados y las jornadas.",
+      "demo": "asistencias/asistencias.html",
+      "funciones_demo": [
+        "Registro de entradas",
+        "Registro de salidas",
+        "Ubicación del registro",
+        "Historial de jornadas",
+        "Consulta de horas trabajadas"
+      ],
+      "opciones_personalizables": [
+        "Horarios por empleado",
+        "Reportes por periodo",
+        "Reglas de puntualidad",
+        "Ubicaciones autorizadas"
+      ],
+      "nota": "La ubicación requiere permiso del navegador y disponibilidad de geolocalización. Por sí sola no garantiza la autenticidad de un registro."
+    },
+    {
+      "id": "consultorio",
+      "nombre": "Sistema para consultorios",
+      "presentacion": "Una propuesta de administración para organizar la atención y la información de un consultorio.",
+      "ideal_para": "Consultorios que quieren definir una herramienta de trabajo a su medida.",
+      "ejemplo_uso": "El personal consulta su agenda y organiza el seguimiento administrativo de las personas atendidas.",
+      "demo": null,
+      "funciones_demo": [],
+      "opciones_personalizables": [
+        "Registro de pacientes",
+        "Agenda de citas",
+        "Seguimiento administrativo",
+        "Registro de pagos",
+        "Reportes",
+        "Accesos según el tipo de usuario"
+      ],
+      "nota": "Las funciones, los permisos y el manejo de información se definen con el responsable del consultorio. No compartas datos de pacientes en este asistente."
+    },
+    {
+      "id": "quinielas",
+      "nombre": "Organizador de quinielas",
+      "presentacion": "Una plataforma para organizar pronósticos deportivos y consultar la participación de un grupo.",
+      "ideal_para": "Grupos que quieren reunir sus pronósticos en un mismo lugar.",
+      "ejemplo_uso": "Registras participantes, organizas una jornada y consultas el concentrado de resultados.",
+      "demo": "Quinielas/quiniela.html",
+      "funciones_demo": [
+        "Registro de participantes",
+        "Captura de pronósticos",
+        "Registro de resultados",
+        "Consulta de concentrados"
+      ],
+      "opciones_personalizables": [
+        "Identidad visual del grupo",
+        "Organización por jornadas",
+        "Criterios de puntuación",
+        "Tablas de posiciones"
+      ],
+      "nota": "Las reglas de participación y los criterios de puntuación se definen para cada proyecto."
+    },
+    {
+      "id": "liga_deportiva",
+      "nombre": "Administración de ligas deportivas",
+      "presentacion": "Una propuesta para reunir la información de una liga y facilitar su consulta.",
+      "ideal_para": "Organizadores de ligas y torneos que quieren mantener informados a equipos y participantes.",
+      "ejemplo_uso": "Una persona consulta los próximos partidos, revisa resultados y encuentra información de los equipos.",
+      "demo": null,
+      "funciones_demo": [],
+      "opciones_personalizables": [
+        "Registro de equipos",
+        "Registro de jugadores",
+        "Calendario de partidos",
+        "Publicación de resultados",
+        "Estadísticas",
+        "Tablas de posiciones"
+      ],
+      "nota": "Las categorías, temporadas y reglas de organización se revisan según las necesidades de la liga."
+    },
+    {
+      "id": "identidad_digital",
+      "nombre": "Diseño e identidad digital",
+      "presentacion": "Material visual para que tu negocio mantenga una presentación coherente y fácil de reconocer.",
+      "ideal_para": "Marcas nuevas o negocios que desean renovar su imagen.",
+      "ejemplo_uso": "Presentas tus servicios en redes con piezas que comparten colores, estilo y datos de contacto.",
+      "demo": null,
+      "funciones_demo": [],
+      "opciones_personalizables": [
+        "Diseño de logotipo",
+        "Piezas publicitarias",
+        "Material para redes sociales",
+        "Catálogos",
+        "Códigos QR",
+        "Material de presentación"
+      ],
+      "nota": "Los formatos de entrega, tamaños y usos del material se acuerdan antes de comenzar."
+    },
+    {
+      "id": "proyecto_personalizado",
+      "nombre": "Proyecto personalizado",
+      "presentacion": "Si tu idea no aparece en el catálogo, podemos revisar qué necesitas y evaluar una solución.",
+      "ideal_para": "Personas y negocios con necesidades particulares.",
+      "ejemplo_uso": "Nos explicas qué tarea deseas mejorar y definimos contigo una propuesta de trabajo.",
+      "demo": null,
+      "funciones_demo": [],
+      "opciones_personalizables": [
+        "Presentar servicios",
+        "Vender productos",
+        "Organizar información",
+        "Administrar tareas",
+        "Generar reportes",
+        "Conectar procesos del negocio"
+      ],
+      "nota": "La viabilidad, las funciones y los servicios necesarios se revisan antes de confirmar una propuesta."
+    }
+  ],
+  "catalogo": {
+    "pregunta_categoria": "¿Qué te gustaría mejorar?",
+    "pregunta_proyecto": "Elige la solución que más se acerque a tu idea.",
+    "pregunta_detalle": "¿Qué te gustaría conocer de esta solución?",
+    "opciones_detalle": [
+      {
+        "id": "utilidad",
+        "texto": "¿Para qué sirve?"
+      },
+      {
+        "id": "funciones",
+        "texto": "¿Qué funciones tiene?"
+      },
+      {
+        "id": "ejemplo",
+        "texto": "Ver un ejemplo de uso"
+      },
+      {
+        "id": "personalizar",
+        "texto": "¿Se puede adaptar a mi negocio?"
+      }
+    ],
+    "titulo_funciones_demo": "Funciones que puedes explorar en el demo",
+    "titulo_opciones_personalizables": "Opciones que podemos evaluar para tu proyecto",
+    "aclaracion_personalizacion": "Estas opciones se revisan contigo. Su inclusión y funcionamiento se confirman en la propuesta del proyecto.",
+    "sin_demo": "Esta solución no tiene un demo público disponible aquí. Puedes conocer sus posibilidades y consultar al ingeniero.",
+    "aviso_demo": "Usa información ficticia al probar el demo. La versión final de tu proyecto se define contigo.",
+    "pregunta_funciones": "¿Qué te interesa incluir? Puedes seleccionar varias opciones.",
+    "seleccion_pendiente": "Todavía necesito orientación para elegir funciones.",
+    "personalizacion": "Sí, podemos revisar cambios en la presentación y en las funciones para adaptarlas a tu negocio. El alcance se acuerda antes de comenzar.",
+    "confirmacion_interes": "Agregué esta solución a tu resumen de interés.",
+    "limite_proyectos": 3,
+    "limite_funciones_por_proyecto": 6,
+    "mensaje_limite_proyectos": "Puedes incluir hasta tres soluciones en el resumen. Entra en Revisar mi resumen y cambia tus selecciones si deseas sustituir alguna.",
+    "mensaje_limite_funciones": "Elige hasta seis funciones principales para ayudarnos a identificar tus prioridades."
+  },
+  "servicios": [
+    {
+      "id": "paginas",
+      "nombre": "Páginas web",
+      "respuesta": "Diseñamos páginas para presentar negocios, servicios y proyectos, con navegación adaptable a distintas pantallas. Podemos incluir presentación, galerías, servicios y contacto.",
+      "destino_categoria": "presencia"
+    },
+    {
+      "id": "tiendas",
+      "nombre": "Tiendas en línea",
+      "respuesta": "Creamos propuestas para mostrar productos y organizar compras. El catálogo, los pagos, la administración y la entrega se definen según el negocio.",
+      "destino_categoria": "comercio"
+    },
+    {
+      "id": "sistemas",
+      "nombre": "Sistemas administrativos",
+      "respuesta": "Desarrollamos herramientas para organizar información y tareas, como clientes, servicios, inventario, ventas y reportes. Elegimos las funciones según tu operación.",
+      "destino_categoria": "administracion"
+    },
+    {
+      "id": "personal",
+      "nombre": "Control de personal",
+      "respuesta": "Podemos evaluar herramientas para registrar asistencias y consultar jornadas. Los horarios, reglas y permisos se definen según las necesidades del equipo.",
+      "destino_categoria": "personal"
+    },
+    {
+      "id": "deportes",
+      "nombre": "Plataformas deportivas",
+      "respuesta": "Podemos trabajar en propuestas para organizar ligas, torneos o pronósticos, con funciones acordadas para cada proyecto.",
+      "destino_categoria": "deportes"
+    },
+    {
+      "id": "diseno",
+      "nombre": "Diseño para tu marca",
+      "respuesta": "Trabajamos en logotipos, piezas publicitarias, catálogos, códigos QR y material de presentación. Los formatos y las piezas se acuerdan contigo.",
+      "destino_categoria": "identidad"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "precio",
+      "pregunta": "¿Cuánto cuesta?",
+      "respuesta": "No puedo darte un precio en este momento. El costo depende de las funciones y del alcance de tu proyecto. Debes cotizarlo directamente con el ingeniero. Puedo preparar un resumen de lo que seleccionaste para que no tengas que explicarlo desde cero.",
+      "accion": "cotizacion"
+    },
+    {
+      "id": "tiempo",
+      "pregunta": "¿Cuánto tarda el desarrollo?",
+      "respuesta": "El tiempo depende del tipo de proyecto y de las funciones. El ingeniero revisará tus necesidades y te indicará un plazo antes de comenzar. Este asistente no confirma fechas de entrega.",
+      "accion": "continuar"
+    },
+    {
+      "id": "adaptacion",
+      "pregunta": "¿Pueden adaptarlo a mi negocio?",
+      "respuesta": "Sí. Podemos revisar cambios en colores, textos, campos y funciones. Las adaptaciones se definen en la propuesta para que sepas qué incluirá tu proyecto.",
+      "accion": "categorias"
+    },
+    {
+      "id": "celular",
+      "pregunta": "¿Se podrá usar en celular?",
+      "respuesta": "Diseñamos la presentación para adaptarse a celulares, tablets y computadoras. La organización de los paneles y las funciones se revisa según el uso que tendrá cada proyecto.",
+      "accion": "continuar"
+    },
+    {
+      "id": "dominio",
+      "pregunta": "¿Incluye dominio y alojamiento?",
+      "respuesta": "El dominio, alojamiento y los servicios externos necesarios se detallan en la cotización. No todos los proyectos requieren lo mismo ni tienen los mismos costos de operación.",
+      "accion": "cotizacion"
+    },
+    {
+      "id": "distancia",
+      "pregunta": "¿Puedo contratar desde otra ciudad?",
+      "respuesta": "Sí. Atendemos a distancia en todo México. Podemos coordinar la propuesta, las revisiones y la entrega por medios digitales.",
+      "accion": "continuar"
+    },
+    {
+      "id": "materiales",
+      "pregunta": "¿Qué necesito para comenzar?",
+      "respuesta": "Ayuda tener una idea de lo que deseas resolver, los servicios o productos que ofreces y, si ya cuentas con ellos, tu logo, textos y fotografías. Si todavía no tienes todo, podemos orientarte.",
+      "accion": "categorias"
+    },
+    {
+      "id": "soporte",
+      "pregunta": "¿Qué pasa después de la entrega?",
+      "respuesta": "La orientación de uso, el soporte, el mantenimiento y las actualizaciones se acuerdan según el proyecto. El ingeniero te explicará qué incluye la propuesta.",
+      "accion": "continuar"
+    },
+    {
+      "id": "pagos",
+      "pregunta": "¿Cómo se realizan los pagos?",
+      "respuesta": "Las formas de pago y las etapas se acuerdan directamente con el ingeniero al preparar la propuesta. Este asistente no recibe pagos ni confirma anticipos.",
+      "accion": "cotizacion"
+    },
+    {
+      "id": "demos",
+      "pregunta": "¿Puedo probar antes de decidir?",
+      "respuesta": "Puedes explorar los demos disponibles para conocer ejemplos de funcionamiento. Son referencias; el diseño y las funciones de tu propio proyecto se acuerdan contigo. Utiliza siempre datos ficticios.",
+      "accion": "demos"
+    },
+    {
+      "id": "existente",
+      "pregunta": "¿Pueden mejorar una página que ya tengo?",
+      "respuesta": "Podemos revisar tu página actual para evaluar qué se puede mejorar. El ingeniero necesitará conocer su funcionamiento y la tecnología utilizada antes de confirmar el alcance.",
+      "accion": "cotizacion"
+    },
+    {
+      "id": "administracion",
+      "pregunta": "¿Podré actualizar la información?",
+      "respuesta": "Podemos evaluar un panel para administrar productos, servicios u otra información. Debe acordarse como parte del proyecto; no todas las páginas incluyen un panel administrativo.",
+      "accion": "categorias"
+    },
+    {
+      "id": "internet",
+      "pregunta": "¿El sistema necesita internet?",
+      "respuesta": "Los demos que usan servicios en la nube necesitan conexión para consultar o guardar información. Si necesitas trabajar sin internet, coméntalo con el ingeniero para evaluar esa posibilidad.",
+      "accion": "continuar"
+    },
+    {
+      "id": "integraciones",
+      "pregunta": "¿Se puede conectar con otras herramientas?",
+      "respuesta": "Podemos evaluar integraciones según las herramientas que utilizas y sus posibilidades de conexión. La compatibilidad, los costos y las condiciones se revisan antes de incluirlas en una propuesta.",
+      "accion": "cotizacion"
+    },
+    {
+      "id": "contacto",
+      "pregunta": "¿Cómo hablo con el ingeniero?",
+      "respuesta": "Selecciona Hablar con el ingeniero o Revisar mi resumen. Podrás revisar tus selecciones y abrir WhatsApp con el mensaje preparado. Tú decides cuándo enviarlo.",
+      "accion": "whatsapp"
+    }
+  ],
+  "perfil": {
+    "objetivo": {
+      "pregunta": "¿Qué te gustaría conseguir principalmente?",
+      "opciones": [
+        {
+          "id": "presentacion",
+          "texto": "Presentar mejor mi negocio"
+        },
+        {
+          "id": "ventas",
+          "texto": "Facilitar las ventas o los pedidos"
+        },
+        {
+          "id": "organizacion",
+          "texto": "Organizar mi operación"
+        },
+        {
+          "id": "tiempo",
+          "texto": "Reducir tareas manuales"
+        },
+        {
+          "id": "atencion",
+          "texto": "Mejorar la atención a mis clientes"
+        },
+        {
+          "id": "orientacion",
+          "texto": "Necesito orientación"
+        }
+      ]
+    },
+    "situacion": {
+      "pregunta": "¿En qué etapa estás?",
+      "opciones": [
+        {
+          "id": "nuevo",
+          "texto": "Estoy empezando mi negocio"
+        },
+        {
+          "id": "activo",
+          "texto": "Mi negocio ya está funcionando"
+        },
+        {
+          "id": "renovacion",
+          "texto": "Quiero mejorar una página o sistema existente"
+        },
+        {
+          "id": "exploracion",
+          "texto": "Por ahora estoy explorando opciones"
+        }
+      ]
+    },
+    "plazo": {
+      "pregunta": "¿Cuándo te gustaría comenzar?",
+      "aclaracion": "Esta selección expresa tu preferencia; no confirma disponibilidad ni fecha de entrega.",
+      "opciones": [
+        {
+          "id": "pronto",
+          "texto": "Lo antes posible"
+        },
+        {
+          "id": "mes",
+          "texto": "Durante el próximo mes"
+        },
+        {
+          "id": "planeacion",
+          "texto": "Estoy planeándolo con tiempo"
+        },
+        {
+          "id": "sin_fecha",
+          "texto": "Todavía no tengo una fecha"
+        }
+      ]
+    }
+  },
+  "cotizacion": {
+    "titulo": "Revisemos tu idea con el ingeniero",
+    "mensaje": "No puedo darte un precio en este momento. Para cotizar necesitamos revisar las funciones y el alcance contigo. Te ayudaré a preparar un resumen para que el ingeniero sepa qué te interesa.",
+    "sin_selecciones": "Puedes elegir una solución primero o comunicarte directamente con el ingeniero para recibir orientación.",
+    "opciones": [
+      {
+        "id": "completar",
+        "texto": "Elegir lo que necesito",
+        "destino": "categorias"
+      },
+      {
+        "id": "resumen",
+        "texto": "Revisar mi resumen",
+        "destino": "resumen"
+      },
+      {
+        "id": "directo",
+        "texto": "Preparar mensaje para el ingeniero",
+        "destino": "whatsapp"
+      }
+    ]
+  },
+  "resumen": {
+    "titulo": "Esto es lo que le contarás al ingeniero",
+    "descripcion": "Revisa tus selecciones. Puedes cambiarlas antes de continuar.",
+    "saludo": "Hola, ingeniero. Vengo del asistente de King Land y me gustaría recibir orientación para mi proyecto.",
+    "encabezado": "RESUMEN DE MI CONSULTA",
+    "campos": {
+      "proyectos": "Soluciones que me interesan",
+      "funciones": "Funciones que me gustaría evaluar",
+      "objetivo": "Mi objetivo principal",
+      "situacion": "Situación actual",
+      "plazo": "Cuándo me gustaría comenzar",
+      "preguntas": "Temas que consulté"
+    },
+    "sin_datos": "Todavía no he definido una solución. Me gustaría que me ayudes a elegir.",
+    "cierre": "¿Podemos revisar el alcance y preparar una cotización?",
+    "aviso": "Se abrirá WhatsApp con este resumen. El mensaje se enviará solamente cuando tú lo confirmes en WhatsApp.",
+    "incluir_solo_selecciones_reales": true,
+    "incluir_preguntas_consultadas": true,
+    "incluir_respuestas_completas_del_bot": false,
+    "incluir_demos_como_necesidades": false,
+    "omitir_campos_sin_respuesta": true,
+    "eliminar_duplicados": true,
+    "maximo_caracteres": 3500
+  }
+}
