@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#254c45">
+  <meta name="description" content="Explora una demostración de catálogo inmobiliario con filtros, favoritos y administración de propiedades ficticias.">
+  <title>Horizonte · Demo inmobiliaria · King Land</title>
+  <link rel="icon" href="../imagenes/logo1.png">
+  <link rel="stylesheet" href="inmobiliaria.css">
+  <script src="inmobiliaria.js" defer></script>
+</head>
+
+<body>
+  <a class="saltar" href="#contenido">Ir al contenido</a>
+
+  <div class="barra-demo">
+    Una demostración de King Land.
+    Propiedades, ubicaciones y precios ficticios.
+  </div>
+
+  <header class="encabezado">
+    <a class="marca" href="inmobiliaria.html" aria-label="Horizonte, inicio de la demo">
+      <span class="simbolo" aria-hidden="true">H</span>
+      <span>
+        Horizonte
+        <small>ESPACIOS CON POSIBILIDADES</small>
+      </span>
+    </a>
+
+    <nav aria-label="Navegación principal">
+      <a href="#catalogo" id="ir-catalogo">Explorar terrenos</a>
+      <button type="button" id="ir-admin">Probar administración</button>
+      <a href="../index.html" class="regresar">King Land ↗</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero">
+      <div class="hero-texto">
+        <p class="eyebrow">CATÁLOGO INMOBILIARIO INTERACTIVO</p>
+
+        <h1>Un espacio para imaginar lo que sigue.</h1>
+
+        <p class="introduccion">
+          Explora terrenos, guarda tus favoritos y encuentra
+          las características que importan para tu próximo proyecto.
+        </p>
+
+        <div class="hero-acciones">
+          <a href="#catalogo" class="boton">Explorar propiedades →</a>
+          <span>Diseñado para descubrir, comparar y conectar.</span>
+        </div>
+
+        <div class="hero-datos">
+          <div>
+            <strong id="hero-total">6</strong>
+            <span>propiedades de muestra</span>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>ambientes para explorar</span>
+          </div>
+          <div>
+            <strong>100%</strong>
+            <span>experiencia demostrativa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="media portada">
+          <span class="respaldo">Tu próximo horizonte</span>
+          <img
+            src="../imagenes/inmobiliaria-costa.png"
+            alt="Paisaje ilustrativo para el catálogo inmobiliario"
+            fetchpriority="high"
+          >
+        </div>
+
+        <div class="nota-flotante">
+          <span class="mini-etiqueta">EXPLORA SIN PRISA</span>
+          <strong>Más claridad.<br>Mejores posibilidades.</strong>
+          <span>Información organizada en cada ficha.</span>
+        </div>
+      </div>
+    </section>
+
+    <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+
+    <section class="beneficios" aria-label="Funciones del catálogo">
+      <article>
+        <span class="numero">01</span>
+        <div>
+          <h2>Encuentra lo que buscas</h2>
+          <p>Filtra por zona, presupuesto y superficie.</p>
+        </div>
+      </article>
+
+      <article>
+        <span class="numero">02</span>
+        <div>
+          <h2>Guarda tus opciones</h2>
+          <p>Reúne tus favoritos en este navegador.</p>
+        </div>
+      </article>
+
+      <article>
+        <span class="numero">03</span>
+        <div>
+          <h2>Consulta cada detalle</h2>
+          <p>Abre una ficha y descarga su resumen.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="catalogo" class="seccion">
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">DESCUBRE EL CATÁLOGO</p>
+          <h2>Diferentes espacios.<br>Nuevas posibilidades.</h2>
+        </div>
+
+        <p>
+          Las imágenes son ilustrativas. Este catálogo no representa
+          inmuebles disponibles para compra.
+        </p>
+      </div>
+
+      <form id="filtros" class="filtros">
+        <label class="campo campo-busqueda">
+          Buscar propiedad
+          <input
+            type="search"
+            name="buscar"
+            placeholder="Nombre o zona"
+            maxlength="60"
+          >
+        </label>
+
+        <label class="campo">
+          Zona
+          <select name="zona">
+            <option value="">Todas las zonas</option>
+            <option value="Costa">Costa</option>
+            <option value="Valle">Valle</option>
+            <option value="Sierra">Sierra</option>
+          </select>
+        </label>
+
+        <label class="campo">
+          Precio máximo
+          <select name="maximo">
+            <option value="">Sin límite</option>
+            <option value="500000">Hasta $500,000</option>
+            <option value="1000000">Hasta $1,000,000</option>
+            <option value="2000000">Hasta $2,000,000</option>
+            <option value="5000000">Hasta $5,000,000</option>
+          </select>
+        </label>
+
+        <label class="campo">
+          Superficie mínima
+          <select name="superficie">
+            <option value="">Cualquier superficie</option>
+            <option value="200">Desde 200 m²</option>
+            <option value="500">Desde 500 m²</option>
+            <option value="1000">Desde 1,000 m²</option>
+          </select>
+        </label>
+
+        <label class="campo">
+          Disponibilidad
+          <select name="estado">
+            <option value="">Todos los estados</option>
+            <option value="Disponible">Disponible</option>
+            <option value="Reservado">Reservado</option>
+            <option value="Vendido">Vendido</option>
+          </select>
+        </label>
+
+        <label class="campo">
+          Ordenar
+          <select name="orden">
+            <option value="original">Orden del catálogo</option>
+            <option value="menor">Menor precio</option>
+            <option value="mayor">Mayor precio</option>
+            <option value="amplio">Mayor superficie</option>
+          </select>
+        </label>
+
+        <div class="controles-filtros">
+          <label class="check">
+            <input type="checkbox" name="favoritos">
+            Solo favoritos
+            <span id="cantidad-favoritos">0</span>
+          </label>
+
+          <button type="reset" class="boton-texto">
+            Limpiar filtros
+          </button>
+        </div>
+      </form>
+
+      <div class="resultados-cabecera">
+        <p id="cantidad-resultados" role="status" aria-live="polite"></p>
+        <span>Precios ilustrativos en MXN</span>
+      </div>
+
+      <div id="propiedades" class="grid-propiedades"></div>
+    </section>
+
+    <section id="administracion" class="seccion admin" hidden>
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">PRUEBA EL OTRO LADO DEL SISTEMA</p>
+          <h2>Administra tu catálogo.</h2>
+        </div>
+
+        <button type="button" id="cerrar-admin">
+          Volver al catálogo
+        </button>
+      </div>
+
+      <p class="aviso-admin">
+        Panel abierto de demostración. Los cambios solo se guardan
+        en este navegador. En un sistema real se incorporan
+        cuentas, permisos y almacenamiento compartido.
+      </p>
+
+      <div id="estadisticas" class="estadisticas"></div>
+
+      <div class="admin-columnas">
+        <form id="form-propiedad" class="panel">
+          <p class="eyebrow">EDITOR DE PROPIEDADES</p>
+          <h3 id="titulo-editor">Agregar propiedad ficticia</h3>
+
+          <input type="hidden" name="id">
+
+          <label class="campo">
+            Nombre de muestra
+            <input
+              name="nombre"
+              required
+              maxlength="60"
+              placeholder="Ej. Jardines del Horizonte"
+            >
+          </label>
+
+          <div class="dos-columnas">
+            <label class="campo">
+              Zona
+              <select name="zona" required>
+                <option value="Costa">Costa</option>
+                <option value="Valle">Valle</option>
+                <option value="Sierra">Sierra</option>
+              </select>
+            </label>
+
+            <label class="campo">
+              Tipo
+              <select name="tipo" required>
+                <option value="Residencial">Residencial</option>
+                <option value="Campestre">Campestre</option>
+                <option value="Comercial">Comercial</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="dos-columnas">
+            <label class="campo">
+              Precio total de muestra
+              <input
+                type="number"
+                name="precio"
+                min="0.01"
+                max="999999999"
+                step="0.01"
+                required
+                placeholder="450000"
+              >
+            </label>
+
+            <label class="campo">
+              Superficie en m²
+              <input
+                type="number"
+                name="metros"
+                min="0.01"
+                max="1000000"
+                step="0.01"
+                required
+                placeholder="250"
+              >
+            </label>
+          </div>
+
+          <label class="campo">
+            Disponibilidad
+            <select name="estado" required>
+              <option value="Disponible">Disponible</option>
+              <option value="Reservado">Reservado</option>
+              <option value="Vendido">Vendido</option>
+            </select>
+          </label>
+
+          <label class="campo">
+            Imagen ilustrativa
+            <select name="imagen" id="selector-imagen"></select>
+          </label>
+
+          <label class="campo">
+            Descripción
+            <textarea
+              name="descripcion"
+              required
+              minlength="10"
+              maxlength="700"
+              rows="5"
+              placeholder="Describe las características ficticias de esta propiedad."
+            ></textarea>
+          </label>
+
+          <label class="check">
+            <input type="checkbox" name="publicado" checked>
+            Mostrar en el catálogo
+          </label>
+
+          <p id="error-editor" class="error" role="alert"></p>
+
+          <div class="acciones">
+            <button class="boton" type="submit">
+              Guardar propiedad
+            </button>
+
+            <button type="button" id="cancelar-edicion">
+              Limpiar editor
+            </button>
+          </div>
+
+          <p class="letra-pequena">
+            Utiliza únicamente información ficticia.
+            La demo admite hasta 30 propiedades.
+          </p>
+        </form>
+
+        <section class="panel">
+          <div class="cabecera-panel">
+            <h3>Propiedades registradas</h3>
+            <button type="button" id="exportar">
+              Exportar CSV
+            </button>
+          </div>
+
+          <div id="lista-admin" class="lista-admin"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="cierre">
+      <div>
+        <p class="eyebrow">ESTA EXPERIENCIA PUEDE SER TUYA</p>
+        <h2>Tu inmobiliaria,<br>con su propio horizonte.</h2>
+        <p>
+          Catálogo, fichas, filtros y administración adaptados
+          a la identidad y operación de tu negocio.
+        </p>
+      </div>
+
+      <div class="cierre-contacto">
+        <img src="../imagenes/logo1.png" alt="King Land">
+        <p>Hablemos del sistema que necesitas.</p>
+
+        <a
+          class="boton boton-arena"
+          id="cotizar"
+          target="_blank"
+          rel="noopener"
+        >
+          Cotizar con King Land ↗
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <span>Horizonte · Demo inmobiliaria de King Land</span>
+      <button type="button" class="boton-texto" id="restablecer">
+        Restablecer demostración
+      </button>
+    </footer>
+  </main>
+
+  <dialog id="modal-propiedad" aria-labelledby="titulo-detalle">
+    <div id="detalle"></div>
+
+    <div class="acciones acciones-modal">
+      <button type="button" id="descargar-ficha">
+        Descargar ficha TXT
+      </button>
+
+      <button type="button" id="imprimir-ficha">
+        Imprimir / PDF
+      </button>
+
+      <button type="button" id="cerrar-modal">
+        Cerrar
+      </button>
+    </div>
+  </dialog>
+
+  <noscript>
+    <p>Activa JavaScript para explorar esta demostración.</p>
+  </noscript>
+</body>
+</html>

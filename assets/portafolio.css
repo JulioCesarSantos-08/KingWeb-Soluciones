@@ -1,0 +1,221 @@
+.hero-cobertura {
+  max-width: 540px;
+  margin-top: 22px;
+  color: var(--verde);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.portada-inmobiliaria {
+  --tono: #dfdfc6;
+  --acento: #626d43;
+}
+
+.portada-restaurante {
+  --tono: #edd1bb;
+  --acento: #914f36;
+}
+
+.portada-estetica {
+  --tono: #d7e1e5;
+  --acento: #456878;
+}
+
+.portada-radio {
+  --tono: #e3d9ec;
+  --acento: #78608d;
+}
+
+.cobertura {
+  border-top: 1px solid #d0d8c6;
+  border-bottom: 1px solid #d0d8c6;
+  background: #e1e6d8;
+}
+
+.cobertura-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.cobertura-tarjeta {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  min-width: 0;
+  padding: 30px;
+  border: 1px solid #cbd4be;
+  border-radius: 17px;
+  background: #f2f2e7;
+}
+
+.cobertura-numero {
+  display: block;
+  margin-bottom: 26px;
+  color: #68785a;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.cobertura-tarjeta h3 {
+  margin-bottom: 20px;
+  color: var(--verde);
+  font-size: clamp(23px, 2.2vw, 31px);
+  line-height: 1.14;
+  letter-spacing: -0.045em;
+}
+
+.cobertura-tarjeta > p {
+  margin-bottom: 26px;
+  color: #68715f;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.cobertura-sello {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: #e0e7d2;
+  color: #65754e;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.cobertura-region {
+  border-color: #d2c29e;
+  background: #eee2c3;
+}
+
+.cobertura-region .cobertura-numero {
+  color: #92763e;
+}
+
+.cobertura-region > p {
+  color: #7c7155;
+}
+
+.cobertura-region .cobertura-sello {
+  background: #e3d3aa;
+  color: #7b622c;
+}
+
+.cobertura-remota {
+  border-color: #bdcfc9;
+  background: #d4e0da;
+}
+
+.cobertura-remota .cobertura-sello {
+  background: #c4d4cb;
+  color: #4d6d5c;
+}
+
+.cobertura-pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 28px;
+  padding-top: 25px;
+  border-top: 1px solid #c9d2be;
+}
+
+.cobertura-pie > p {
+  max-width: 500px;
+  font-size: 13px;
+}
+
+.cobertura-pie .boton {
+  flex-shrink: 0;
+}
+
+.contacto-cobertura {
+  display: grid;
+  gap: 10px;
+  margin-top: 25px;
+  padding-top: 23px;
+  border-top: 1px solid rgba(135, 103, 40, 0.25);
+}
+
+.contacto-cobertura strong {
+  color: var(--verde);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.contacto-cobertura > span {
+  color: #826f45;
+  font-size: 12px;
+}
+
+.contacto-cobertura > a {
+  width: fit-content;
+  color: var(--verde);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (min-width: 1101px) {
+  .navegacion {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .cobertura-grid {
+    gap: 15px;
+  }
+
+  .cobertura-tarjeta {
+    padding: 24px;
+  }
+
+  .cobertura-pie {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cobertura-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cobertura-tarjeta {
+    padding: 27px;
+  }
+
+  .cobertura-numero {
+    margin-bottom: 20px;
+  }
+
+  .cobertura-tarjeta h3 {
+    font-size: 29px;
+  }
+
+  .cobertura-tarjeta > p {
+    font-size: 13px;
+  }
+
+  .cobertura-pie .boton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-cobertura {
+    max-width: 340px;
+    font-size: 11px;
+  }
+
+  .contacto-cobertura strong {
+    font-size: 12px;
+  }
+}

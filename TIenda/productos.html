@@ -1,206 +1,387 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Herramienta para tienda en línea</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e9">
 
-<link rel="icon" href="../imagenes/logo2.png">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Tienda en línea · Demo de King Land</title>
 
-<style>
+  <meta name="description" content="Explora una tienda de demostración: catálogo, favoritos, carrito y compra simulada. Una experiencia creada por King Land.">
 
-*{box-sizing:border-box}
+  <link rel="icon" href="../imagenes/logo1.png">
+  <link rel="stylesheet" href="productos.css">
 
-body{
-margin:0;
-font-family:Poppins;
-background:#eef3ff;
-padding-bottom:140px;
-}
-
-header{
-background:#2563eb;
-color:white;
-padding:12px 16px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-flex-wrap:wrap;
-}
-
-header img{height:36px}
-
-.btn{
-background:#0ea5e9;
-border:none;
-color:white;
-padding:8px 16px;
-border-radius:20px;
-font-weight:600;
-cursor:pointer;
-transition:.25s;
-}
-
-.btn:hover{transform:scale(1.05)}
-
-.btn.green{background:#22c55e}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:15px;
-padding:20px;
-}
-
-.card{
-background:white;
-border-radius:16px;
-padding:12px;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
-text-align:center;
-display:flex;
-flex-direction:column;
-gap:5px;
-}
-
-.card img{
-width:100%;
-height:120px;
-object-fit:contain;
-}
-
-.nombre{font-weight:600}
-.desc{font-size:12px;color:#666}
-
-.precioOld{text-decoration:line-through;color:#888;font-size:12px}
-.precioNew{font-weight:600;color:#16a34a}
-
-.badge{
-background:#dc2626;
-color:white;
-font-size:11px;
-padding:3px 8px;
-border-radius:10px;
-display:inline-block;
-}
-
-.carrito{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-background:white;
-box-shadow:0 -4px 12px rgba(0,0,0,.15);
-padding:10px 15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-z-index:50;
-}
-
-#listaCarrito{
-font-size:12px;
-max-height:50px;
-overflow:auto;
-flex:1;
-}
-
-.total{font-weight:600}
-
-.modal{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.6);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:100;
-}
-
-.ticket{
-background:white;
-width:320px;
-padding:20px;
-border-radius:14px;
-text-align:center;
-font-size:14px;
-}
-
-.ticket h2{margin:0}
-
-.ticket hr{margin:10px 0}
-
-.sub{color:#666;font-size:12px}
-
-.btn-primary{
-background:#22c55e;
-border:none;
-color:white;
-padding:10px;
-width:100%;
-border-radius:10px;
-margin-top:10px;
-font-weight:600;
-}
-
-.btn-outline{
-margin-top:6px;
-background:none;
-border:1px solid #ccc;
-width:100%;
-padding:8px;
-border-radius:10px;
-}
-
-</style>
+  <script src="productos.js" defer></script>
 </head>
 
 <body>
+  <a class="saltar" href="#catalogo">Ir al catálogo</a>
 
-<header>
-<div style="display:flex;align-items:center;gap:10px">
-<img src="../imagenes/logo2.png">
-<b>Herramienta para tienda en línea</b>
-</div>
+  <div class="demo-barra">
+    <div class="contenedor">
+      <p><span></span> DEMO INTERACTIVO · No se realizan compras ni cobros reales</p>
+      <a href="../index.html">Volver a King Land ↗</a>
+    </div>
+  </div>
 
-<div style="display:flex;gap:8px">
-<button class="btn" onclick="location.href='recibos.html'">Recibos</button>
-<button class="btn" onclick="location.href='../index.html'">Inicio</button>
-</div>
-</header>
+  <header class="cabecera">
+    <div class="contenedor cabecera-interior">
+      <a class="marca" href="#inicio" aria-label="Estudio Market, inicio">
+        <span class="marca-icono" aria-hidden="true">m.</span>
+        <span>ESTUDIO<small>MARKET</small></span>
+      </a>
 
-<div class="grid" id="productos"></div>
+      <nav class="acciones-cabecera" aria-label="Herramientas de la tienda">
+        <button id="ver-favoritos" class="boton-icono" type="button" aria-pressed="false">
+          <span aria-hidden="true">♡</span>
+          <span class="texto-cabecera">Favoritos</span>
+          <b id="favoritos-contador">0</b>
+        </button>
 
-<div class="carrito">
-<div id="listaCarrito"></div>
-<div class="total" id="total">$0</div>
-<button class="btn green" onclick="comprar()">Comprar</button>
-</div>
+        <button class="boton-icono" type="button" data-accion="historial">
+          <span aria-hidden="true">▤</span>
+          <span class="texto-cabecera">Mis recibos</span>
+        </button>
 
-<div id="modal" class="modal">
-<div class="ticket">
+        <button
+          class="boton-carrito"
+          id="abrir-carrito"
+          type="button"
+          data-accion="carrito"
+          aria-haspopup="dialog"
+          aria-controls="carrito"
+        >
+          Mi carrito <b id="carrito-contador">0</b>
+        </button>
+      </nav>
+    </div>
+  </header>
 
-<h2>King Web Store</h2>
-<div class="sub">Gracias por visitarnos</div>
+  <main>
+    <section class="contenedor hero" id="inicio">
+      <div class="hero-texto">
+        <p class="eyebrow">UNA TIENDA. MUCHAS POSIBILIDADES.</p>
 
-<div id="ticketItems"></div>
+        <h1>
+          Cosas que van<br>
+          <em>contigo.</em>
+        </h1>
 
-<hr>
+        <p class="hero-descripcion">
+          Tecnología, estilo y esenciales para tu día a día.
+          Descubre cómo podría sentirse comprar en tu propia tienda.
+        </p>
 
-<div id="ticketTotales"></div>
+        <a class="boton" href="#catalogo">
+          Explorar colección <span aria-hidden="true">↗</span>
+        </a>
 
-<div class="sub">Cliente: Visitante-KingWeb</div>
+        <div class="hero-notas">
+          <span>Catálogo de muestra</span>
+          <span>Experiencia interactiva</span>
+        </div>
+      </div>
 
-<button onclick="confirmarCompra()" class="btn-primary">Confirmar compra</button>
-<button onclick="cerrarModal()" class="btn-outline">Cancelar</button>
+      <div class="hero-visual">
+        <div class="hero-circulo"></div>
+        <span class="hero-sello">SELECCIÓN<br>DEMO / 01</span>
 
-</div>
-</div>
+        <img
+          class="hero-producto"
+          src="../imagenes/audifonos.png"
+          alt="Audífonos del catálogo de demostración"
+          width="480"
+          height="400"
+          fetchpriority="high"
+        >
 
-<script type="module" src="productos.js"></script>
+        <div class="hero-tarjeta">
+          <span class="eyebrow">PEQUEÑOS DETALLES</span>
+          <strong>Una experiencia<br>que se disfruta.</strong>
+          <span aria-hidden="true">✦</span>
+        </div>
 
+        <p>Estudio Market es una tienda ficticia creada para este demo.</p>
+      </div>
+    </section>
+
+    <div class="beneficios">
+      <div class="contenedor">
+        <span><b>01</b> Compra simulada, sin cobros</span>
+        <span><b>02</b> Cupón de prueba: <strong>KING10</strong></span>
+        <span><b>03</b> Recibos guardados en tu navegador</span>
+      </div>
+    </div>
+
+    <section class="contenedor catalogo" id="catalogo">
+      <div class="encabezado-seccion">
+        <div>
+          <p class="eyebrow">ENCUENTRA TU PRÓXIMO FAVORITO</p>
+          <h2>La colección.</h2>
+        </div>
+
+        <p>
+          Explora, guarda y agrega al carrito.<br>
+          Todos los productos y precios son demostrativos.
+        </p>
+      </div>
+
+      <div class="herramientas">
+        <label class="buscador" for="buscar">
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="buscar"
+            type="search"
+            placeholder="Buscar un producto..."
+            maxlength="100"
+            autocomplete="off"
+          >
+        </label>
+
+        <div class="orden">
+          <label for="ordenar">Ordenar por</label>
+          <select id="ordenar">
+            <option value="destacados">Selección destacada</option>
+            <option value="menor">Menor precio</option>
+            <option value="mayor">Mayor precio</option>
+            <option value="descuento">Mayor descuento</option>
+            <option value="nombre">Nombre: A a Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filtros-fila">
+        <div class="categorias" role="group" aria-label="Categorías de productos">
+          <button type="button" data-categoria="Todas" aria-pressed="true">Todo</button>
+          <button type="button" data-categoria="Tecnología" aria-pressed="false">Tecnología</button>
+          <button type="button" data-categoria="Moda" aria-pressed="false">Moda</button>
+          <button type="button" data-categoria="Hogar" aria-pressed="false">Hogar</button>
+          <button type="button" data-categoria="Accesorios" aria-pressed="false">Accesorios</button>
+          <button type="button" data-categoria="Despensa" aria-pressed="false">Despensa</button>
+        </div>
+
+        <label class="ofertas-filtro">
+          <input id="solo-ofertas" type="checkbox">
+          Solo ofertas
+        </label>
+      </div>
+
+      <p class="resultado" id="resultado" role="status"></p>
+
+      <div class="productos-grid" id="productos"></div>
+
+      <div class="vacio" id="sin-resultados" hidden>
+        <span aria-hidden="true">⌕</span>
+        <h3>No encontramos esa combinación</h3>
+        <p>Prueba otra búsqueda o elimina los filtros.</p>
+        <button class="boton secundario" id="limpiar-filtros" type="button">
+          Mostrar todos los productos
+        </button>
+      </div>
+
+      <noscript>
+        <p class="aviso">
+          Activa JavaScript para explorar el catálogo y la compra simulada.
+        </p>
+      </noscript>
+
+      <p class="aviso" id="aviso-local" role="status" hidden>
+        Tu navegador no permite guardar los cambios. Puedes seguir probando
+        la tienda, pero los datos podrían perderse al recargar.
+      </p>
+    </section>
+
+    <section class="contenedor promocion">
+      <div>
+        <p class="eyebrow">PRUEBA TAMBIÉN LAS PROMOCIONES</p>
+        <h2>Un detalle extra<br>para tu carrito.</h2>
+        <p>
+          Usa el cupón <strong>KING10</strong> y prueba un descuento
+          adicional del 10% sobre los productos.
+        </p>
+      </div>
+
+      <div class="cupon-visual">
+        <span>CUPÓN DE DEMOSTRACIÓN</span>
+        <strong>KING10</strong>
+        <small>No aplica sobre el envío simulado.</small>
+      </div>
+    </section>
+
+    <section class="contenedor proyecto-cta">
+      <div>
+        <p class="eyebrow">ESTO PODRÍA SER TU NEGOCIO</p>
+        <h2>Tu marca. Tus productos.<br><em>Tu propia tienda.</em></h2>
+        <p>
+          Podemos adaptar el diseño, el catálogo y las funciones
+          a la forma en que vendes.
+        </p>
+      </div>
+
+      <a
+        class="boton"
+        href="https://wa.me/522225354183?text=Hola%2C%20prob%C3%A9%20el%20demo%20de%20tienda%20de%20King%20Land%20y%20me%20interesa%20cotizar%20una%20tienda%20para%20mi%20negocio."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Quiero una tienda así <span aria-hidden="true">↗</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div>
+        <strong>ESTUDIO MARKET</strong>
+        <p>Una demostración creada por King Land.</p>
+      </div>
+
+      <div class="pie-enlaces">
+        <a href="../index.html">Volver al portafolio ↗</a>
+        <button id="reiniciar-demo" type="button">Reiniciar demostración</button>
+      </div>
+
+      <p class="pie-nota">
+        Sin pedidos reales ni pagos. Los datos de prueba se guardan
+        únicamente en este navegador. Se conservan los últimos 20 recibos.
+      </p>
+    </div>
+  </footer>
+
+  <button class="carrito-movil" type="button" data-accion="carrito">
+    <span>Mi carrito <b id="carrito-contador-movil">0</b></span>
+    <strong id="total-movil">$0.00</strong>
+    <span aria-hidden="true">→</span>
+  </button>
+
+  <div class="notificacion" id="notificacion" role="status" aria-live="polite"></div>
+
+  <dialog id="detalle" class="modal modal-detalle" aria-labelledby="detalle-titulo">
+    <div class="modal-head">
+      <div>
+        <p class="eyebrow">CONOCE EL PRODUCTO</p>
+        <h2 id="detalle-titulo" tabindex="-1"></h2>
+      </div>
+      <button class="cerrar" type="button" data-accion="cerrar" aria-label="Cerrar detalle">×</button>
+    </div>
+    <div id="detalle-cuerpo" class="detalle-cuerpo"></div>
+  </dialog>
+
+  <dialog id="carrito" class="modal modal-carrito" aria-labelledby="carrito-titulo">
+    <div class="modal-head">
+      <div>
+        <p class="eyebrow">TU SELECCIÓN</p>
+        <h2 id="carrito-titulo" tabindex="-1">Mi carrito</h2>
+      </div>
+      <button class="cerrar" type="button" data-accion="cerrar" aria-label="Cerrar carrito">×</button>
+    </div>
+
+    <div class="vacio" id="carrito-vacio">
+      <span aria-hidden="true">◌</span>
+      <h3>Tu carrito tiene espacio para algo nuevo</h3>
+      <p>Explora la colección y agrega tus productos favoritos.</p>
+      <button class="boton" type="button" data-accion="cerrar">Seguir explorando</button>
+    </div>
+
+    <div id="carrito-contenido">
+      <div id="carrito-lista" class="carrito-lista"></div>
+
+      <form id="form-cupon" class="form-cupon">
+        <label for="cupon">¿Tienes un cupón?</label>
+
+        <div>
+          <input id="cupon" type="text" placeholder="KING10" maxlength="20" autocomplete="off">
+          <button class="boton" type="submit">Aplicar</button>
+        </div>
+
+        <p id="estado-cupon" role="status"></p>
+        <button class="texto-boton" id="quitar-cupon" type="button" hidden>Quitar cupón</button>
+      </form>
+
+      <div class="totales" id="carrito-totales"></div>
+
+      <button class="boton ancho" id="ir-checkout" type="button">
+        Continuar con mi compra de prueba →
+      </button>
+
+      <p class="nota">
+        En el siguiente paso podrás elegir retiro o envío simulado.
+      </p>
+    </div>
+  </dialog>
+
+  <dialog id="checkout" class="modal modal-checkout" aria-labelledby="checkout-titulo">
+    <div class="modal-head">
+      <div>
+        <p class="eyebrow">ÚLTIMO PASO · DEMOSTRACIÓN</p>
+        <h2 id="checkout-titulo" tabindex="-1">Revisa tu compra</h2>
+      </div>
+      <button class="cerrar" type="button" data-accion="cerrar" aria-label="Cerrar compra de prueba">×</button>
+    </div>
+
+    <p class="aviso">
+      No ingreses datos personales ni bancarios.
+      Esta compra utiliza un cliente de prueba y no genera cargos.
+    </p>
+
+    <p id="checkout-items" class="nota"></p>
+
+    <form id="form-checkout">
+      <label for="entrega">Método de entrega</label>
+      <select id="entrega">
+        <option value="retiro">Retiro simulado — sin costo</option>
+        <option value="envio">Envío simulado — $99 o gratis desde $1,500</option>
+      </select>
+
+      <p class="ayuda">
+        El envío gratuito se calcula sobre los productos después de aplicar el cupón.
+        No se solicita una dirección real.
+      </p>
+
+      <label for="pago">Método de pago de prueba</label>
+      <select id="pago">
+        <option>Tarjeta simulada</option>
+        <option>Transferencia simulada</option>
+        <option>Efectivo simulado</option>
+      </select>
+
+      <div class="totales" id="checkout-totales"></div>
+
+      <button class="boton ancho" type="submit">Confirmar compra simulada</button>
+      <button class="boton secundario ancho" type="button" data-accion="carrito">Volver al carrito</button>
+    </form>
+  </dialog>
+
+  <dialog id="recibo" class="modal modal-recibo" aria-labelledby="recibo-titulo">
+    <div class="modal-head">
+      <div>
+        <p class="eyebrow">COMPRA SIMULADA</p>
+        <h2 id="recibo-titulo" tabindex="-1">Tu recibo</h2>
+      </div>
+      <button class="cerrar" type="button" data-accion="cerrar" aria-label="Cerrar recibo">×</button>
+    </div>
+
+    <div id="recibo-cuerpo"></div>
+
+    <div class="recibo-acciones">
+      <button class="boton" id="descargar-recibo" type="button">Descargar TXT ↓</button>
+      <button class="boton secundario" id="imprimir-recibo" type="button">Imprimir / PDF</button>
+      <button class="texto-boton" type="button" data-accion="cerrar">Seguir explorando</button>
+    </div>
+  </dialog>
+
+  <dialog id="historial" class="modal modal-historial" aria-labelledby="historial-titulo">
+    <div class="modal-head">
+      <div>
+        <p class="eyebrow">SOLO EN ESTE NAVEGADOR</p>
+        <h2 id="historial-titulo" tabindex="-1">Mis recibos de prueba</h2>
+      </div>
+      <button class="cerrar" type="button" data-accion="cerrar" aria-label="Cerrar historial">×</button>
+    </div>
+
+    <p class="nota">Últimas 20 compras simuladas. Ninguna representa un pedido real.</p>
+    <div id="historial-lista" class="historial-lista"></div>
+  </dialog>
 </body>
 </html>

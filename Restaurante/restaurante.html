@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#843f2d">
+  <meta name="description" content="Demostración de un sistema para restaurante con pedidos por mesa, comandas de cocina, cuentas y recibos.">
+  <title>Brasa · Restaurante demo · King Land</title>
+  <link rel="icon" href="../imagenes/logo1.png">
+  <link rel="stylesheet" href="restaurante.css">
+  <script src="restaurante.js" defer></script>
+</head>
+
+<body>
+  <a class="saltar" href="#contenido">Ir al contenido</a>
+
+  <div class="barra-demo">
+    Demo interactiva · Productos y cuentas ficticias · Sin pagos reales
+  </div>
+
+  <header>
+    <a class="marca" href="restaurante.html">
+      <span class="marca-icono" aria-hidden="true">B</span>
+      <span>
+        Brasa
+        <small>RESTAURANTE · DEMO</small>
+      </span>
+    </a>
+
+    <nav aria-label="Principal">
+      <button type="button" data-vista="menu" aria-current="page">
+        Menú y pedidos
+      </button>
+
+      <button type="button" data-vista="cocina">
+        Cocina y mesas
+      </button>
+
+      <button type="button" data-vista="historial">
+        Historial
+      </button>
+
+      <a href="../index.html">King Land ↗</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">DEL PRIMER ANTOJO AL ÚLTIMO DETALLE</p>
+
+        <h1>Buen sabor.<br>Mejor organización.</h1>
+
+        <p>
+          Explora el menú, organiza el consumo por persona
+          y acompaña cada comanda desde la cocina hasta la mesa.
+        </p>
+
+        <div class="acciones">
+          <button type="button" class="boton" data-vista="menu">
+            Crear un pedido →
+          </button>
+
+          <button type="button" data-vista="cocina">
+            Explorar la operación
+          </button>
+        </div>
+      </div>
+
+      <aside class="hero-nota">
+        <span class="sello">HECHO PARA PROBAR</span>
+        <strong>Una mesa.<br>Todo bajo control.</strong>
+
+        <p>
+          Esta demostración incluye cuentas de ejemplo.
+          Puedes modificarlas y restablecer la muestra cuando quieras.
+        </p>
+
+        <div class="pasos">
+          <span>Pedido</span>
+          <span>Cocina</span>
+          <span>Servicio</span>
+          <span>Cuenta</span>
+        </div>
+      </aside>
+    </section>
+
+    <div id="aviso" role="status" aria-live="polite"></div>
+
+    <section
+      id="metricas"
+      class="metricas"
+      aria-label="Resumen de operación"
+    ></section>
+
+    <section data-panel="menu">
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">ELIGE, ASIGNA Y ENVÍA</p>
+          <h2>La siguiente comanda<br>empieza aquí.</h2>
+        </div>
+
+        <p>
+          Selecciona “Para compartir” o una persona antes
+          de agregar cada producto.
+        </p>
+      </div>
+
+      <div class="pedido-layout">
+        <section class="catalogo" aria-label="Menú de productos">
+          <label class="campo buscador">
+            Buscar en el menú
+            <input
+              type="search"
+              id="buscar-menu"
+              placeholder="Tacos, quesadilla, bebidas…"
+              maxlength="60"
+            >
+          </label>
+
+          <div class="categorias" aria-label="Categorías">
+            <button type="button" data-categoria="Todos" aria-pressed="true">
+              Todo el menú
+            </button>
+
+            <button type="button" data-categoria="Tacos" aria-pressed="false">
+              Tacos
+            </button>
+
+            <button
+              type="button"
+              data-categoria="Especialidades"
+              aria-pressed="false"
+            >
+              Especialidades
+            </button>
+
+            <button type="button" data-categoria="Bebidas" aria-pressed="false">
+              Bebidas
+            </button>
+          </div>
+
+          <div id="menu" class="menu-grid"></div>
+        </section>
+
+        <aside class="panel pedido-panel">
+          <form id="form-pedido">
+            <div class="entre">
+              <div>
+                <p class="eyebrow">ORDEN EN PREPARACIÓN</p>
+                <h2>Tu comanda</h2>
+              </div>
+
+              <span class="contador">
+                <span id="unidades">0</span> uds.
+              </span>
+            </div>
+
+            <label class="campo">
+              Destino
+              <select id="destino"></select>
+            </label>
+
+            <div class="dos-columnas">
+              <label class="campo">
+                Mesa
+                <select id="mesa"></select>
+              </label>
+
+              <label class="campo">
+                Comensales
+                <select id="personas"></select>
+              </label>
+            </div>
+
+            <label class="campo asignacion">
+              Agregar próximos productos a
+              <select id="asignar"></select>
+            </label>
+
+            <p class="muted">
+              Para ampliar una cuenta abierta, selecciónala en Destino.
+              Los nuevos productos se enviarán como otra comanda.
+            </p>
+
+            <div id="carrito"></div>
+
+            <label class="campo">
+              Nota para esta comanda
+              <textarea
+                id="nota"
+                rows="2"
+                maxlength="180"
+                placeholder="Ej. Servir las bebidas primero."
+              ></textarea>
+            </label>
+
+            <div class="total-borrador">
+              <span>Total de esta comanda</span>
+              <strong id="total-borrador">$0.00</strong>
+            </div>
+
+            <p id="error-pedido" class="error" role="alert"></p>
+
+            <button type="submit" class="boton ancho">
+              Enviar a cocina →
+            </button>
+
+            <button type="button" id="vaciar" class="texto ancho">
+              Vaciar comanda
+            </button>
+
+            <p class="letra-pequena">
+              Precios ilustrativos en MXN. El borrador sin enviar
+              se pierde al recargar la página.
+            </p>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section data-panel="cocina" hidden>
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">CADA COMANDA, EN SU MOMENTO</p>
+          <h2>Así se mueve<br>el servicio.</h2>
+        </div>
+
+        <label class="campo">
+          Mostrar comandas
+          <select id="filtro-cocina">
+            <option value="">Todas sin servir</option>
+            <option value="Recibida">Recibidas</option>
+            <option value="Preparando">En preparación</option>
+            <option value="Lista">Listas</option>
+            <option value="Servida">Servidas de cuentas abiertas</option>
+          </select>
+        </label>
+      </div>
+
+      <p class="aclaracion">
+        Controles abiertos para demostración.
+        Cada comanda avanza de Recibida a Preparando, Lista y Servida.
+        En un sistema real se asignan permisos a cada puesto.
+      </p>
+
+      <div id="cocina" class="cocina-grid"></div>
+
+      <div class="titulo-seccion subseccion">
+        <div>
+          <p class="eyebrow">VISTA GENERAL</p>
+          <h2>Mesas con cuenta abierta.</h2>
+        </div>
+
+        <p>
+          El cobro se habilita cuando todas las comandas
+          de la cuenta están servidas.
+        </p>
+      </div>
+
+      <div id="cuentas" class="cuentas"></div>
+    </section>
+
+    <section data-panel="historial" hidden>
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">UN REGISTRO CLARO DEL SERVICIO</p>
+          <h2>Cuentas cerradas.</h2>
+        </div>
+
+        <button type="button" id="exportar">
+          Exportar selección CSV
+        </button>
+      </div>
+
+      <div class="filtros-historial panel">
+        <label class="campo">
+          Buscar cuenta
+          <input
+            type="search"
+            id="buscar-historial"
+            placeholder="Folio, mesa, pagado o cancelado"
+            maxlength="60"
+          >
+        </label>
+
+        <label class="campo">
+          Fecha de cierre
+          <select id="periodo">
+            <option value="">Todo el historial</option>
+            <option value="hoy">Hoy</option>
+            <option value="7">Últimos 7 días</option>
+            <option value="30">Últimos 30 días</option>
+          </select>
+        </label>
+      </div>
+
+      <p id="total-historial" class="resumen-historial"></p>
+
+      <div class="tabla panel-tabla">
+        <table>
+          <thead>
+            <tr>
+              <th>Folio</th>
+              <th>Mesa</th>
+              <th>Cierre</th>
+              <th>Estado</th>
+              <th>Método</th>
+              <th>Consumo</th>
+              <th>Detalle</th>
+            </tr>
+          </thead>
+
+          <tbody id="filas-historial"></tbody>
+        </table>
+      </div>
+
+      <p class="muted">
+        Las cuentas canceladas conservan su consumo como referencia,
+        pero no suman a lo cobrado. Estas cifras no representan utilidad.
+      </p>
+    </section>
+
+    <section class="contacto">
+      <div>
+        <p class="eyebrow">TU RESTAURANTE, A TU MANERA</p>
+        <h2>Menos vueltas.<br>Más tiempo para atender.</h2>
+        <p>
+          Podemos adaptar el menú, las mesas, los roles
+          y los reportes a la operación de tu negocio.
+        </p>
+      </div>
+
+      <a id="cotizar" class="boton claro" target="_blank" rel="noopener">
+        Cotizar con King Land ↗
+      </a>
+    </section>
+
+    <footer>
+      <span>
+        Brasa · Demo de King Land · Datos guardados en este navegador
+      </span>
+
+      <button type="button" id="restablecer" class="texto">
+        Restablecer muestra
+      </button>
+    </footer>
+  </main>
+
+  <dialog id="modal" aria-labelledby="titulo-detalle">
+    <div id="detalle"></div>
+
+    <div class="acciones acciones-modal">
+      <button type="button" id="txt">Descargar TXT</button>
+      <button type="button" id="imprimir">Imprimir / PDF</button>
+      <button type="button" id="cerrar-modal">Cerrar</button>
+    </div>
+  </dialog>
+
+  <noscript>
+    <p>Activa JavaScript para utilizar esta demostración.</p>
+  </noscript>
+</body>
+</html>

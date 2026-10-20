@@ -1,88 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>King Web | Demo Lavandería</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#244b49">
 
-<link rel="icon" href="../imagenes/logo2.png">
+  <title>Nuevo servicio · Demo de lavandería | King Land</title>
 
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <meta name="description" content="Explora un sistema de lavandería con registro de servicios, anticipos, recibos y seguimiento. Demostración de King Land.">
 
-<link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="../imagenes/logo1.png">
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="script.js" defer></script>
 </head>
 
-<body>
+<body data-vista="nuevo">
+  <a class="saltar" href="#contenido">Ir al contenido</a>
 
-<header>
-<div style="display:flex;align-items:center;gap:10px">
-<img src="../imagenes/logo2.png">
-<strong>Demo Lavandería</strong>
-</div>
-<button onclick="location.href='../index.html'">Inicio</button>
-</header>
+  <div id="app">
+    <p class="cargando">Preparando la demostración de lavandería…</p>
+  </div>
 
-<div class="container">
-
-<h3>Crear recibo</h3>
-
-<label>Nombre del cliente</label>
-<input id="cliente" placeholder="Ej: Juan Pérez">
-
-<label>Tipo de servicio</label>
-<select id="lavanderia">
-<option>Lavado</option>
-<option>Lavado + Secado</option>
-<option>Planchado</option>
-</select>
-
-<label>Kilos de ropa</label>
-<input id="kilos" type="number" placeholder="Ej: 8">
-
-<label>Folio</label>
-<input id="folio" placeholder="Automático">
-
-<div id="ultimoFolio" style="font-size:13px;margin-bottom:10px"></div>
-
-<label>Fecha ingreso</label>
-<input id="fechaIngreso" type="date">
-
-<label>Fecha entrega</label>
-<input id="fechaEntrega" type="date">
-
-<label>Hora entrega</label>
-<input id="horaEntrega" type="time">
-
-<label>Total a pagar</label>
-<input id="total" placeholder="Ej: 180">
-
-<label>Estado del servicio</label>
-<select id="estado">
-<option>Pendiente</option>
-<option>Pagado</option>
-</select>
-
-<label>Método de pago</label>
-<select id="metodoPago">
-<option>Efectivo</option>
-<option>Transferencia</option>
-</select>
-
-<button style="margin-top:15px" onclick="generarRecibo()">Generar recibo</button>
-
-<div id="recibo" class="hidden"></div>
-
-<div id="accionesRecibo" class="hidden" style="margin-top:15px;display:flex;gap:10px;flex-wrap:wrap">
-<button onclick="compartirRecibo()">Compartir recibo</button>
-<button onclick="location.href='datos.html'">Ver recibos</button>
-<button onclick="location.href='analisis.html'">Análisis</button>
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
+  <noscript>
+    <p class="aviso">
+      Activa JavaScript para explorar la demostración.
+      <a href="../index.html">Volver al portafolio</a>
+    </p>
+  </noscript>
 </body>
 </html>

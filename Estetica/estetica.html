@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#344d5a">
+  <meta name="description" content="Demostración de un sistema de estética automotriz con servicios, agenda, seguimiento de trabajos y recibos.">
+  <title>Lustre · Estética automotriz demo · King Land</title>
+  <link rel="icon" href="../imagenes/logo1.png">
+  <link rel="stylesheet" href="estetica.css">
+  <script src="estetica.js" defer></script>
+</head>
+
+<body>
+  <a class="saltar" href="#contenido">Ir al contenido</a>
+
+  <div class="barra-demo">
+    Demo de King Land · Servicios, visitantes y pagos ficticios
+  </div>
+
+  <header>
+    <a class="marca" href="estetica.html">
+      <span class="marca-icono" aria-hidden="true">L</span>
+      <span>
+        Lustre
+        <small>AUTO CARE · DEMO</small>
+      </span>
+    </a>
+
+    <nav aria-label="Principal">
+      <button type="button" data-vista="servicios" aria-current="page">
+        Servicios
+      </button>
+
+      <button type="button" data-vista="agenda">
+        Agenda
+      </button>
+
+      <button type="button" data-vista="cliente">
+        Seguimiento
+      </button>
+
+      <button type="button" data-vista="operacion">
+        Operación
+      </button>
+
+      <a href="../index.html">King Land ↗</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero">
+      <div class="hero-texto">
+        <p class="eyebrow">CUIDADO QUE SE VE. ORDEN QUE SE NOTA.</p>
+
+        <h1>Cada detalle<br>tiene su proceso.</h1>
+
+        <p class="introduccion">
+          Una experiencia para descubrir servicios, organizar citas
+          y acompañar el cuidado de cada vehículo.
+        </p>
+
+        <div class="acciones">
+          <button type="button" class="boton" data-vista="servicios">
+            Explorar servicios →
+          </button>
+
+          <button type="button" data-vista="operacion">
+            Probar el sistema
+          </button>
+        </div>
+
+        <div class="hero-puntos">
+          <span>Agenda organizada</span>
+          <span>Seguimiento claro</span>
+          <span>Pagos y recibos</span>
+        </div>
+      </div>
+
+      <div class="hero-imagen foto">
+        <span class="respaldo">El cuidado comienza en los detalles.</span>
+
+        <img
+          src="../imagenes/estetica-portada.png"
+          alt="Automóvil de exhibición en un espacio de detallado"
+          fetchpriority="high"
+        >
+
+        <div class="hero-tarjeta">
+          <small>UNA EXPERIENCIA CONECTADA</small>
+          <strong>Del primer clic<br>a la entrega.</strong>
+          <span>Explora ambos lados del servicio.</span>
+        </div>
+      </div>
+    </section>
+
+    <div id="aviso" role="status" aria-live="polite"></div>
+
+    <section
+      id="metricas"
+      class="metricas"
+      aria-label="Resumen de demostración"
+    ></section>
+
+    <section data-panel="servicios">
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">UN CATÁLOGO PARA CADA NECESIDAD</p>
+          <h2>Elige cómo<br>cuidar tu vehículo.</h2>
+        </div>
+
+        <label class="campo selector-tipo">
+          Mostrar precios de muestra para
+          <select id="tipo-catalogo"></select>
+        </label>
+      </div>
+
+      <p class="aclaracion">
+        Los precios, procesos y tiempos son ilustrativos.
+        Sirven para probar el sistema y no representan
+        una cotización ni una garantía de resultados.
+      </p>
+
+      <div id="catalogo" class="catalogo"></div>
+    </section>
+
+    <section data-panel="agenda" hidden>
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">UN ESPACIO PARA CADA SERVICIO</p>
+          <h2>Prueba la agenda.</h2>
+        </div>
+
+        <p>
+          La demo utiliza una bahía y bloquea el tiempo completo
+          de cada servicio.
+        </p>
+      </div>
+
+      <div class="agenda-layout">
+        <form id="form-agenda" class="panel formulario-agenda">
+          <h3>Configura una cita ficticia</h3>
+
+          <label class="campo">
+            Visitante de demostración
+            <select id="cliente"></select>
+          </label>
+
+          <label class="campo">
+            Servicio
+            <select id="servicio"></select>
+          </label>
+
+          <div class="dos-columnas">
+            <label class="campo">
+              Tipo de vehículo
+              <select id="tipo"></select>
+            </label>
+
+            <label class="campo">
+              Modelo ficticio
+              <input
+                id="vehiculo"
+                required
+                minlength="2"
+                maxlength="40"
+                placeholder="Ej. Sedán azul de muestra"
+                autocomplete="off"
+              >
+            </label>
+          </div>
+
+          <div class="dos-columnas">
+            <label class="campo">
+              Fecha
+              <input type="date" id="fecha" required>
+            </label>
+
+            <label class="campo">
+              Horario disponible
+              <select id="hora" required></select>
+            </label>
+          </div>
+
+          <div id="resumen-agenda" class="resumen-agenda"></div>
+
+          <p id="error-agenda" class="error" role="alert"></p>
+
+          <button class="boton ancho" type="submit">
+            Crear cita de demostración →
+          </button>
+
+          <p class="letra-pequena">
+            No solicitamos datos personales.
+            Esta acción no crea una reservación real.
+          </p>
+        </form>
+
+        <aside class="agenda-ayuda">
+          <section class="panel panel-azul">
+            <p class="eyebrow">HORARIOS CON LÓGICA</p>
+            <h3>El tiempo también se organiza.</h3>
+
+            <p>
+              Puedes agendar desde mañana y hasta 30 días adelante.
+              La jornada de muestra va de 09:00 a 18:00.
+            </p>
+
+            <p>
+              Un servicio de tres horas ocupa todo ese bloque.
+              La siguiente cita solo puede iniciar cuando termine.
+            </p>
+          </section>
+
+          <section class="panel">
+            <h3>Prueba el recorrido completo</h3>
+
+            <ol class="instrucciones">
+              <li>Crea una cita ficticia.</li>
+              <li>Abre la vista Operación.</li>
+              <li>Recibe el vehículo y asigna responsable.</li>
+              <li>Registra un anticipo o liquida el saldo.</li>
+              <li>Completa el trabajo y entrega el vehículo.</li>
+            </ol>
+
+            <p class="letra-pequena">
+              Para explorar la demo puedes avanzar las etapas
+              sin esperar la fecha de la cita.
+            </p>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section data-panel="cliente" hidden>
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">CLARIDAD DURANTE TODO EL PROCESO</p>
+          <h2>Así se ve<br>el seguimiento.</h2>
+        </div>
+
+        <label class="campo selector-tipo">
+          Explorar como visitante ficticio
+          <select id="visitante"></select>
+        </label>
+      </div>
+
+      <p class="aclaracion">
+        Esta selección permite explorar registros de muestra.
+        No es un inicio de sesión. En una implementación real,
+        cada cliente accedería únicamente a su información autorizada.
+      </p>
+
+      <div id="mis-citas" class="ordenes-grid"></div>
+    </section>
+
+    <section data-panel="operacion" hidden>
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">LA OPERACIÓN EN UN SOLO LUGAR</p>
+          <h2>Del ingreso<br>a la entrega.</h2>
+        </div>
+
+        <button type="button" id="exportar">
+          Exportar selección CSV
+        </button>
+      </div>
+
+      <p class="aclaracion">
+        Controles abiertos de demostración.
+        Puedes asignar responsables, guardar notas, registrar pagos
+        simulados y avanzar órdenes. Los roles reales requieren
+        autenticación y permisos.
+      </p>
+
+      <div class="filtros panel">
+        <label class="campo">
+          Buscar orden
+          <input
+            id="buscar-orden"
+            type="search"
+            maxlength="60"
+            placeholder="Folio, vehículo, servicio o visitante"
+          >
+        </label>
+
+        <label class="campo">
+          Etapa
+          <select id="filtro-etapa"></select>
+        </label>
+
+        <label class="campo">
+          Fecha de cita
+          <input id="filtro-fecha" type="date">
+        </label>
+
+        <button type="button" id="limpiar-filtros">
+          Limpiar
+        </button>
+      </div>
+
+      <p id="conteo" class="conteo" role="status" aria-live="polite"></p>
+
+      <div id="ordenes" class="ordenes-grid"></div>
+    </section>
+
+    <section class="contacto">
+      <div>
+        <p class="eyebrow">TU NEGOCIO, CON SU PROPIA EXPERIENCIA</p>
+
+        <h2>Un sistema que acompañe<br>la calidad de tu trabajo.</h2>
+
+        <p>
+          Podemos adaptar servicios, agenda, roles, seguimiento
+          y recibos a la operación de tu estética automotriz.
+        </p>
+      </div>
+
+      <a
+        id="cotizar"
+        class="boton boton-arena"
+        target="_blank"
+        rel="noopener"
+      >
+        Cotizar con King Land ↗
+      </a>
+    </section>
+
+    <footer>
+      <span>Lustre · Demo de King Land · Datos locales del navegador</span>
+
+      <button type="button" id="restablecer" class="texto">
+        Restablecer muestra
+      </button>
+    </footer>
+  </main>
+
+  <dialog id="modal" aria-labelledby="titulo-detalle">
+    <div id="detalle"></div>
+
+    <div class="acciones acciones-modal">
+      <button type="button" id="descargar">
+        Descargar recibo TXT
+      </button>
+
+      <button type="button" id="imprimir">
+        Imprimir / PDF
+      </button>
+
+      <button type="button" id="cerrar-modal">
+        Cerrar
+      </button>
+    </div>
+  </dialog>
+
+  <noscript>
+    <p>Activa JavaScript para utilizar esta demostración.</p>
+  </noscript>
+</body>
+</html>

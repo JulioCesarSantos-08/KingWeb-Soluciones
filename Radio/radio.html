@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#63577b">
+  <meta name="description" content="Demostración de una página para radio en línea con reproductor, programación, favoritos y solicitudes de canciones.">
+  <title>Onda · Radio demo · King Land</title>
+  <link rel="icon" href="../imagenes/logo1.png">
+  <link rel="stylesheet" href="radio.css">
+  <script src="radio.js" defer></script>
+</head>
+
+<body>
+  <a class="saltar" href="#contenido">Ir al contenido</a>
+
+  <div class="barra-demo">
+    Estación ficticia · Audio instrumental de muestra · Demo de King Land
+  </div>
+
+  <header>
+    <a class="marca" href="radio.html">
+      <span class="marca-icono" aria-hidden="true">O</span>
+      <span>
+        Onda
+        <small>UNA FRECUENCIA PARA CONECTAR</small>
+      </span>
+    </a>
+
+    <nav aria-label="Principal">
+      <a href="#escuchar">Escuchar</a>
+      <a href="#programacion">Programación</a>
+      <a href="#voces">Las voces</a>
+      <a href="#participar">Participar</a>
+      <a href="../index.html" class="volver">King Land ↗</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero">
+      <div class="hero-texto">
+        <p class="eyebrow">SONIDOS, HISTORIAS Y BUENA COMPAÑÍA</p>
+
+        <h1>Siempre hay<br>algo que nos<br><em>conecta.</em></h1>
+
+        <p class="introduccion">
+          Una experiencia de radio pensada para descubrir programas,
+          acompañar tu día y abrir espacio a nuevas voces.
+        </p>
+
+        <div class="acciones">
+          <a href="#escuchar" class="boton">
+            Probar reproductor →
+          </a>
+
+          <a href="#programacion" class="boton secundario">
+            Ver programación
+          </a>
+        </div>
+
+        <div class="hero-detalles">
+          <span>Programación semanal</span>
+          <span>Favoritos</span>
+          <span>Solicitudes</span>
+        </div>
+      </div>
+
+      <div class="hero-imagen foto">
+        <span class="respaldo">En la misma sintonía.</span>
+
+        <img
+          src="../imagenes/radio-cabina.png"
+          alt="Cabina ilustrativa de una estación de radio"
+          fetchpriority="high"
+        >
+
+        <div class="hero-nota">
+          <small>UNA ESTACIÓN DE DEMOSTRACIÓN</small>
+          <strong>Tu próxima<br>buena compañía.</strong>
+          <span>Diseñada para conectar con la audiencia.</span>
+        </div>
+      </div>
+    </section>
+
+    <div id="aviso" role="status" aria-live="polite"></div>
+
+    <section id="escuchar" class="reproductor-seccion">
+      <div class="player">
+        <div class="player-arte">
+          <div id="disco" class="disco" aria-hidden="true">
+            <div class="disco-centro">O</div>
+          </div>
+
+          <span class="player-sello">MUESTRA INSTRUMENTAL</span>
+        </div>
+
+        <div class="player-contenido">
+          <p class="eyebrow">PONTE EN SINTONÍA</p>
+          <h2>Frecuencias suaves.</h2>
+
+          <p class="player-descripcion">
+            Una secuencia instrumental generada en tu navegador
+            para probar los controles del reproductor.
+          </p>
+
+          <div class="estado-player">
+            <span id="estado-audio" role="status">
+              Muestra en pausa
+            </span>
+
+            <span id="tiempo" aria-label="Tiempo escuchado">
+              00:00
+            </span>
+          </div>
+
+          <div class="controles-player">
+            <button
+              type="button"
+              id="play"
+              class="boton"
+              aria-pressed="false"
+            >
+              Reproducir muestra
+            </button>
+
+            <label class="volumen">
+              <span>
+                Volumen
+                <output id="valor-volumen" for="volumen">25%</output>
+              </span>
+
+              <input
+                id="volumen"
+                type="range"
+                min="0"
+                max="100"
+                step="1"
+                value="25"
+              >
+            </label>
+          </div>
+
+          <p class="letra-pequena">
+            Audio de demostración independiente de la programación.
+            No es una transmisión en vivo y no se reproduce automáticamente.
+          </p>
+        </div>
+      </div>
+
+      <aside class="ahora">
+        <p class="eyebrow">EN LA PARRILLA DE MUESTRA</p>
+
+        <p id="reloj" class="reloj"></p>
+
+        <h3 id="programa-actual"></h3>
+
+        <p id="horario-actual"></p>
+
+        <span class="etiqueta">Horario ilustrativo</span>
+
+        <p class="letra-pequena">
+          El bloque mostrado corresponde a la hora de Ciudad de México.
+          No modifica el audio instrumental.
+        </p>
+      </aside>
+    </section>
+
+    <section id="programacion" class="seccion">
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">CADA MOMENTO TIENE SU ESPACIO</p>
+          <h2>Encuentra tu<br>próxima sintonía.</h2>
+        </div>
+
+        <p>
+          Explora la semana y guarda los programas
+          que te gustaría volver a encontrar.
+        </p>
+      </div>
+
+      <div id="dias" class="dias" aria-label="Días de programación"></div>
+
+      <div class="programacion-controles">
+        <h3 id="dia-elegido"></h3>
+
+        <div class="acciones">
+          <label class="check">
+            <input id="favoritos" type="checkbox">
+            Solo favoritos
+            <span id="contador-favoritos">0</span>
+          </label>
+
+          <button type="button" id="hoy">Ir a hoy</button>
+        </div>
+      </div>
+
+      <p class="muted">
+        Horarios de Ciudad de México. Programas y nombres ficticios.
+      </p>
+
+      <div id="programas" class="programas"></div>
+    </section>
+
+    <section id="voces" class="seccion">
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">PERSONALIDAD EN CADA ESPACIO</p>
+          <h2>Voces que dan<br>forma a la experiencia.</h2>
+        </div>
+
+        <p>
+          Perfiles de demostración para mostrar
+          cómo presentar al equipo de una estación.
+        </p>
+      </div>
+
+      <div class="voces-grid">
+        <article class="voz">
+          <div class="foto">
+            <span class="respaldo">Una nueva conversación.</span>
+            <img
+              src="../imagenes/radio-microfono.png"
+              alt="Micrófono ilustrativo de estudio"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="voz-cuerpo">
+            <span class="mini-etiqueta">PERFIL FICTICIO</span>
+            <h3>Voz Aurora</h3>
+            <p>
+              Conversación cercana para comenzar el día
+              y compartir la tarde.
+            </p>
+          </div>
+        </article>
+
+        <article class="voz">
+          <div class="foto">
+            <span class="respaldo">Cada detalle cuenta.</span>
+            <img
+              src="../imagenes/radio-consola.png"
+              alt="Consola ilustrativa de audio"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="voz-cuerpo">
+            <span class="mini-etiqueta">PERFIL FICTICIO</span>
+            <h3>Cabina Central</h3>
+            <p>
+              Selección, ritmo y continuidad
+              para acompañar cada bloque.
+            </p>
+          </div>
+        </article>
+
+        <article class="voz">
+          <div class="foto">
+            <span class="respaldo">Baja el ritmo.</span>
+            <img
+              src="../imagenes/radio-auriculares.png"
+              alt="Auriculares ilustrativos de estudio"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="voz-cuerpo">
+            <span class="mini-etiqueta">PERFIL FICTICIO</span>
+            <h3>Selección Nocturna</h3>
+            <p>
+              Una identidad de muestra
+              para los espacios de noche y madrugada.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="participar" class="seccion">
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">LA AUDIENCIA TAMBIÉN TIENE VOZ</p>
+          <h2>Prueba una<br>solicitud de canción.</h2>
+        </div>
+
+        <p>
+          Elige entre opciones ficticias y observa
+          cómo llega una solicitud al panel de cabina.
+        </p>
+      </div>
+
+      <div class="participar-layout">
+        <form id="form-solicitud" class="panel formulario">
+          <h3>Tu selección de muestra</h3>
+
+          <label class="campo">
+            Alias ficticio
+            <select id="alias"></select>
+          </label>
+
+          <label class="campo">
+            Canción ficticia
+            <select id="cancion"></select>
+          </label>
+
+          <label class="campo">
+            Bloque de programación
+            <select id="programa"></select>
+          </label>
+
+          <label class="campo">
+            Dedicatoria de muestra
+            <select id="mensaje"></select>
+          </label>
+
+          <p id="error-solicitud" class="error" role="alert"></p>
+
+          <button class="boton ancho" type="submit">
+            Crear solicitud de demostración →
+          </button>
+
+          <p id="confirmacion" class="confirmacion" role="status"></p>
+
+          <p class="letra-pequena">
+            No se envía a una estación ni se reproduce la canción elegida.
+            La solicitud solo se guarda en este navegador.
+          </p>
+        </form>
+
+        <aside class="participar-ayuda">
+          <section class="panel panel-lila">
+            <p class="eyebrow">UNA EXPERIENCIA QUE CONTINÚA</p>
+            <h3>De la audiencia<br>a la cabina.</h3>
+
+            <ol>
+              <li>Crea una solicitud ficticia.</li>
+              <li>Encuéntrala en el panel de abajo.</li>
+              <li>Márcala como revisada.</li>
+              <li>Completa el recorrido como atendida.</li>
+            </ol>
+
+            <a class="boton secundario" href="#cabina">
+              Ver panel de cabina ↓
+            </a>
+          </section>
+
+          <section class="panel">
+            <h3>Una demo sin datos personales</h3>
+            <p class="muted">
+              Los alias, canciones y dedicatorias son opciones
+              de muestra. No necesitas escribir tu nombre,
+              teléfono o correo para explorar el funcionamiento.
+            </p>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section id="cabina" class="seccion">
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">EL OTRO LADO DE LA INTERACCIÓN</p>
+          <h2>Cabina de demostración.</h2>
+        </div>
+
+        <button type="button" id="exportar">
+          Exportar todas las solicitudes CSV
+        </button>
+      </div>
+
+      <p class="aclaracion">
+        Controles abiertos para probar el recorrido.
+        Los cambios de estado son simulados y no implican
+        que una canción haya sido transmitida.
+        Una versión real puede incorporar acceso para el equipo.
+      </p>
+
+      <div class="cabina-controles">
+        <p id="cantidad-solicitudes"></p>
+
+        <label class="campo">
+          Mostrar
+          <select id="filtro-solicitudes">
+            <option value="">Todas las solicitudes</option>
+            <option>Pendiente</option>
+            <option>Revisada</option>
+            <option>Atendida</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="solicitudes" class="solicitudes-grid"></div>
+    </section>
+
+    <section class="seccion">
+      <div class="titulo-seccion">
+        <div>
+          <p class="eyebrow">MÁS ALLÁ DEL REPRODUCTOR</p>
+          <h2>Un espacio para<br>contar lo que sigue.</h2>
+        </div>
+
+        <p>
+          Ejemplos de publicaciones para presentar
+          novedades, proyectos y contenidos de la estación.
+        </p>
+      </div>
+
+      <div class="notas-grid">
+        <article class="nota-card">
+          <div class="foto">
+            <span class="respaldo">La semana en sintonía.</span>
+            <img
+              src="../imagenes/radio-estudio.png"
+              alt="Estudio ilustrativo de radio"
+              loading="lazy"
+            >
+          </div>
+
+          <div>
+            <span class="mini-etiqueta">CONTENIDO DE MUESTRA</span>
+            <h3>Una programación que se entiende de un vistazo.</h3>
+            <button type="button" data-nota="programacion">
+              Leer contenido →
+            </button>
+          </div>
+        </article>
+
+        <article class="nota-card">
+          <div class="foto">
+            <span class="respaldo">Una comunidad que participa.</span>
+            <img
+              src="../imagenes/radio-microfono.png"
+              alt="Micrófono ilustrativo para participación de la audiencia"
+              loading="lazy"
+            >
+          </div>
+
+          <div>
+            <span class="mini-etiqueta">CONTENIDO DE MUESTRA</span>
+            <h3>Un espacio para escuchar a tu audiencia.</h3>
+            <button type="button" data-nota="audiencia">
+              Leer contenido →
+            </button>
+          </div>
+        </article>
+
+        <article class="nota-card">
+          <div class="foto">
+            <span class="respaldo">Tu identidad, en cada detalle.</span>
+            <img
+              src="../imagenes/radio-consola.png"
+              alt="Equipo ilustrativo de transmisión"
+              loading="lazy"
+            >
+          </div>
+
+          <div>
+            <span class="mini-etiqueta">CONTENIDO DE MUESTRA</span>
+            <h3>La identidad de tu estación, también en internet.</h3>
+            <button type="button" data-nota="identidad">
+              Leer contenido →
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contacto">
+      <div>
+        <p class="eyebrow">TU ESTACIÓN MERECE SU PROPIO ESPACIO</p>
+        <h2>Hagamos que tu señal<br>también tenga presencia.</h2>
+
+        <p>
+          Reproductor, programación, equipo y participación
+          adaptados a la identidad de tu proyecto.
+        </p>
+      </div>
+
+      <a id="cotizar" class="boton boton-arena" target="_blank" rel="noopener">
+        Cotizar con King Land ↗
+      </a>
+    </section>
+
+    <footer>
+      <span>Onda · Radio ficticia de demostración · King Land</span>
+
+      <button type="button" id="restablecer" class="texto">
+        Restablecer demostración
+      </button>
+    </footer>
+  </main>
+
+  <dialog id="modal-nota" aria-labelledby="titulo-nota">
+    <div id="contenido-nota"></div>
+    <button type="button" id="cerrar-nota">Cerrar</button>
+  </dialog>
+
+  <noscript>
+    <p>Activa JavaScript para utilizar esta demostración.</p>
+  </noscript>
+</body>
+</html>

@@ -1,11 +1,11 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "marca": "King Land",
   "asistente": {
     "nombre": "Asistente King Land",
     "subtitulo": "Encuentra una solución para tu negocio",
-    "bienvenida": "¡Hola! Te ayudo a conocer nuestras soluciones y elegir lo que necesitas para tu negocio. Selecciona una opción para comenzar.",
-    "aclaracion": "Soy un asistente automático de orientación. Puedes explorar proyectos, elegir funciones y preparar un resumen para hablar con el ingeniero.",
+    "bienvenida": "¡Hola! Te ayudo a explorar nuestras 10 demos, conocer sus funciones y elegir lo que necesitas para tu negocio. Selecciona una opción para comenzar.",
+    "aclaracion": "Soy un asistente de orientación con opciones cerradas. Puedes explorar soluciones, elegir funciones y preparar un resumen para el ingeniero. Nuestra base está en Río Grande, Oaxaca; atendemos Puerto Escondido y alrededores y trabajamos desde home office en todo México.",
     "entrada_libre": false,
     "guardar_conversacion": false,
     "mensaje_error": "No pude cargar la información del asistente. Puedes comunicarte directamente con el ingeniero por WhatsApp.",
@@ -18,7 +18,8 @@
     "whatsapp": "522225354183",
     "texto_boton": "Hablar con el ingeniero",
     "ubicacion": "Río Grande, Oaxaca",
-    "cobertura": "Atención a distancia en todo México"
+    "cobertura": "Río Grande, Puerto Escondido y alrededores; atención remota en todo México.",
+    "modalidad": "Trabajo remoto desde home office. Las llamadas, videollamadas y reuniones presenciales se coordinan previamente."
   },
   "navegacion": {
     "volver": "Volver",
@@ -90,6 +91,7 @@
         "taller",
         "tortilleria",
         "estetica_automotriz",
+        "restaurante",
         "consultorio"
       ]
     },
@@ -106,6 +108,20 @@
       "proyectos": [
         "quinielas",
         "liga_deportiva"
+      ]
+    },
+    {
+      "id": "inmobiliario",
+      "nombre": "Mostrar terrenos y propiedades",
+      "proyectos": [
+        "inmobiliaria"
+      ]
+    },
+    {
+      "id": "radio",
+      "nombre": "Crear una página para mi radio",
+      "proyectos": [
+        "radio"
       ]
     },
     {
@@ -149,24 +165,25 @@
       "nombre": "Tienda en línea",
       "presentacion": "Una solución para mostrar productos y facilitar que tus clientes seleccionen lo que desean comprar.",
       "ideal_para": "Negocios que venden productos y quieren organizar su catálogo y sus pedidos.",
-      "ejemplo_uso": "El cliente explora los productos, agrega artículos al carrito y revisa su compra. En el proyecto final acordamos contigo cómo se gestionarán el pago y la entrega.",
+      "ejemplo_uso": "Exploras productos, guardas favoritos, agregas al carrito y pruebas un cupón y una entrega simulada. Después generas un recibo y consultas el historial local.",
       "demo": "TIenda/productos.html",
       "funciones_demo": [
-        "Catálogo de productos",
-        "Carrito de compras",
-        "Descuentos",
-        "Recibos digitales",
-        "Consulta de ventas"
+        "Búsqueda, categorías y orden del catálogo",
+        "Productos favoritos y ficha de detalle",
+        "Carrito con cantidades y límites de compra",
+        "Cupón de descuento de demostración",
+        "Entrega y métodos de pago simulados",
+        "Recibos descargables e historial local"
       ],
       "opciones_personalizables": [
-        "Categorías de productos",
-        "Control de inventario",
-        "Administración de pedidos",
-        "Métodos de pago",
-        "Opciones de entrega",
-        "Contacto por WhatsApp"
+        "Administración de productos e inventario",
+        "Gestión compartida de pedidos",
+        "Pasarela de pagos reales",
+        "Opciones reales de envío o recolección",
+        "Cuentas y permisos de usuario",
+        "Atención por WhatsApp"
       ],
-      "nota": "Los métodos de pago y los servicios de entrega no se incluyen automáticamente: se revisan en la propuesta."
+      "nota": "Las compras, los descuentos y los pagos de esta demo son ficticios. No realiza cargos ni envíos. Los pagos reales y servicios externos se cotizan según el proyecto."
     },
     {
       "id": "tienda_belleza",
@@ -191,109 +208,124 @@
     {
       "id": "lavanderia",
       "nombre": "Sistema para lavanderías",
-      "presentacion": "Una herramienta para organizar servicios, clientes y recibos durante la atención de una lavandería.",
+      "presentacion": "Una herramienta para registrar pedidos de lavandería, dar seguimiento a sus etapas y controlar cobros y saldos.",
       "ideal_para": "Lavanderías que necesitan consultar con mayor facilidad sus servicios y cobros.",
-      "ejemplo_uso": "Registras un servicio, generas su recibo y consultas la información cuando el cliente regresa.",
+      "ejemplo_uso": "Capturas un servicio por kilos o piezas, defines su entrega y registras un anticipo. Luego puedes agregar abonos, actualizar el pedido y entregar un recibo.",
       "demo": "Lavanderia/lavanderia.html",
       "funciones_demo": [
-        "Registro de servicios",
-        "Generación de recibos",
-        "Historial de clientes",
-        "Seguimiento de cobros"
+        "Servicios por kilos o piezas",
+        "Fechas de entrega y servicio exprés",
+        "Etapas de atención de los pedidos",
+        "Anticipos, abonos y saldos pendientes",
+        "Recibos descargables e impresión",
+        "Filtros, exportación CSV y análisis por periodo"
       ],
       "opciones_personalizables": [
-        "Estados de los pedidos",
-        "Fechas de entrega",
-        "Catálogo de servicios y precios",
-        "Reportes del negocio",
-        "Avisos por WhatsApp"
+        "Servicios y tarifas propios del negocio",
+        "Avisos de entrega por WhatsApp",
+        "Usuarios y permisos de acceso",
+        "Información compartida entre dispositivos",
+        "Control por sucursal"
       ],
-      "nota": "Podemos revisar cómo adaptar los registros a tus servicios y a tu forma de cobrar."
+      "nota": "La demo separa los servicios registrados de los pagos recibidos. Los datos son ficticios y locales; no realiza cobros reales."
     },
     {
       "id": "taller",
       "nombre": "Sistema para talleres mecánicos",
-      "presentacion": "Una herramienta para tener a la mano información de clientes, inventario y recibos de servicios.",
+      "presentacion": "Una herramienta para organizar clientes y vehículos, órdenes de trabajo, refacciones y pagos de un taller.",
       "ideal_para": "Talleres que quieren organizar su atención y reducir registros dispersos.",
-      "ejemplo_uso": "Consultas la información de un cliente, revisas el inventario y generas un recibo por el servicio realizado.",
+      "ejemplo_uso": "Seleccionas un vehículo, registras mano de obra y una refacción con su cantidad. El sistema descuenta existencias y permite seguir la reparación y sus pagos.",
       "demo": "Mecanico/taller.html",
       "funciones_demo": [
-        "Registro de clientes",
-        "Gestión de inventario",
-        "Generación de recibos",
-        "Consulta de recibos"
+        "Clientes, vehículos e historial de servicios",
+        "Inventario y alertas de existencias bajas",
+        "Órdenes con mano de obra y refacciones",
+        "Descuento de inventario al crear una orden",
+        "Abonos, saldos y etapas de reparación",
+        "Recibos y exportación de órdenes"
       ],
       "opciones_personalizables": [
-        "Registro de vehículos",
-        "Órdenes de trabajo",
-        "Historial de servicios",
-        "Estados de reparación",
-        "Recordatorios de mantenimiento"
+        "Varias refacciones y servicios por orden",
+        "Recordatorios de mantenimiento",
+        "Cuentas y permisos para el equipo",
+        "Gestión de proveedores y compras",
+        "Operación compartida entre dispositivos"
       ],
-      "nota": "Las órdenes de trabajo, los recordatorios y otras funciones adicionales se evalúan según el alcance."
+      "nota": "La entrega requiere saldo liquidado en la simulación. Los recordatorios automáticos y las conexiones con otros servicios son opciones a evaluar para el proyecto final."
     },
     {
       "id": "estetica_automotriz",
-      "nombre": "Solución para estética automotriz",
-      "presentacion": "Una propuesta para presentar servicios de cuidado automotriz y organizar la atención del negocio.",
+      "nombre": "Sistema para estética automotriz",
+      "presentacion": "Una experiencia con catálogo de servicios, agenda y seguimiento del vehículo desde la recepción hasta la entrega.",
       "ideal_para": "Autolavados y negocios de detallado o estética automotriz.",
-      "ejemplo_uso": "El visitante conoce los servicios disponibles y solicita información para la atención de su vehículo.",
-      "demo": null,
-      "funciones_demo": [],
-      "opciones_personalizables": [
-        "Página de presentación",
-        "Catálogo de servicios",
-        "Galería de trabajos",
-        "Registro de clientes y vehículos",
-        "Organización de citas",
-        "Seguimiento de servicios",
-        "Recibos para clientes"
+      "ejemplo_uso": "Eliges un servicio y tipo de vehículo, reservas un bloque disponible y consultas el seguimiento. Desde Operación asignas responsable, guardas notas, registras abonos y completas la entrega.",
+      "demo": "Estetica/estetica.html",
+      "funciones_demo": [
+        "Servicios con precios ficticios por tipo de vehículo",
+        "Agenda sin cruces para una bahía",
+        "Seguimiento de citas por visitante ficticio",
+        "Etapas de recepción, trabajo y entrega",
+        "Responsables y notas de trabajo",
+        "Anticipos, abonos, saldos y recibos",
+        "Filtros de órdenes y exportación CSV"
       ],
-      "nota": "Podemos evaluar una página de presentación, un sistema administrativo o una combinación de ambos."
+      "opciones_personalizables": [
+        "Varias bahías y horarios de atención propios",
+        "Cuentas reales de clientes y empleados",
+        "Galería de trabajos del negocio",
+        "Avisos y recordatorios de citas",
+        "Cupones y promociones",
+        "Integración con otros reportes del negocio"
+      ],
+      "nota": "Los servicios, precios, duraciones y pagos son de muestra. Puedes avanzar las etapas sin esperar la cita para explorar la demo. La entrega se bloquea si queda saldo pendiente. Las vistas no son cuentas reales de usuario."
     },
     {
       "id": "tortilleria",
       "nombre": "Sistema para tortillerías",
-      "presentacion": "Una herramienta para consultar los movimientos del negocio y entender mejor sus ingresos y gastos.",
+      "presentacion": "Una herramienta para registrar ventas por peso, gastos y pagos al personal y consultar los resultados de esos movimientos.",
       "ideal_para": "Tortillerías que buscan una administración más organizada.",
-      "ejemplo_uso": "Registras ventas y gastos para consultar el balance de la operación y revisar sus resultados.",
+      "ejemplo_uso": "Registras una venta en kilos, pruebas el efectivo recibido y el cambio y generas un recibo. Después capturas un gasto o pago al personal y revisas cómo cambia el resultado del periodo.",
       "demo": "Tortilleria/tortilleria.html",
       "funciones_demo": [
-        "Registro de ventas",
-        "Registro de gastos",
-        "Gestión de empleados",
-        "Consulta de ganancias",
-        "Gráficas de resultados"
+        "Ventas por kilos y precios de muestra",
+        "Efectivo, cambio y transferencia simulada",
+        "Recibos y anulación de ventas",
+        "Gastos por categoría y anulación de movimientos",
+        "Personal y registro de pagos sin duplicarlos",
+        "Filtros de fechas, gráficas y exportación CSV"
       ],
       "opciones_personalizables": [
-        "Reportes por periodo",
-        "Clasificación de gastos",
+        "Catálogo y tarifas del negocio",
         "Control de producción",
-        "Administración de sucursales"
+        "Inventario de insumos",
+        "Administración de sucursales",
+        "Roles y datos compartidos del equipo"
       ],
-      "nota": "La información de los reportes depende de los registros capturados en el sistema."
+      "nota": "El resultado es la diferencia entre ventas y gastos registrados; no equivale a utilidad contable neta. La tarifa diaria del personal solo se vuelve gasto al registrar su pago. La demo no incluye producción ni nómina completa."
     },
     {
       "id": "asistencias",
       "nombre": "Control de asistencias",
-      "presentacion": "Una herramienta para registrar entradas y salidas y consultar las jornadas de trabajo.",
+      "presentacion": "Una herramienta para registrar jornadas, entradas, salidas y pausas y consultar el tiempo trabajado.",
       "ideal_para": "Negocios y equipos que necesitan organizar el registro de asistencia de su personal.",
-      "ejemplo_uso": "Una persona registra su entrada y el administrador consulta los horarios registrados y las jornadas.",
+      "ejemplo_uso": "Seleccionas un empleado ficticio, registras una entrada y pruebas una pausa y su reanudación. Al salir se calcula el tiempo neto, descontando los descansos.",
       "demo": "asistencias/asistencias.html",
       "funciones_demo": [
-        "Registro de entradas",
-        "Registro de salidas",
-        "Ubicación del registro",
-        "Historial de jornadas",
-        "Consulta de horas trabajadas"
+        "Entradas y salidas por empleado ficticio",
+        "Pausas y reanudación de jornada",
+        "Bloqueo de jornadas abiertas duplicadas",
+        "Cálculo de tiempo neto y jornadas nocturnas",
+        "Ubicación opcional solicitada al navegador",
+        "Filtros, puntualidad de muestra y exportación CSV"
       ],
       "opciones_personalizables": [
-        "Horarios por empleado",
-        "Reportes por periodo",
-        "Reglas de puntualidad",
-        "Ubicaciones autorizadas"
+        "Horarios y tolerancias por empleado",
+        "Autenticación y permisos de usuarios",
+        "Ubicaciones o zonas autorizadas",
+        "Reportes compartidos por equipo",
+        "Integraciones con otros procesos de personal"
       ],
-      "nota": "La ubicación requiere permiso del navegador y disponibilidad de geolocalización. Por sí sola no garantiza la autenticidad de un registro."
+      "nota": "La geolocalización solo se solicita si eliges esa opción y das permiso. Las coordenadas no se guardan en el historial de la demo. No se valida una zona de trabajo ni se genera una nómina; los controles son de demostración."
     },
     {
       "id": "consultorio",
@@ -318,21 +350,24 @@
       "nombre": "Organizador de quinielas",
       "presentacion": "Una plataforma para organizar pronósticos deportivos y consultar la participación de un grupo.",
       "ideal_para": "Grupos que quieren reunir sus pronósticos en un mismo lugar.",
-      "ejemplo_uso": "Registras participantes, organizas una jornada y consultas el concentrado de resultados.",
+      "ejemplo_uso": "Eliges local, empate o visitante en diez encuentros ficticios, registras tu participación y descargas el comprobante. Después cierras la jornada, capturas resultados y consultas la clasificación.",
       "demo": "Quinielas/quiniela.html",
       "funciones_demo": [
-        "Registro de participantes",
-        "Captura de pronósticos",
-        "Registro de resultados",
-        "Consulta de concentrados"
+        "Pronósticos local, empate y visitante",
+        "Contador de selecciones y llenado al azar",
+        "Folios y comprobantes descargables",
+        "Cierre de recepción y captura de resultados",
+        "Clasificación automática y empates de posición",
+        "Búsqueda de participaciones y exportación CSV"
       ],
       "opciones_personalizables": [
-        "Identidad visual del grupo",
-        "Organización por jornadas",
-        "Criterios de puntuación",
-        "Tablas de posiciones"
+        "Equipos y encuentros de cada jornada",
+        "Varias jornadas o temporadas",
+        "Reglas de puntuación del grupo",
+        "Cuentas y permisos de participantes",
+        "Límites de participación por usuario"
       ],
-      "nota": "Las reglas de participación y los criterios de puntuación se definen para cada proyecto."
+      "nota": "Los encuentros y participantes son ficticios. Un acierto suma un punto; los partidos pendientes no se marcan como error. No hay cobros ni premios y la demo no identifica a personas reales."
     },
     {
       "id": "liga_deportiva",
@@ -387,6 +422,84 @@
         "Conectar procesos del negocio"
       ],
       "nota": "La viabilidad, las funciones y los servicios necesarios se revisan antes de confirmar una propuesta."
+    },
+    {
+      "id": "inmobiliaria",
+      "nombre": "Catálogo inmobiliario",
+      "presentacion": "Una página para presentar terrenos y propiedades, facilitar su búsqueda y administrar el catálogo.",
+      "ideal_para": "Inmobiliarias, promotores y negocios que desean mostrar terrenos o propiedades de forma organizada.",
+      "ejemplo_uso": "Filtras por zona, presupuesto y superficie, guardas favoritos y abres una ficha. Desde la administración puedes agregar propiedades ficticias, editarlas, ocultarlas o cambiar su disponibilidad.",
+      "demo": "Inmobiliaria/inmobiliaria.html",
+      "funciones_demo": [
+        "Catálogo con imágenes ilustrativas",
+        "Búsqueda y filtros de zona, precio y superficie",
+        "Favoritos guardados en el navegador",
+        "Fichas descargables e impresión",
+        "Disponibilidad: disponible, reservado y vendido",
+        "Alta, edición, publicación y eliminación de propiedades",
+        "Exportación del catálogo a CSV"
+      ],
+      "opciones_personalizables": [
+        "Mapas con ubicaciones de propiedades reales",
+        "Galerías con varias imágenes y videos",
+        "Carga y administración de fotografías",
+        "Formularios de consulta y contacto comercial",
+        "Documentos públicos seleccionados",
+        "Acceso privado para administradores"
+      ],
+      "nota": "Las propiedades, ubicaciones, imágenes y precios son ilustrativos. La demo no ofrece inmuebles reales ni muestra un mapa con direcciones de clientes. El botón de WhatsApp consulta el desarrollo del sistema."
+    },
+    {
+      "id": "restaurante",
+      "nombre": "Sistema para restaurantes y pedidos",
+      "presentacion": "Una herramienta para organizar el consumo por mesa y persona, enviar comandas y seguir el servicio hasta el cierre de la cuenta.",
+      "ideal_para": "Restaurantes, taquerías y negocios de alimentos con atención en mesas.",
+      "ejemplo_uso": "Abres una cuenta, asignas productos a comensales o a consumos compartidos y envías la comanda. Puedes agregar consumos posteriores, avanzar cada comanda en cocina y cerrar la cuenta cuando todo esté servido.",
+      "demo": "Restaurante/restaurante.html",
+      "funciones_demo": [
+        "Menú con búsqueda y categorías",
+        "Cuentas por mesa y productos por persona",
+        "Consumos compartidos con reparto de centavos",
+        "Nuevas comandas para cuentas abiertas",
+        "Seguimiento de cocina hasta el servicio en mesa",
+        "Cobro completo simulado y cálculo de cambio",
+        "Recibos, cancelaciones e historial con exportación CSV"
+      ],
+      "opciones_personalizables": [
+        "Menú, precios y mesas del negocio",
+        "Usuarios de mesero, cocina y administración",
+        "Impresión en cocina y caja según compatibilidad",
+        "Pedidos para llevar o entregar",
+        "Inventario y control de insumos",
+        "Pagos parciales o cuentas separadas"
+      ],
+      "nota": "El reparto por persona es orientativo: esta demo cobra la cuenta completa. Los pagos son simulados y una cuenta solo se cobra cuando todas sus comandas están servidas. Las canceladas no suman a lo cobrado."
+    },
+    {
+      "id": "radio",
+      "nombre": "Página para radio en línea",
+      "presentacion": "Una página para presentar una estación, su programación, perfiles y publicaciones y facilitar la participación de la audiencia.",
+      "ideal_para": "Estaciones, proyectos de radio digital y equipos que desean una presencia propia en internet.",
+      "ejemplo_uso": "Pruebas el audio instrumental, consultas un día de programación y guardas un programa favorito. Luego creas una solicitud ficticia y avanzas su revisión desde la cabina de demostración.",
+      "demo": "Radio/radio.html",
+      "funciones_demo": [
+        "Reproductor instrumental con pausa y volumen",
+        "Programación semanal y de fin de semana",
+        "Bloque según la hora de Ciudad de México",
+        "Programas favoritos en el navegador",
+        "Perfiles y publicaciones de muestra",
+        "Solicitudes con canciones y dedicatorias cerradas",
+        "Cabina simulada con estados y exportación CSV"
+      ],
+      "opciones_personalizables": [
+        "Conexión a una transmisión de streaming compatible",
+        "Programación y perfiles de la estación",
+        "Publicación y edición de novedades",
+        "Solicitudes conectadas a una cabina real",
+        "Acceso de moderadores y administradores",
+        "Identidad visual y enlaces oficiales"
+      ],
+      "nota": "El audio es una muestra instrumental generada en el navegador, no una transmisión en vivo. Es independiente de la parrilla. Las canciones solicitadas son ficticias y no se reproducen ni se envían a una estación."
     }
   ],
   "catalogo": {
@@ -415,8 +528,8 @@
     "titulo_opciones_personalizables": "Opciones que podemos evaluar para tu proyecto",
     "aclaracion_personalizacion": "Estas opciones se revisan contigo. Su inclusión y funcionamiento se confirman en la propuesta del proyecto.",
     "sin_demo": "Esta solución no tiene un demo público disponible aquí. Puedes conocer sus posibilidades y consultar al ingeniero.",
-    "aviso_demo": "Usa información ficticia al probar el demo. La versión final de tu proyecto se define contigo.",
-    "pregunta_funciones": "¿Qué te interesa incluir? Puedes seleccionar varias opciones.",
+    "aviso_demo": "Usa información ficticia. Las 10 demos guardan datos en este navegador y no realizan pagos reales. La versión final puede incorporar usuarios y datos compartidos según el alcance acordado.",
+    "pregunta_funciones": "¿Qué te interesa incluir? Elige hasta seis prioridades entre las funciones del demo y las opciones que podemos evaluar para tu proyecto.",
     "seleccion_pendiente": "Todavía necesito orientación para elegir funciones.",
     "personalizacion": "Sí, podemos revisar cambios en la presentación y en las funciones para adaptarlas a tu negocio. El alcance se acuerda antes de comenzar.",
     "confirmacion_interes": "Agregué esta solución a tu resumen de interés.",
@@ -461,6 +574,18 @@
       "nombre": "Diseño para tu marca",
       "respuesta": "Trabajamos en logotipos, piezas publicitarias, catálogos, códigos QR y material de presentación. Los formatos y las piezas se acuerdan contigo.",
       "destino_categoria": "identidad"
+    },
+    {
+      "id": "inmobiliario",
+      "nombre": "Catálogos inmobiliarios",
+      "respuesta": "Creamos propuestas para mostrar terrenos o propiedades con fichas, fotografías y filtros. La administración, los mapas y las consultas se definen según tu operación. Puedes probar un catálogo ficticio desde esta categoría.",
+      "destino_categoria": "inmobiliario"
+    },
+    {
+      "id": "radio",
+      "nombre": "Páginas para radio en línea",
+      "respuesta": "Podemos presentar tu estación con reproductor, programación, perfiles y publicaciones. La conexión a una transmisión real y la participación de la audiencia se revisan según las herramientas y necesidades del proyecto.",
+      "destino_categoria": "radio"
     }
   ],
   "preguntas": [
@@ -469,6 +594,30 @@
       "pregunta": "¿Cuánto cuesta?",
       "respuesta": "No puedo darte un precio en este momento. El costo depende de las funciones y del alcance de tu proyecto. Debes cotizarlo directamente con el ingeniero. Puedo preparar un resumen de lo que seleccionaste para que no tengas que explicarlo desde cero.",
       "accion": "cotizacion"
+    },
+    {
+      "id": "ubicacion",
+      "pregunta": "¿Dónde se ubica King Land?",
+      "respuesta": "Nuestra base de trabajo está en Río Grande, Oaxaca. Atendemos proyectos de Río Grande, Puerto Escondido y comunidades cercanas. También colaboramos a distancia con negocios de todo México. Para conocer tu proyecto o coordinar una reunión, escríbenos primero por WhatsApp.",
+      "accion": "whatsapp"
+    },
+    {
+      "id": "home_office",
+      "pregunta": "¿Cómo trabajan desde home office?",
+      "respuesta": "Trabajamos de forma remota y coordinamos la propuesta, las revisiones y la entrega por medios digitales. Podemos conversar por WhatsApp o acordar una videollamada. No necesitas estar en la misma ciudad para desarrollar tu proyecto con nosotros.",
+      "accion": "continuar"
+    },
+    {
+      "id": "reunion",
+      "pregunta": "¿Puedo coordinar una reunión presencial?",
+      "respuesta": "Puedes consultarlo por WhatsApp. La atención presencial en Río Grande, Puerto Escondido y alrededores se coordina previamente según disponibilidad. El asistente no confirma domicilios de atención, horarios ni reuniones.",
+      "accion": "whatsapp"
+    },
+    {
+      "id": "privacidad_demos",
+      "pregunta": "¿Los demos muestran datos de sus clientes?",
+      "respuesta": "No mostramos los nombres reales de los clientes en estas demos. Usamos marcas, participantes, propiedades y movimientos ficticios. Utiliza también datos de muestra al probarlas; los registros de esta versión se guardan en tu navegador.",
+      "accion": "demos"
     },
     {
       "id": "tiempo",
@@ -497,7 +646,7 @@
     {
       "id": "distancia",
       "pregunta": "¿Puedo contratar desde otra ciudad?",
-      "respuesta": "Sí. Atendemos a distancia en todo México. Podemos coordinar la propuesta, las revisiones y la entrega por medios digitales.",
+      "respuesta": "Sí. Nuestra base está en Río Grande, Oaxaca; atendemos proyectos de Puerto Escondido y sus alrededores y trabajamos desde home office con clientes de todo México. Podemos coordinar propuestas, revisiones y entregas por WhatsApp, videollamadas y medios digitales.",
       "accion": "continuar"
     },
     {
@@ -509,7 +658,7 @@
     {
       "id": "soporte",
       "pregunta": "¿Qué pasa después de la entrega?",
-      "respuesta": "La orientación de uso, el soporte, el mantenimiento y las actualizaciones se acuerdan según el proyecto. El ingeniero te explicará qué incluye la propuesta.",
+      "respuesta": "La orientación, el soporte y el mantenimiento incluidos se detallan en la propuesta. Las funciones nuevas o cambios posteriores que queden fuera del alcance original pueden tener un costo adicional y se cotizan antes de realizarlos.",
       "accion": "continuar"
     },
     {
@@ -521,7 +670,7 @@
     {
       "id": "demos",
       "pregunta": "¿Puedo probar antes de decidir?",
-      "respuesta": "Puedes explorar los demos disponibles para conocer ejemplos de funcionamiento. Son referencias; el diseño y las funciones de tu propio proyecto se acuerdan contigo. Utiliza siempre datos ficticios.",
+      "respuesta": "Sí. Hay 10 demos públicas: tienda, lavandería, taller, asistencias, tortillería, quinielas, inmobiliaria, restaurante, estética automotriz y radio. Son simulaciones con marcas y datos ficticios para proteger a nuestros clientes. El alcance de tu proyecto se acuerda contigo.",
       "accion": "demos"
     },
     {
@@ -539,7 +688,7 @@
     {
       "id": "internet",
       "pregunta": "¿El sistema necesita internet?",
-      "respuesta": "Los demos que usan servicios en la nube necesitan conexión para consultar o guardar información. Si necesitas trabajar sin internet, coméntalo con el ingeniero para evaluar esa posibilidad.",
+      "respuesta": "Para abrir las demos desde nuestra página necesitas conexión. Sus registros de prueba se guardan en tu navegador y no se comparten automáticamente entre dispositivos. En un sistema final, la conexión necesaria depende del almacenamiento y las funciones acordadas. Si necesitas trabajar sin internet, consúltalo con el ingeniero.",
       "accion": "continuar"
     },
     {
@@ -653,7 +802,7 @@
   },
   "resumen": {
     "titulo": "Esto es lo que le contarás al ingeniero",
-    "descripcion": "Revisa tus selecciones. Puedes cambiarlas antes de continuar.",
+    "descripcion": "Revisa tus soluciones, funciones y temas consultados. Puedes cambiarlos antes de continuar con el ingeniero.",
     "saludo": "Hola, ingeniero. Vengo del asistente de King Land y me gustaría recibir orientación para mi proyecto.",
     "encabezado": "RESUMEN DE MI CONSULTA",
     "campos": {

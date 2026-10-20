@@ -7,14 +7,15 @@
 
   <title>King Land | Soluciones digitales para tu negocio</title>
 
-  <meta name="description" content="Páginas web, tiendas en línea y sistemas personalizados para tu negocio. Explora nuestros demos y cuéntanos tu proyecto.">
+  <meta name="description" content="Páginas web, tiendas en línea y sistemas a medida desde Río Grande, Oaxaca. Atención en Puerto Escondido y alrededores, y trabajo remoto en todo México. Explora 10 demos.">
   <meta property="og:title" content="King Land | Soluciones digitales">
-  <meta property="og:description" content="Tu negocio tiene potencial. Hagámoslo digital. Explora soluciones y demos para tu próximo proyecto.">
+  <meta property="og:description" content="Soluciones digitales desde Río Grande, Oaxaca, para Puerto Escondido, sus alrededores y proyectos a distancia en todo México. Explora nuestros demos.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
 
   <link rel="icon" type="image/png" href="imagenes/logo1.png">
   <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="assets/portafolio.css">
 
   <script src="script.js" defer></script>
 </head>
@@ -46,11 +47,17 @@
         ☰
       </button>
 
-      <nav class="navegacion" id="navegacion" aria-label="Navegación principal">
+      <nav
+        class="navegacion"
+        id="navegacion"
+        aria-label="Navegación principal"
+      >
         <a href="#proyectos">Proyectos</a>
         <a href="#servicios">Soluciones</a>
         <a href="#sobre">Sobre nosotros</a>
+        <a href="#ubicacion">Ubicación</a>
         <a href="#preguntas">Preguntas</a>
+
         <a class="boton" href="#contacto">
           Hablemos de tu idea <span>↗</span>
         </a>
@@ -93,14 +100,27 @@
             <span>Atención directa</span>
             <span>Celular y computadora</span>
           </div>
+
+          <p class="hero-cobertura">
+            Desde Río Grande, Oaxaca · Puerto Escondido y alrededores ·
+            Atención remota en México
+          </p>
         </div>
 
         <div class="escena">
-          <p class="escena-etiqueta">DE TU IDEA A UNA SOLUCIÓN REAL</p>
+          <p class="escena-etiqueta">
+            DE TU IDEA A UNA SOLUCIÓN REAL
+          </p>
 
-          <div class="ventana" aria-label="Ilustración de un panel administrativo">
+          <div
+            class="ventana"
+            aria-label="Ilustración de un panel administrativo"
+          >
             <div class="ventana-barra">
-              <span class="ventana-puntos" aria-hidden="true">● ● ●</span>
+              <span class="ventana-puntos" aria-hidden="true">
+                ● ● ●
+              </span>
+
               <span>Tu negocio, en digital</span>
               <span aria-hidden="true">↗</span>
             </div>
@@ -112,7 +132,9 @@
                   <h3>Hola, emprendedor ✦</h3>
                 </div>
 
-                <span class="panel-avatar" aria-hidden="true">T</span>
+                <span class="panel-avatar" aria-hidden="true">
+                  T
+                </span>
               </div>
 
               <div class="panel-destacado">
@@ -163,7 +185,9 @@
 
             <div>
               <strong>Hecho para tu negocio</strong>
-              <small>Tu forma de trabajar merece su propia solución.</small>
+              <small>
+                Tu forma de trabajar merece su propia solución.
+              </small>
             </div>
           </div>
 
@@ -238,6 +262,15 @@
           aria-pressed="false"
         >
           Deportes
+        </button>
+
+        <button
+          class="filtro"
+          type="button"
+          data-filtro="web"
+          aria-pressed="false"
+        >
+          Catálogos y sitios web
         </button>
       </div>
 
@@ -380,14 +413,14 @@
             <h3>Sistema para tortillerías</h3>
 
             <p>
-              Consulta ventas, gastos, empleados y ganancias
-              para entender mejor el movimiento diario de tu negocio.
+              Consulta ventas, gastos y pagos al personal
+              para explorar los resultados de los movimientos registrados.
             </p>
 
             <div class="etiquetas">
               <span>Ventas</span>
               <span>Gastos</span>
-              <span>Ganancias</span>
+              <span>Resultados</span>
             </div>
 
             <a
@@ -433,14 +466,145 @@
             </a>
           </div>
         </article>
+
+        <article class="proyecto" data-categoria="web">
+          <div class="proyecto-portada portada-inmobiliaria">
+            <small>CATÁLOGO INMOBILIARIO</small>
+            <strong>Cada espacio,<br>nuevas posibilidades.</strong>
+          </div>
+
+          <div class="proyecto-contenido">
+            <h3>Catálogo inmobiliario</h3>
+
+            <p>
+              Explora propiedades ficticias, filtra por zona y presupuesto,
+              guarda favoritos y prueba la administración del catálogo.
+            </p>
+
+            <div class="etiquetas">
+              <span>Propiedades</span>
+              <span>Filtros</span>
+              <span>Administración</span>
+            </div>
+
+            <a
+              class="proyecto-enlace"
+              href="Inmobiliaria/inmobiliaria.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Probar demo de inmobiliaria en otra pestaña"
+            >
+              Probar demo <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="proyecto" data-categoria="gestion">
+          <div class="proyecto-portada portada-restaurante">
+            <small>RESTAURANTE Y PEDIDOS</small>
+            <strong>Del primer antojo<br>al cierre de cuenta.</strong>
+          </div>
+
+          <div class="proyecto-contenido">
+            <h3>Sistema para restaurantes</h3>
+
+            <p>
+              Organiza pedidos por mesa y persona, envía nuevas comandas
+              a cocina y prueba el servicio y el cobro simulado.
+            </p>
+
+            <div class="etiquetas">
+              <span>Mesas</span>
+              <span>Comandas</span>
+              <span>Cuentas</span>
+            </div>
+
+            <a
+              class="proyecto-enlace"
+              href="Restaurante/restaurante.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Probar demo de restaurante en otra pestaña"
+            >
+              Probar demo <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="proyecto" data-categoria="gestion">
+          <div class="proyecto-portada portada-estetica">
+            <small>ESTÉTICA AUTOMOTRIZ</small>
+            <strong>Cada detalle,<br>con su seguimiento.</strong>
+          </div>
+
+          <div class="proyecto-contenido">
+            <h3>Estética automotriz</h3>
+
+            <p>
+              Consulta servicios, reserva horarios y explora el seguimiento
+              de vehículos, los responsables y los abonos simulados.
+            </p>
+
+            <div class="etiquetas">
+              <span>Agenda</span>
+              <span>Órdenes</span>
+              <span>Recibos</span>
+            </div>
+
+            <a
+              class="proyecto-enlace"
+              href="Estetica/estetica.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Probar demo de estética automotriz en otra pestaña"
+            >
+              Probar demo <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="proyecto" data-categoria="web">
+          <div class="proyecto-portada portada-radio">
+            <small>RADIO EN LÍNEA</small>
+            <strong>Una frecuencia<br>para conectar.</strong>
+          </div>
+
+          <div class="proyecto-contenido">
+            <h3>Página para radio</h3>
+
+            <p>
+              Prueba un reproductor instrumental de muestra,
+              explora la programación y recorre las solicitudes
+              ficticias de canciones.
+            </p>
+
+            <div class="etiquetas">
+              <span>Reproductor</span>
+              <span>Programación</span>
+              <span>Solicitudes</span>
+            </div>
+
+            <a
+              class="proyecto-enlace"
+              href="Radio/radio.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Probar demo de radio en otra pestaña"
+            >
+              Probar demo <span>↗</span>
+            </a>
+          </div>
+        </article>
       </div>
 
       <p class="nota-demos" id="resultado-filtro" role="status">
-        6 demos disponibles para explorar.
+        10 demos disponibles para explorar.
       </p>
 
       <p class="nota-demos">
-        Usa información ficticia al probar los demos.
+        Las marcas y los datos de los demos son ficticios para proteger
+        la identidad de nuestros clientes. Los cambios se guardan en tu
+        navegador y las acciones de pago son simuladas.
         Las funciones y el diseño de tu proyecto se definen contigo.
       </p>
     </section>
@@ -701,20 +865,120 @@
         </p>
 
         <p>
-          La tecnología debe ayudarte a trabajar mejor y a mostrar
-          lo que haces. Por eso, cada proyecto empieza escuchándote
-          y entendiendo tu forma de trabajar.
+          Nuestra base está en Río Grande, Oaxaca. Atendemos proyectos
+          de Río Grande, Puerto Escondido y sus alrededores, y trabajamos
+          desde home office para colaborar también con negocios
+          de otras ciudades.
         </p>
 
         <div class="sobre-puntos">
           <span>↗ Atención directa con el desarrollador</span>
           <span>↗ Proyectos personalizados</span>
-          <span>↗ Atención a distancia en todo México</span>
+          <span>↗ Río Grande, Puerto Escondido y alrededores</span>
+          <span>↗ Trabajo remoto desde home office en todo México</span>
         </div>
 
         <a class="enlace" href="#contacto">
           Hagamos equipo <span>→</span>
         </a>
+      </div>
+    </section>
+
+    <section
+      class="cobertura seccion"
+      id="ubicacion"
+      aria-labelledby="titulo-ubicacion"
+    >
+      <div class="contenedor">
+        <div class="encabezado-seccion">
+          <div>
+            <p class="etiqueta">
+              Cerca de tu negocio, estés donde estés
+            </p>
+
+            <h2 class="titulo" id="titulo-ubicacion">
+              Desde la Costa de Oaxaca.<br>
+              <em>Conectados con tu proyecto.</em>
+            </h2>
+          </div>
+
+          <p>
+            Nuestra base de trabajo está en Río Grande, Oaxaca.
+            Atendemos proyectos de Puerto Escondido y sus alrededores,
+            y colaboramos a distancia en todo México.
+          </p>
+        </div>
+
+        <div class="cobertura-grid">
+          <article class="cobertura-tarjeta cobertura-base">
+            <span class="cobertura-numero">
+              01 / NUESTRA BASE
+            </span>
+
+            <h3>Río Grande,<br>Oaxaca.</h3>
+
+            <p>
+              Desde aquí damos forma a páginas web, tiendas en línea
+              y sistemas para emprendedores y negocios.
+            </p>
+
+            <span class="cobertura-sello">
+              Costa de Oaxaca
+            </span>
+          </article>
+
+          <article class="cobertura-tarjeta cobertura-region">
+            <span class="cobertura-numero">
+              02 / ATENCIÓN REGIONAL
+            </span>
+
+            <h3>Puerto Escondido<br>y alrededores.</h3>
+
+            <p>
+              Atendemos proyectos de Río Grande, Puerto Escondido
+              y comunidades cercanas. Cualquier reunión presencial
+              se coordina previamente.
+            </p>
+
+            <span class="cobertura-sello">
+              Platiquemos sobre tu proyecto
+            </span>
+          </article>
+
+          <article class="cobertura-tarjeta cobertura-remota">
+            <span class="cobertura-numero">
+              03 / SIN BARRERAS DE DISTANCIA
+            </span>
+
+            <h3>Home office.<br>Alcance nacional.</h3>
+
+            <p>
+              Trabajamos de forma remota. Coordinamos propuestas,
+              revisiones y entregas por WhatsApp, videollamadas
+              y medios digitales.
+            </p>
+
+            <span class="cobertura-sello">
+              Atención remota en México
+            </span>
+          </article>
+        </div>
+
+        <div class="cobertura-pie">
+          <p>
+            Para conversar sobre tu idea o coordinar una reunión,
+            escríbenos primero por WhatsApp.
+          </p>
+
+          <a
+            class="boton"
+            href="https://wa.me/522225354183?text=Hola%2C%20vi%20que%20atienden%20en%20R%C3%ADo%20Grande%2C%20Puerto%20Escondido%20y%20alrededores.%20Me%20gustar%C3%ADa%20platicar%20sobre%20mi%20proyecto."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Consultar atención para mi proyecto <span>↗</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -795,9 +1059,22 @@
             <summary>¿Puedo trabajar contigo desde otra ciudad?</summary>
 
             <p>
-              Sí. Atendemos a distancia en todo México.
-              Podemos coordinar la propuesta, las revisiones
-              y la entrega por medios digitales.
+              Sí. Nuestra base está en Río Grande, Oaxaca, y atendemos
+              proyectos de Puerto Escondido y sus alrededores.
+              También trabajamos desde home office con clientes
+              de todo México, coordinando propuestas, revisiones
+              y entregas por medios digitales.
+            </p>
+          </details>
+
+          <details class="pregunta">
+            <summary>¿Cómo coordinamos una reunión?</summary>
+
+            <p>
+              Escríbenos por WhatsApp para conocer tu proyecto y acordar
+              una llamada, videollamada o reunión presencial según
+              disponibilidad. Trabajamos desde home office y las reuniones
+              se coordinan previamente.
             </p>
           </details>
         </div>
@@ -818,6 +1095,20 @@
             Cuéntanos qué haces, qué necesitas y qué te gustaría mejorar.
             Te ayudamos a encontrar por dónde empezar.
           </p>
+
+          <div class="contacto-cobertura">
+            <strong>
+              Río Grande, Oaxaca · Puerto Escondido y alrededores
+            </strong>
+
+            <span>
+              Trabajo desde home office y atención remota en todo México.
+            </span>
+
+            <a href="#ubicacion">
+              Conoce nuestra ubicación y forma de atención →
+            </a>
+          </div>
         </div>
 
         <div class="contacto-opciones">
@@ -876,8 +1167,9 @@
       </div>
 
       <div>
-        <p>Río Grande, Oaxaca</p>
-        <p>Atención a distancia en todo México</p>
+        <p>Base en Río Grande, Oaxaca</p>
+        <p>Puerto Escondido y alrededores</p>
+        <p>Home office · Atención remota en México</p>
       </div>
 
       <div class="pie-creditos">

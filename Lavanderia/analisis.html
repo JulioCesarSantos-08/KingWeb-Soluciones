@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Análisis Lavandería</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#244b49">
 
-<link rel="icon" href="../imagenes/logo2.png">
+  <title>Análisis del negocio · Demo de lavandería | King Land</title>
 
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <meta name="description" content="Explora ventas registradas, cobros y saldos en el panel de análisis del demo de lavandería de King Land.">
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="icon" href="../imagenes/logo1.png">
+  <link rel="stylesheet" href="styles.css">
 
-<link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 
-<body>
+<body data-vista="analisis">
+  <a class="saltar" href="#contenido">Ir al contenido</a>
 
-<header>
-<img src="../imagenes/logo2.png">
-<h3>Análisis ingresos</h3>
-<button onclick="location.href='lavanderia.html'">Volver</button>
-</header>
+  <div id="app">
+    <p class="cargando">Preparando el análisis de demostración…</p>
+  </div>
 
-<div class="stats">
-<p>Total recibos: <strong id="totalRecibos">0</strong></p>
-<p>Total ingresos: $<strong id="totalIngresos">0</strong></p>
-</div>
-
-<div style="padding:20px">
-<canvas id="grafica"></canvas>
-</div>
-
-<script src="analisis.js"></script>
-
+  <noscript>
+    <p class="aviso">
+      Activa JavaScript para explorar la demostración.
+      <a href="../index.html">Volver al portafolio</a>
+    </p>
+  </noscript>
 </body>
 </html>
